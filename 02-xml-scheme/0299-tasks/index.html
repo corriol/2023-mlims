@@ -213,7 +213,49 @@ again. </p>
 <p>After that, modify the XSD file taking into account that the price must be greater than 0 and quantity musn't be negative.   </p>
 </li>
 <li>
-<p><code>202Card.xsd</code>: Given the following XML document</p>
+<p><code>202Catalog.xsd</code>: Given the following XML document</p>
+</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nt">&lt;catalog&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span>  <span class="nt">&lt;cd&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="nt">&lt;title&gt;</span>Empire Burlesque<span class="nt">&lt;/title&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="nt">&lt;artist&gt;</span>Bob Dylan<span class="nt">&lt;/artist&gt;</span>        
+<span class="linenos" data-linenos=" 5 "></span>    <span class="nt">&lt;price&gt;</span>10.90<span class="nt">&lt;/price&gt;</span>      
+<span class="linenos" data-linenos=" 6 "></span>    <span class="nt">&lt;date&gt;</span>1985-05-01<span class="nt">&lt;/date&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="nt">&lt;details&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>      <span class="nt">&lt;company&gt;</span>Columbia<span class="nt">&lt;/company&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>      <span class="nt">&lt;country&gt;</span>USA<span class="nt">&lt;/country&gt;</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="nt">&lt;/details&gt;</span>
+<span class="linenos" data-linenos="11 "></span>  <span class="nt">&lt;/cd&gt;</span>
+<span class="linenos" data-linenos="12 "></span>  <span class="nt">&lt;cd&gt;</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="nt">&lt;title&gt;</span>Hide your heart<span class="nt">&lt;/title&gt;</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="nt">&lt;artist&gt;</span>Bonnie Tyler<span class="nt">&lt;/artist&gt;</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="nt">&lt;price&gt;</span>9.90<span class="nt">&lt;/price&gt;</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="nt">&lt;date&gt;</span>1988-06-20<span class="nt">&lt;/date&gt;</span>
+<span class="linenos" data-linenos="17 "></span>    <span class="nt">&lt;details&gt;</span>
+<span class="linenos" data-linenos="18 "></span>      <span class="nt">&lt;company&gt;</span>CBS Records<span class="nt">&lt;/company&gt;</span>
+<span class="linenos" data-linenos="19 "></span>      <span class="nt">&lt;country&gt;</span>UK<span class="nt">&lt;/country&gt;</span>
+<span class="linenos" data-linenos="20 "></span>    <span class="nt">&lt;/details&gt;</span>      
+<span class="linenos" data-linenos="21 "></span>  <span class="nt">&lt;/cd&gt;</span> 
+<span class="linenos" data-linenos="22 "></span>  <span class="nt">&lt;cd&gt;</span>
+<span class="linenos" data-linenos="23 "></span>    <span class="nt">&lt;title&gt;</span>Still got the blues<span class="nt">&lt;/title&gt;</span>
+<span class="linenos" data-linenos="24 "></span>    <span class="nt">&lt;artist&gt;</span>Gary Moore<span class="nt">&lt;/artist&gt;</span>
+<span class="linenos" data-linenos="25 "></span>    <span class="nt">&lt;price&gt;</span>10.20<span class="nt">&lt;/price&gt;</span>
+<span class="linenos" data-linenos="26 "></span>    <span class="nt">&lt;date&gt;</span>1990-12-10<span class="nt">&lt;/date&gt;</span>
+<span class="linenos" data-linenos="27 "></span>    <span class="nt">&lt;details&gt;</span>
+<span class="linenos" data-linenos="28 "></span>      <span class="nt">&lt;company&gt;</span>RCA<span class="nt">&lt;/company&gt;</span>
+<span class="linenos" data-linenos="29 "></span>      <span class="nt">&lt;country&gt;</span>USA<span class="nt">&lt;/country&gt;</span>
+<span class="linenos" data-linenos="30 "></span>    <span class="nt">&lt;/details&gt;</span>
+<span class="linenos" data-linenos="31 "></span>  <span class="nt">&lt;/cd&gt;</span>
+<span class="linenos" data-linenos="32 "></span><span class="nt">&lt;/catalog&gt;</span>
+</code></pre></div>
+  Create an XSD document to validate it. After that add some cd and validate
+  again. </p>
+<p>Next, modify the XSD file taking into account that the price must be greater than 0 and 
+  the date cannot be earlier than 1 January 1970.</p>
+<ol start="203">
+<li>
+<p><code>203Card.xsd</code>: Given the following XML document</p>
 <p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="linenos" data-linenos=" 2 "></span><span class="nt">&lt;cards</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
 <span class="linenos" data-linenos=" 3 "></span>    <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"202Cards.xsd"</span><span class="nt">&gt;</span>
@@ -281,7 +323,7 @@ Create the <code>202Cards.xsd</code> file in order to validate it. </p>
 </code></pre></div>
 </li>
 <li>
-<p><code>205Prices.xsd</code>: Triple-digit prices</p>
+<p><code>206Prices.xsd</code>: Triple-digit prices</p>
 <p>Given the following XML document:</p>
 <p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?xml version="1.0" encoding = "UTF-8"?&gt;</span>
 <span class="linenos" data-linenos="2 "></span><span class="nt">&lt;prices</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> 
@@ -299,7 +341,7 @@ Create the <code>202Cards.xsd</code> file in order to validate it. </p>
 </ul>
 </li>
 <li>
-<p><code>206Players.xsd</code>. Given the following XML document:</p>
+<p><code>207Players.xsd</code>. Given the following XML document:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?xml version="1.0" encoding = "UTF-8"?&gt;</span>
 <span class="linenos" data-linenos=" 2 "></span><span class="nt">&lt;players</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> 
 <span class="linenos" data-linenos=" 3 "></span>    <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"206Players.xsd"</span><span class="nt">&gt;</span>
@@ -331,7 +373,7 @@ Create the <code>202Cards.xsd</code> file in order to validate it. </p>
  in order to control the correctness of positions. You can find the name of positions in English at <a href="https://protips.dickssportinggoods.com/sports-and-activities/soccer/soccer-positions-the-numbers-player-roles-basic-formations">Soccer Positions: The Numbers, Player Roles &amp; Basic Formations</a></p>
 </li>
 <li>
-<p><code>207people.xsd</code>: Given the following XSD file "people.xsd":</p>
+<p><code>208people.xsd</code>: Given the following XSD file "people.xsd".</p>
 <p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="linenos" data-linenos=" 2 "></span><span class="nt">&lt;xs:schema</span> <span class="na">xmlns:xs=</span><span class="s">"http://www.w3.org/2001/XMLSchema"</span><span class="nt">&gt;</span>
 <span class="linenos" data-linenos=" 3 "></span>    <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"people"</span><span class="nt">&gt;</span>
