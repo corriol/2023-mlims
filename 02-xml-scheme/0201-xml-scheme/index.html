@@ -837,6 +837,16 @@ Unlike <code>fixed</code>, <code>default</code> assigns a default value but lets
 <h4 id="restrictions">Restrictions<a class="headerlink" href="#restrictions" title="Permanent link">¶</a></h4>
 <p>Without a doubt the most interesting modifier is the one that allows to define restrictions to the base types. With the restriction modifier you can create data types in which only certain values ​​are accepted, the data meets a certain condition, and so on.</p>
 <p>The <code>&lt;birth&gt;</code> element can only have integer values ​​between 1850 and 2011 if defined as follows:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"birth"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="nt">&lt;xs:simpleType&gt;</span>
+<span class="linenos" data-linenos="3 "></span>        <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:integer"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos="4 "></span>            <span class="nt">&lt;xs:maxInclusive</span> <span class="na">value=</span><span class="s">"2011"</span> <span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="5 "></span>            <span class="nt">&lt;xs:minInclusive</span> <span class="na">value=</span><span class="s">"1850"</span> <span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="6 "></span>        <span class="nt">&lt;/xs:restriction&gt;</span>
+<span class="linenos" data-linenos="7 "></span>    <span class="nt">&lt;/xs:simpleType&gt;</span>
+<span class="linenos" data-linenos="8 "></span><span class="nt">&lt;/xs:element&gt;</span>
+</code></pre></div>
+We can also define a simple type for later use:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;xs:simpleType</span> <span class="na">name=</span><span class="s">"year_birth"</span><span class="nt">&gt;</span>
 <span class="linenos" data-linenos="2 "></span>    <span class="nt">&lt;xs:restriction</span> <span class="na">base=</span><span class="s">"xs:integer"</span><span class="nt">&gt;</span>
 <span class="linenos" data-linenos="3 "></span>        <span class="nt">&lt;xs:maxInclusive</span> <span class="na">value=</span><span class="s">"2011"</span> <span class="nt">/&gt;</span>
