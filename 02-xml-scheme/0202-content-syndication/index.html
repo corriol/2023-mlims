@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.2.2, mkdocs-material-7.2.6" name="generator"/>
-<title>3. Content syndication - MLIMS</title>
+<title>Content syndication - MLIMS</title>
 <link href="../../assets/stylesheets/main.802231af.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <meta content="#4cae4f" name="theme-color"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#3-content-syndication">
+<a class="md-skip" href="#an-example-of-xml-dialect-content-syndication">
           Skip to content
         </a>
 </div>
@@ -46,7 +46,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              3. Content syndication
+              Content syndication
             
           </span>
 </div>
@@ -133,8 +133,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_2">
         2. XML schemas and vocabularies
         <span class="md-nav__icon md-icon"></span>
@@ -154,6 +154,68 @@
 <a class="md-nav__link" href="../0201-xml-scheme/">
         XML schemas
       </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Content syndication
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Content syndication
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduction">
+    Introduction
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-little-history">
+    A little history
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#content-syndication-today">
+    Content syndication today
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-of-use">
+    Example of use
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#structure-of-content-channels">
+    Structure of content channels
+  </a>
+<nav aria-label="Structure of content channels" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rss-20">
+    RSS 2.0
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#atom">
+    Atom
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#credits-bibliography-and-webography">
+    Credits, bibliography and webography
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../0299-tasks/">
@@ -217,11 +279,6 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tasks">
-    Tasks
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#credits-bibliography-and-webography">
     Credits, bibliography and webography
   </a>
@@ -233,23 +290,7 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="3-content-syndication">3. Content syndication<a class="headerlink" href="#3-content-syndication" title="Permanent link">¶</a></h1>
-<details class="info"><summary>Objectives</summary><ul>
-<li>Analyse a specific example of the use of markup language for the transmission of information.</li>
-<li>Define an XML document based on its syntax and structure.</li>
-<li></li>
-</ul>
-</details>
-<details class="info"><summary>Assessment criteria</summary><ul>
-<li>The advantages that content syndication brings to the management and transmission of information have been identified.</li>
-<li>Its areas of application have been defined.</li>
-<li>Technologies based on content syndication have been analysed.</li>
-<li>The structure and syntax of a content channel has been identified.</li>
-<li>Content channels have been created and validated.</li>
-<li>Functionality and access to channels are checked.</li>
-<li>Specific tools are used such as aggregators and channel directories.</li>
-</ul>
-</details>
+<h1 id="an-example-of-xml-dialect-content-syndication">An example of XML dialect: Content syndication<a class="headerlink" href="#an-example-of-xml-dialect-content-syndication" title="Permanent link">¶</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
 <p>The syndication (or broadcasting) of web content is that a part of the content
 of a web page is made available to other sites or individual subscribers
@@ -295,13 +336,16 @@ the use of other sharing systems such as APIs.</p>
 <p><strong>Podcasting</strong> refers to the technique for creating and broadcasting audio and video files over the Internet that allows the user to download them to their computer and listen to them  or see them whenever you want.</p>
 </div>
 <h2 id="example-of-use">Example of use<a class="headerlink" href="#example-of-use" title="Permanent link">¶</a></h2>
-<p><img alt="Event 24h24l.org" src="assets/03/rss-example.png"/></p>
+<figure>
+<p><img alt="Event 24h24l.org" src="../assets/rss-example.png"/></p>
+<figcaption>Event 24h24l.org podcast RSS</figcaption>
+</figure>
 <p>Using a <em>podcatcher</em> we can download the new <em>podcasts</em> published.</p>
 <p>Adding the <strong>feed</strong> (name given to the list of items) shows us what's new
 that there is.</p>
-<p><img alt="gPodder usage example" src="assets/03/podcacher-exemple-1.png"/></p>
+<p><img alt="gPodder usage example" src="../assets/podcacher-exemple-1.png"/></p>
 <p>Once added, we are subscribed and the <em>podcatcher</em> will notify us of news.</p>
-<p><img alt="gPodder usage example 2" src="assets/03/podcacher-exemple-2.png"/> </p>
+<p><img alt="gPodder usage example 2" src="../assets/podcacher-exemple-2.png"/> </p>
 <h2 id="structure-of-content-channels">Structure of content channels<a class="headerlink" href="#structure-of-content-channels" title="Permanent link">¶</a></h2>
 <p><strong>Web feeds</strong> allow programs to check if there are updates posted on a website. 
 To provide a web channel, the site owner may use specialized software (such as a
@@ -414,98 +458,6 @@ and that there were advantages in a new design.</p>
 <p>Although it is possible to use XML validators, the most common is to do so
 serve specific programs to validate RSS and Atom such as the W3C <em>Feed Validation Service</em>
  (<a href="https://validator.w3.org/feed">validator.w3.org/feed</a>)</p>
-<h2 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">¶</a></h2>
-<ol start="301">
-<li>
-<p>Using a RSS aggregator</p>
-<p>In the next task we will install an RSS aggregator and subscribe to some channels.</p>
-<ol>
-<li>Install the Firefox add-on: <em>Feedbro</em>.</li>
-<li>Access the add-on.</li>
-<li>Subscribe to the following channels:<ol>
-<li>The podcasts of the 24h24l.org event.</li>
-<li>The latest news from El País</li>
-<li>The front page news of El Mundo.</li>
-<li>Check if any of the pages you consult regularly redistribute their contents. If so, subscribe to their channel.</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p><code>302rssfeed.xml</code>. Creating an RSS feed </p>
-<p>You were the creator of the web <code>recipe-example.org</code> and you currently have in the main page the following content.</p>
-<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="linenos" data-linenos=" 2 "></span><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang </span><span class="o">=</span> <span class="s">"ca"</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos=" 3 "></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos=" 4 "></span>  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset </span><span class="o">=</span> <span class="s">"UTF-8"</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos=" 5 "></span>  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name </span><span class="o">=</span> <span class="s">"viewport"</span> <span class="na">content </span><span class="o">=</span> <span class="s">"width = device-width, initial-scale = 1.0"</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos=" 6 "></span>  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Recipes<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos=" 7 "></span><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos=" 8 "></span>
-<span class="linenos" data-linenos=" 9 "></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="10 "></span><span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="11 "></span>  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Sample recipes <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="12 "></span><span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="13 "></span><span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="14 "></span><span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="15 "></span>  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Baked rice<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="16 "></span>  <span class="p">&lt;</span><span class="nt">time</span> <span class="na">datetime </span><span class="o">=</span> <span class="s">"2020-12-13 08:00:00"</span><span class="p">&gt;</span> Sunday, December 13
-<span class="linenos" data-linenos="17 "></span>    2020 <span class="p">&lt;/</span><span class="nt">time</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="18 "></span>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> The peculiarity of this rice, as the name suggests, is
-<span class="linenos" data-linenos="19 "></span>    which is baked. I,
-<span class="linenos" data-linenos="20 "></span>    like paella and other Valencian rice dishes, it is also a
-<span class="linenos" data-linenos="21 "></span>    dish of popular origin, which in this case was made from
-<span class="linenos" data-linenos="22 "></span>    of the remains of the putxero. That's why among his
-<span class="linenos" data-linenos="23 "></span>    Ingredients are not missing chickpeas, pork chops and
-<span class="linenos" data-linenos="24 "></span>    sausage. This dish is especially typical in counties such as
-<span class="linenos" data-linenos="25 "></span>    la Costera, where it has been celebrated in Xàtiva for a long time
-<span class="linenos" data-linenos="26 "></span>    a few years the National Baked Rice Contest. <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="27 "></span>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/2020/12/arros-al-forn.html"</span><span class="p">&gt;</span> Continue reading <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="28 "></span><span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="29 "></span><span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="30 "></span>  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Paella valenciana<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="31 "></span>  <span class="p">&lt;</span><span class="nt">time</span> <span class="na">datetime</span><span class="o">=</span><span class="s">"2020-04-06 13:20:00"</span><span class="p">&gt;</span> Monday, April 6,
-<span class="linenos" data-linenos="32 "></span>   2020 <span class="p">&lt;/</span><span class="nt">time</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="33 "></span>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> The paella is the highest standard of Valencian cuisine and
-<span class="linenos" data-linenos="34 "></span>  probably also of the Spanish, due to its recognition
-<span class="linenos" data-linenos="35 "></span>  gastronomy worldwide. Its origin, like that of all
-<span class="linenos" data-linenos="36 "></span>  dishes of popular cuisine, derived from the conjunction of foods that
-<span class="linenos" data-linenos="37 "></span>  each family had at their disposal, especially in the area of
-<span class="linenos" data-linenos="38 "></span>  the orchard of Valencia, which was supplied with fresh vegetables.
-<span class="linenos" data-linenos="39 "></span>  In addition, it was formerly customary to raise chickens and rabbits for
-<span class="linenos" data-linenos="40 "></span>  to family use, therefore, if we add abundance to all this
-<span class="linenos" data-linenos="41 "></span>  of the rice cultivated in the Albufera, the result is this
-<span class="linenos" data-linenos="42 "></span>  genuinely Valencian dish that receives the name of the container in the
-<span class="linenos" data-linenos="43 "></span>  which is cooked. <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="44 "></span>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/2020/04/paella-valenciana.html"</span><span class="p">&gt;</span> Continue reading <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="45 "></span><span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="46 "></span><span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="47 "></span>  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Olleta<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="48 "></span>  <span class="p">&lt;</span><span class="nt">time</span> <span class="na">datetime </span><span class="o">=</span> <span class="s">"2019-12-28 18:20:00"</span><span class="p">&gt;</span> Friday, December 28
-<span class="linenos" data-linenos="49 "></span>  2019 <span class="p">&lt;/</span><span class="nt">time</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="50 "></span>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> L'olleta is the most representative dish in the mountain area
-<span class="linenos" data-linenos="51 "></span>  of Alicante and in the interior of Valencia. This is a succulent putxero,
-<span class="linenos" data-linenos="52 "></span>  similar to a broth stew but one of the most refined in all of Spain,
-<span class="linenos" data-linenos="53 "></span>  and for this reason it is recognized nationally. Its intense flavor
-<span class="linenos" data-linenos="54 "></span>  and fragrant derives from the aromatic fragrance of the sausages and,
-<span class="linenos" data-linenos="55 "></span>  once degreased, it reaches a sublime point. <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="56 "></span>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/2019/12/olleta.html"</span><span class="p">&gt;</span> Continue reading <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="57 "></span><span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="58 "></span><span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="59 "></span>  <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="60 "></span>  <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="61 "></span>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="linenos" data-linenos="62 "></span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div>
-Create the RSS feed in version 2.0 so that users know when you post new recipes.</p>
-<p>Validate the file.</p>
-</li>
-<li>
-<p><code>303Ivoox</code>. Given the following IVOOX screenshot create <strong>by hand</strong> in a sheet an RSS feed that announces the three 
-    podcast episodes.</p>
-<p><img alt="" src="assets/03/task-05.png"/></p>
-</li>
-</ol>
 <h2 id="credits-bibliography-and-webography">Credits, bibliography and webography<a class="headerlink" href="#credits-bibliography-and-webography" title="Permanent link">¶</a></h2>
 <ul>
 <li>
@@ -520,6 +472,34 @@ Create the RSS feed in version 2.0 so that users know when you post new recipes.
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: XML schemas" class="md-footer__link md-footer__link--prev" href="../0201-xml-scheme/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              XML schemas
+            </div>
+</div>
+</a>
+<a aria-label="Next: Tasks" class="md-footer__link md-footer__link--next" href="../0299-tasks/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Tasks
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-footer-copyright">

@@ -155,11 +155,33 @@
         XML schemas
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../0202-content-syndication/">
+        Content syndication
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Tasks
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         Tasks
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#content-syndication">
+    Content syndication
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -173,6 +195,17 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#content-syndication">
+    Content syndication
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -400,13 +433,105 @@ Using the elements "name", "city" and "age", write a XML document that can be va
 </ul>
 </li>
 </ol>
+<h2 id="content-syndication">Content syndication<a class="headerlink" href="#content-syndication" title="Permanent link">¶</a></h2>
+<ol start="301">
+<li>
+<p>Using a RSS aggregator</p>
+<p>In the next task we will install an RSS aggregator and subscribe to some channels.</p>
+<ol>
+<li>Install the Firefox add-on: <em>Feedbro</em>.</li>
+<li>Access the add-on.</li>
+<li>Subscribe to the following channels:<ol>
+<li>The podcasts of the 24h24l.org event.</li>
+<li>The latest news from El País</li>
+<li>The front page news of El Mundo.</li>
+<li>Check if any of the pages you consult regularly redistribute their contents. If so, subscribe to their channel.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><code>302rssfeed.xml</code>. Creating an RSS feed </p>
+<p>You were the creator of the web <code>recipe-example.org</code> and you currently have in the main page the following content.</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang </span><span class="o">=</span> <span class="s">"ca"</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset </span><span class="o">=</span> <span class="s">"UTF-8"</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name </span><span class="o">=</span> <span class="s">"viewport"</span> <span class="na">content </span><span class="o">=</span> <span class="s">"width = device-width, initial-scale = 1.0"</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Recipes<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="11 "></span>  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Sample recipes <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="12 "></span><span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="13 "></span><span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="14 "></span><span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="15 "></span>  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Baked rice<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="16 "></span>  <span class="p">&lt;</span><span class="nt">time</span> <span class="na">datetime </span><span class="o">=</span> <span class="s">"2020-12-13 08:00:00"</span><span class="p">&gt;</span> Sunday, December 13
+<span class="linenos" data-linenos="17 "></span>    2020 <span class="p">&lt;/</span><span class="nt">time</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="18 "></span>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> The peculiarity of this rice, as the name suggests, is
+<span class="linenos" data-linenos="19 "></span>    which is baked. I,
+<span class="linenos" data-linenos="20 "></span>    like paella and other Valencian rice dishes, it is also a
+<span class="linenos" data-linenos="21 "></span>    dish of popular origin, which in this case was made from
+<span class="linenos" data-linenos="22 "></span>    of the remains of the putxero. That's why among his
+<span class="linenos" data-linenos="23 "></span>    Ingredients are not missing chickpeas, pork chops and
+<span class="linenos" data-linenos="24 "></span>    sausage. This dish is especially typical in counties such as
+<span class="linenos" data-linenos="25 "></span>    la Costera, where it has been celebrated in Xàtiva for a long time
+<span class="linenos" data-linenos="26 "></span>    a few years the National Baked Rice Contest. <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="27 "></span>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/2020/12/arros-al-forn.html"</span><span class="p">&gt;</span> Continue reading <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="28 "></span><span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="29 "></span><span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="30 "></span>  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Paella valenciana<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="31 "></span>  <span class="p">&lt;</span><span class="nt">time</span> <span class="na">datetime</span><span class="o">=</span><span class="s">"2020-04-06 13:20:00"</span><span class="p">&gt;</span> Monday, April 6,
+<span class="linenos" data-linenos="32 "></span>   2020 <span class="p">&lt;/</span><span class="nt">time</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="33 "></span>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> The paella is the highest standard of Valencian cuisine and
+<span class="linenos" data-linenos="34 "></span>  probably also of the Spanish, due to its recognition
+<span class="linenos" data-linenos="35 "></span>  gastronomy worldwide. Its origin, like that of all
+<span class="linenos" data-linenos="36 "></span>  dishes of popular cuisine, derived from the conjunction of foods that
+<span class="linenos" data-linenos="37 "></span>  each family had at their disposal, especially in the area of
+<span class="linenos" data-linenos="38 "></span>  the orchard of Valencia, which was supplied with fresh vegetables.
+<span class="linenos" data-linenos="39 "></span>  In addition, it was formerly customary to raise chickens and rabbits for
+<span class="linenos" data-linenos="40 "></span>  to family use, therefore, if we add abundance to all this
+<span class="linenos" data-linenos="41 "></span>  of the rice cultivated in the Albufera, the result is this
+<span class="linenos" data-linenos="42 "></span>  genuinely Valencian dish that receives the name of the container in the
+<span class="linenos" data-linenos="43 "></span>  which is cooked. <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="44 "></span>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/2020/04/paella-valenciana.html"</span><span class="p">&gt;</span> Continue reading <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="45 "></span><span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="46 "></span><span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="47 "></span>  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Olleta<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="48 "></span>  <span class="p">&lt;</span><span class="nt">time</span> <span class="na">datetime </span><span class="o">=</span> <span class="s">"2019-12-28 18:20:00"</span><span class="p">&gt;</span> Friday, December 28
+<span class="linenos" data-linenos="49 "></span>  2019 <span class="p">&lt;/</span><span class="nt">time</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="50 "></span>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> L'olleta is the most representative dish in the mountain area
+<span class="linenos" data-linenos="51 "></span>  of Alicante and in the interior of Valencia. This is a succulent putxero,
+<span class="linenos" data-linenos="52 "></span>  similar to a broth stew but one of the most refined in all of Spain,
+<span class="linenos" data-linenos="53 "></span>  and for this reason it is recognized nationally. Its intense flavor
+<span class="linenos" data-linenos="54 "></span>  and fragrant derives from the aromatic fragrance of the sausages and,
+<span class="linenos" data-linenos="55 "></span>  once degreased, it reaches a sublime point. <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="56 "></span>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/2019/12/olleta.html"</span><span class="p">&gt;</span> Continue reading <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="57 "></span><span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="58 "></span><span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="59 "></span>  <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="60 "></span>  <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="61 "></span>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="62 "></span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+Create the RSS feed in version 2.0 so that users know when you post new recipes.</p>
+<p>Validate the file.</p>
+</li>
+<li>
+<p><code>303Ivoox</code>. Given the following IVOOX screenshot create <strong>by hand</strong> in your notebook an RSS feed that announces the three 
+    podcast episodes.</p>
+<p><img alt="" src="../assets/task-05.png"/></p>
+</li>
+</ol>
 </article>
 </div>
 </div>
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: XML schemas" class="md-footer__link md-footer__link--prev" href="../0201-xml-scheme/" rel="prev">
+<a aria-label="Previous: Content syndication" class="md-footer__link md-footer__link--prev" href="../0202-content-syndication/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -415,7 +540,7 @@ Using the elements "name", "city" and "age", write a XML document that can be va
 <span class="md-footer__direction">
                 Previous
               </span>
-              XML schemas
+              Content syndication
             </div>
 </div>
 </a>
