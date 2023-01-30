@@ -23,7 +23,7 @@
     <circle cx="40.2" cy="137.8" r="4.8" fill="#fff" stroke="#000" stroke-width=".4" transform="rotate(56.612568)" font-family="Times-Roman"/>
     <circle cx="186.4" cy="-14.3" r="4.8" fill="#fff" stroke="#000" stroke-width=".4" transform="matrix(-0.5502976,0.83496859,0.83496859,0.5502976,0,0)" font-family="Times-Roman"/>
     <text x="-128.4" y="109.6" stroke-width=".3" style="line-height:0%" font-size="4.2" font-family="sans-serif" letter-spacing="0" word-spacing="0">
-      <tspan x="-128.4" y="109.6" style="line-height:1.25" font-size="4.9">Nodes</tspan><tspan x="-128.4" y="115.7" style="line-height:1.25" font-size="4.9">descendientes</tspan><tspan x="-128.4" y="121.8" style="line-height:1.25" font-size="4.9">del nodo &apos;a&apos;</tspan><tspan x="-128.4" y="128" style="line-height:1.25" font-size="4.9"></tspan>
+      <tspan x="-128.4" y="109.6" style="line-height:1.25" font-size="4.9">Descendants</tspan><tspan x="-128.4" y="115.7" style="line-height:1.25" font-size="4.9">of</tspan><tspan x="-128.4" y="121.8" style="line-height:1.25" font-size="4.9">node &apos;a&apos;</tspan><tspan x="-128.4" y="128" style="line-height:1.25" font-size="4.9"></tspan>
     </text>
     <path fill="red" stroke="red" stroke-width=".4" d="M-114.2 122.6l2.4 6.3" marker-end="url(#b)"/>
     <text x="-95.6" y="126.8" stroke-width=".3" style="line-height:0%" font-size="4.2" font-family="sans-serif" letter-spacing="0" word-spacing="0">

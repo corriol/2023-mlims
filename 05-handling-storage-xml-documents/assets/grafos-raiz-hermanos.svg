@@ -28,7 +28,7 @@
     <circle cx="5.7" cy="161.3" r="4.8" fill="#fff" stroke="#000" stroke-width=".4" transform="rotate(56.612568)" font-family="Times-Roman"/>
     <circle cx="194.4" cy="-55.3" r="4.8" fill="#fff" stroke="#000" stroke-width=".4" transform="matrix(-0.5502976,0.83496859,0.83496859,0.5502976,0,0)" font-family="Times-Roman"/>
     <text x="-160.7" y="146.9" stroke-width=".3" style="line-height:0%" font-size="4.2" font-family="sans-serif" letter-spacing="0" word-spacing="0">
-      <tspan x="-160.7" y="146.9" style="line-height:1.25" font-size="4.9">Nodos hermanos</tspan>
+      <tspan x="-160.7" y="146.9" style="line-height:1.25" font-size="4.9">Siblings</tspan>
     </text>
     <path fill="red" stroke="red" stroke-width=".4" d="M-148 142.7l-2-5" marker-end="url(#b)"/>
     <path fill="red" stroke="red" stroke-width=".4" d="M-115.2 110.3l-1.7 5" marker-end="url(#c)"/>
@@ -39,7 +39,7 @@
     <path fill="red" stroke="red" stroke-width=".4" d="M-144.3 99.2l6.4-2.8" marker-end="url(#b)"/>
     <path fill="red" stroke="red" stroke-width=".4" d="M-136.7 142.7l2-5" marker-end="url(#b)"/>
     <text x="-123.2" y="108.9" stroke-width=".3" style="line-height:0%" font-size="4.2" font-family="sans-serif" letter-spacing="0" word-spacing="0">
-      <tspan x="-123.2" y="108.9" style="line-height:1.25" font-size="4.9">Nodos hermanos</tspan>
+      <tspan x="-123.2" y="108.9" style="line-height:1.25" font-size="4.9">Siblings</tspan>
     </text>
   </g>
 </svg>
