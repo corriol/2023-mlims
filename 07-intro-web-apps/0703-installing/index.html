@@ -378,6 +378,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#creating-our-first-nodes-app">
+    Creating our first Node.s app
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#more-resources">
     More resources
   </a>
@@ -423,9 +428,32 @@
 <p>To exit the REPL, type <code>.exit</code> or press <code>Ctrl+C</code> twice.</p>
 <p>In this example, we defined two variables (<code>x</code> and <code>y</code>) and then added them together. We also used the <code>console.log()</code> method to print a message to the console.</p>
 <p>Using the console and the REPL interpreter can be a helpful way to experiment with Node.js and learn how to write JavaScript code for the server-side.</p>
+<h2 id="creating-our-first-nodes-app">Creating our first Node.s app<a class="headerlink" href="#creating-our-first-nodes-app" title="Permanent link">¶</a></h2>
+<p>To create a Node.js program that takes in the user's name as a command-line argument and outputs a greeting to the console the program should:</p>
+<ol>
+<li>Use the <code>process.argv</code> array to get the user's name from the command line.</li>
+<li>Output a greeting to the console in the following format: <code>Hello, &lt;username&gt;!</code>, where <code>&lt;username&gt;</code> is the input value.</li>
+</ol>
+<p>Here's an example of how your program should behave:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$node hello.js Alice
+<span class="linenos" data-linenos="2 "></span>Hello, Alice!
+</code></pre></div>
+<p>The code should be something like that:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1">// hello.js</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="c1">// Get the command-line arguments</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="kd">const</span> <span class="nx">args</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">argv</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="c1">// Get the username from the command-line arguments</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="kd">const</span> <span class="nx">username</span> <span class="o">=</span> <span class="nx">args</span><span class="p">[</span><span class="mf">2</span><span class="p">];</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="c1">// Print out the greeting</span>
+<span class="linenos" data-linenos="10 "></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">username</span><span class="si">}</span><span class="sb">!`</span><span class="p">);</span>
+</code></pre></div>
 <h2 id="more-resources">More resources<a class="headerlink" href="#more-resources" title="Permanent link">¶</a></h2>
 <ul>
 <li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-the-node-js-repl">https://www.digitalocean.com/community/tutorials/how-to-use-the-node-js-repl</a></li>
+<li><a href="https://nodejs.org/docs/latest-v18.x/api/process.html#processargv">https://nodejs.org/docs/latest-v18.x/api/process.html#processargv</a></li>
 </ul>
 </article>
 </div>
