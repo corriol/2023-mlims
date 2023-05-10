@@ -1,0 +1,773 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.2.2, mkdocs-material-7.2.6" name="generator"/>
+<title>XPath - MLIMS</title>
+<link href="../../assets/stylesheets/main.802231af.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
+<meta content="#4cae4f" name="theme-color"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700%7C&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Lato";--md-code-font-family:""}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="brown" data-md-color-primary="green" data-md-color-scheme="" dir="ltr">
+<script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#xpath">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="MLIMS" class="md-header__button md-logo" data-md-component="logo" href="../.." title="MLIMS">
+<img alt="logo" src="../../assets/logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            MLIMS
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              XPath
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="MLIMS" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="MLIMS">
+<img alt="logo" src="../../assets/logo.png"/>
+</a>
+    MLIMS
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1">
+        1. Markup languages. XML
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="1. Markup languages. XML" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          1. Markup languages. XML
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01-mlxml/00_index/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01-mlxml/01_llenguatges/">
+        Markup languages
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01-mlxml/02_xml/">
+        XML
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01-mlxml/03_tasks/">
+        Tasks
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+        2. XML schemas and vocabularies
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="2. XML schemas and vocabularies" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          2. XML schemas and vocabularies
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02-xml-scheme/0200-intro/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02-xml-scheme/0201-xml-scheme/">
+        XML schemas
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02-xml-scheme/0202-content-syndication/">
+        Content syndication
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02-xml-scheme/0299-tasks/">
+        Tasks
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+        3. HTML
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="3. HTML" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          3. HTML
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../03-html/0300-intro/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../03-html/0301-html/">
+        HTML
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+        4. CSS
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="4. CSS" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          4. CSS
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../04-css/04-01-css/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../04-css/04-02-css-layout/">
+        Introduction to CSS layout
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../04-css/04-99-tasks/">
+        Tasks
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+        5. XML handling and storage
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="5. XML handling and storage" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          5. XML handling and storage
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../0500-intro/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          XPath
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        XPath
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#document-tree">
+    Document tree
+  </a>
+<nav aria-label="Document tree" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#node-types">
+    Node types
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xpath-expression-syntax">
+    XPath expression syntax
+  </a>
+<nav aria-label="XPath expression syntax" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xml-sample">
+    XML sample
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#axis">
+    Axis
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#predicate">
+    Predicate
+  </a>
+<nav aria-label="Predicate" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conditions">
+    Conditions
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#node-selection">
+    Node selection
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tools">
+    Tools
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bibliography-webography-and-credits">
+    Bibliography, webography and credits
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../0502-xslt/">
+        XSLT
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../0503-xmlstorage/">
+        XML Storage
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../0599-tasks/">
+        Tasks
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
+        6. An introduction to javascript
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="6. An introduction to javascript" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          6. An introduction to javascript
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../06-an-introdution-to-javascript/01-intro/">
+        Introduction
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7">
+        7. An introduction to server side languages
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="7. An introduction to server side languages" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          7. An introduction to server side languages
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../07-intro-web-apps/0700-index/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../07-intro-web-apps/0701-intro/">
+        Introduction to web apps
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../07-intro-web-apps/0702-node/">
+        Node.js
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../07-intro-web-apps/0703-installing">
+        Installing Node.js
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../07-intro-web-apps/0704-modules/">
+        Modules and packages
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../07-intro-web-apps/0799-tasks/">
+        Tasks
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8">
+        8. Bussines information systems
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="8. Bussines information systems" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+          8. Bussines information systems
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../10-bussines-information-systems/01-intro/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../10-bussines-information-systems/02-ERP-installation-management/">
+        ERP management
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../10-bussines-information-systems/99-tasks/">
+        Tasks
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#document-tree">
+    Document tree
+  </a>
+<nav aria-label="Document tree" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#node-types">
+    Node types
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xpath-expression-syntax">
+    XPath expression syntax
+  </a>
+<nav aria-label="XPath expression syntax" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xml-sample">
+    XML sample
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#axis">
+    Axis
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#predicate">
+    Predicate
+  </a>
+<nav aria-label="Predicate" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conditions">
+    Conditions
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#node-selection">
+    Node selection
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tools">
+    Tools
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bibliography-webography-and-credits">
+    Bibliography, webography and credits
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="xpath">XPath<a class="headerlink" href="#xpath" title="Permanent link">¶</a></h1>
+<p>XPath is a simple language for identifying parts of an XML document that are of interest. 
+It is used by XSLT, and also by XLink; it is extended considerably by XQuery.</p>
+<div class="admonition info">
+<p class="admonition-title">XLink</p>
+<p>XLink is used to create hyperlinks in XML documents.</p>
+</div>
+<p>XPath cannot be used stand-alone: it is always used in the context of a host language, whether that language is XSLT, Python, PHP, C#, JavaScript...</p>
+<p>XPath can be very powerful: for example, to find all <code>div</code> elements that have a class attribute called <code>sock</code> with a <code>span</code> child whose class attribute is equal to <code>colour</code>, one might write,</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>div[@class="sock"]/span[@class="colour"]
+</code></pre></div>
+<p>XPath uses a path notation (as in URLs) for navigating through the hierarchical structure of an XML document. It uses a <strong>non-XML syntax</strong> so that it can be used in URIs and XML attribute values.</p>
+<p>XPath 3.1 became a Recommendation on 21 March 2017.</p>
+<h2 id="document-tree">Document tree<a class="headerlink" href="#document-tree" title="Permanent link">¶</a></h2>
+<p>XPath treat XML documents as trees of nodes. The topmost element of the tree is called the root element:</p>
+<p><img alt="bg right 90%" src="../assets/grafos-arbol-dirigido.svg">
+<img alt="bg 100%" src="../assets/grafos-raiz-hermanos.svg">
+<img alt="bg 100%" src="../assets/grafos-descendientes.svg"/>
+<img alt="bg 100%" src="../assets/grafos-ascendientes.svg"/></img></img></p>
+<h3 id="node-types">Node types<a class="headerlink" href="#node-types" title="Permanent link">¶</a></h3>
+<p>In XPath, nodes can include more than just elements. There are seven types of nodes.</p>
+<ol>
+<li>root element</li>
+<li>elements</li>
+<li>attributes</li>
+<li>text nodes</li>
+<li>namespaces</li>
+<li>processing instructions</li>
+<li>comments</li>
+</ol>
+<h3 id="xpath-expression-syntax">XPath expression syntax<a class="headerlink" href="#xpath-expression-syntax" title="Permanent link">¶</a></h3>
+<p>XPath expressions are written in text and describe the path you want to follow. To use XPath, the document must be well-structured. There are two ways to write XPath expressions: <strong>shorthand</strong>, which is simpler and easier to understand, and <strong>full syntax</strong>, which is more complex but has more options. We will learn the first one.</p>
+<p>When you evaluate an XPath expression, the system will look for nodes in the document that match the path you described. The result of the evaluation will be all the nodes that match the path. An XPath expression can be divided into search steps, each of which has three parts:</p>
+<ol>
+<li>The <strong>axis</strong>, which determines if you are looking for element or attribute nodes based on their names.</li>
+<li>The <strong>predicate</strong>, which restricts the axis selection to nodes that meet certain conditions.</li>
+<li>The <strong>node selection</strong>, which chooses the elements or text contained in the selected nodes.</li>
+</ol>
+<h4 id="xml-sample">XML sample<a class="headerlink" href="#xml-sample" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nt">&lt;library&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span>  <span class="nt">&lt;book&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="nt">&lt;title&gt;</span>Life is Elsewhere<span class="nt">&lt;/title&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="nt">&lt;author&gt;</span>Milan Kundera<span class="nt">&lt;/author&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="nt">&lt;publicationDate</span> <span class="na">year=</span><span class="s">"1973"</span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="nt">&lt;/book&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="nt">&lt;book&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="nt">&lt;title&gt;</span>Pantaleon and the Visitors<span class="nt">&lt;/title&gt;</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="nt">&lt;author</span> <span class="na">birthDate=</span><span class="s">"03/28/1936"</span><span class="nt">&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/author&gt;</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="nt">&lt;publicationDate</span> <span class="na">year=</span><span class="s">"1973"</span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="12 "></span>  <span class="nt">&lt;/book&gt;</span>
+<span class="linenos" data-linenos="13 "></span>  <span class="nt">&lt;book&gt;</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="nt">&lt;title&gt;</span>Conversation in the Cathedral<span class="nt">&lt;/title&gt;</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="nt">&lt;author</span> <span class="na">birthDate=</span><span class="s">"03/28/1936"</span><span class="nt">&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/author&gt;</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="nt">&lt;publicationDate</span> <span class="na">year=</span><span class="s">"1969"</span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="17 "></span>  <span class="nt">&lt;/book&gt;</span>
+<span class="linenos" data-linenos="18 "></span><span class="nt">&lt;/library&gt;</span>
+</code></pre></div>
+<figure>
+<p><img alt="bg 89%" src="../assets/grafos-documento.svg"/></p>
+<figcaption>Node tree representation of the above XML document</figcaption>
+</figure>
+<h3 id="axis">Axis<a class="headerlink" href="#axis" title="Permanent link">¶</a></h3>
+<p>The axis allows us to select a subset of nodes. Element nodes are indicated by the element name. Attribute nodes are indicated by <code>@</code> and the name.</p>
+<p><code>/</code>: at the beginning of the expression, indicates the root node, otherwise indicates "child". It must be followed by the name of an element or attribute.</p>
+<p><code>/biblioteca/libro/autor</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;autor&gt;</span>Milan Kundera<span class="nt">&lt;/autor&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;autor</span> <span class="na">fechaNacimiento=</span><span class="s">"28/03/1936"</span><span class="nt">&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/autor&gt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="nt">&lt;autor</span> <span class="na">fechaNacimiento=</span><span class="s">"28/03/1936"</span><span class="nt">&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/autor&gt;</span>
+</code></pre></div>
+<p><code>/autor</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Returns nothing because <span class="nt">&lt;author&gt;</span> is not a child of the root node.
+</code></pre></div>
+<p><code>/biblioteca/autor</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Returns nothing because <span class="nt">&lt;author&gt;</span> is not a child of <span class="nt">&lt;biblioteca&gt;</span>.
+</code></pre></div>
+<p><code>/biblioteca/libro/autor/@fechaNacimiento</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span> fechaNacimiento="28/03/1936"
+<span class="linenos" data-linenos="2 "></span> fechaNacimiento="28/03/1936"
+</code></pre></div>
+<p><code>/biblioteca/libro/@fechaNacimiento</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Returns nothing because fechaNacimiento is an attribute 
+<span class="linenos" data-linenos="2 "></span>of <span class="nt">&lt;author&gt;</span> not of <span class="nt">&lt;libro&gt;</span>.
+</code></pre></div>
+<p><code>//</code>: indicates "descendant" (children, children of children, etc.).</p>
+<p><code>/biblioteca//autor</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;autor&gt;</span>Milan Kundera<span class="nt">&lt;/autor&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;autor</span> <span class="na">fechaNacimiento=</span><span class="s">"28/03/1936"</span><span class="nt">&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/autor&gt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="nt">&lt;autor</span> <span class="na">fechaNacimiento=</span><span class="s">"28/03/1936"</span><span class="nt">&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/autor&gt;</span>
+</code></pre></div>
+<p><code>//autor</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;autor&gt;</span>Milan Kundera<span class="nt">&lt;/autor&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;autor</span> <span class="na">fechaNacimiento=</span><span class="s">"28/03/1936"</span><span class="nt">&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/autor&gt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="nt">&lt;autor</span> <span class="na">fechaNacimiento=</span><span class="s">"28/03/1936"</span><span class="nt">&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/autor&gt;</span>
+</code></pre></div>
+<p><code>//autor//libro</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Returns nothing because <span class="nt">&lt;libro&gt;</span> is not a child of <span class="nt">&lt;autor&gt;</span>.
+</code></pre></div>
+<ul>
+<li><code>/..</code>: indicates the parent element.</li>
+</ul>
+<p><code>//@año</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span> año="1973"
+<span class="linenos" data-linenos="2 "></span> año="1973"
+<span class="linenos" data-linenos="3 "></span> año="1969"
+</code></pre></div>
+<p><code>/biblioteca/libro/autor/@fechaNacimiento/..</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;autor</span> <span class="na">fechaNacimiento=</span><span class="s">"28/03/1936"</span><span class="nt">&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/autor&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;autor</span> <span class="na">fechaNacimiento=</span><span class="s">"28/03/1936"</span><span class="nt">&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/autor&gt;</span>
+</code></pre></div>
+<p><code>//@fechaNacimiento/../..</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nt">&lt;libro&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="nt">&lt;titulo&gt;</span>Pantaleón y las visitadoras<span class="nt">&lt;/titulo&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="nt">&lt;autor</span> <span class="na">fechaNacimiento=</span><span class="s">"28/03/1936"</span><span class="nt">&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/autor&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="nt">&lt;fechaPublicacion</span> <span class="na">año=</span><span class="s">"1973"</span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>  <span class="nt">&lt;/libro&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="nt">&lt;libro&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="nt">&lt;titulo&gt;</span>Conversación en la catedral<span class="nt">&lt;/titulo&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="nt">&lt;autor</span> <span class="na">fechaNacimiento=</span><span class="s">"28/03/1936"</span><span class="nt">&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/autor&gt;</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="nt">&lt;fechaPublicacion</span> <span class="na">año=</span><span class="s">"1969"</span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="11 "></span>  <span class="nt">&lt;/libro&gt;</span>
+</code></pre></div>
+<ul>
+<li><code>|</code>: allows to indicate several routes.</li>
+</ul>
+<p><code>//autor|//titulo</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;titulo&gt;</span>La vida está en otra parte<span class="nt">&lt;/titulo&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;autor&gt;</span>Milan Kundera<span class="nt">&lt;/autor&gt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="nt">&lt;titulo&gt;</span>Pantaleón y las visitadoras<span class="nt">&lt;/titulo&gt;</span>
+<span class="linenos" data-linenos="4 "></span><span class="nt">&lt;autor</span> <span class="na">fechaNacimiento=</span><span class="s">"28/03/1936"</span><span class="nt">&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/autor&gt;</span>
+<span class="linenos" data-linenos="5 "></span><span class="nt">&lt;titulo&gt;</span>Conversación en la catedral<span class="nt">&lt;/titulo&gt;</span>
+<span class="linenos" data-linenos="6 "></span><span class="nt">&lt;autor</span> <span class="na">fechaNacimiento=</span><span class="s">"28/03/1936"</span><span class="nt">&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/autor&gt;</span>
+</code></pre></div>
+<p><code>//autor|//titulo|//@año</code></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;titulo&gt;</span>La vida está en otra parte<span class="nt">&lt;/titulo&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;autor&gt;</span>Milan Kundera<span class="nt">&lt;/autor&gt;</span>
+<span class="linenos" data-linenos="3 "></span> año="1973"
+<span class="linenos" data-linenos="4 "></span><span class="nt">&lt;titulo&gt;</span>Pantaleón y las visitadoras<span class="nt">&lt;/titulo&gt;</span>
+<span class="linenos" data-linenos="5 "></span><span class="nt">&lt;autor</span> <span class="na">fechaNacimiento=</span><span class="s">"28/03/1936"</span><span class="nt">&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/autor&gt;</span>
+<span class="linenos" data-linenos="6 "></span> año="1973"
+<span class="linenos" data-linenos="7 "></span><span class="nt">&lt;titulo&gt;</span>Conversación en la catedral<span class="nt">&lt;/titulo&gt;</span>
+<span class="linenos" data-linenos="8 "></span><span class="nt">&lt;autor</span> <span class="na">fechaNacimiento=</span><span class="s">"28/03/1936"</span><span class="nt">&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/autor&gt;</span>
+<span class="linenos" data-linenos="9 "></span> año="1969"
+</code></pre></div>
+<h3 id="predicate">Predicate<a class="headerlink" href="#predicate" title="Permanent link">¶</a></h3>
+<p>The predicate is written in square brackets, following the axis.</p>
+<p>If the axis has selected some nodes, the predicate allows you to restrict that selection to those that meet certain conditions.</p>
+<ul>
+<li><code>[@attribute]</code>: select the elements that have the attribute.</li>
+<li><code>[number]</code>: if there are several results, select one of them by order number; <code>last()</code> selects the last one.</li>
+<li><code>[condition]</code>: select the nodes that meet the condition.</li>
+</ul>
+<h4 id="conditions">Conditions<a class="headerlink" href="#conditions" title="Permanent link">¶</a></h4>
+<p>Predicates allow you to define conditions on attribute values. The following operators can be used in the conditions:</p>
+<ul>
+<li>logical operators: and, or, not()</li>
+<li>arithmetic operators: +, -, *, div, mod</li>
+<li>comparison operators: =, !=, &lt;, &gt;, &lt;=, &gt;= </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>//fechaPublicacion[@año&gt;1970]
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span>//libro[autor="Mario Vargas Llosa"]
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span>//@año[.&gt;1970]
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span>//autor[.="Mario Vargas Llosa"]
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span>//libro[autor="Mario Vargas Llosa" and fechaPublicacion/@año="1973"]
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span>//libro[autor="Mario Vargas Llosa" and fechaPublicacion/@año="1973"]
+</code></pre></div>
+<h3 id="node-selection">Node selection<a class="headerlink" href="#node-selection" title="Permanent link">¶</a></h3>
+<p>The node selection is written after the axis and the predicate. If the axis and the predicate have selected some nodes, the selection of nodes indicates what part of those nodes we keep.</p>
+<ul>
+<li><code>/node()</code>: Select all children (elements or text) of the node.</li>
+<li>
+<p><code>//node()</code>: Select all descendants (elements or text) of the node.</p>
+</li>
+<li>
+<p><code>/text()</code>: Select only the text contained in the node.</p>
+</li>
+<li><code>//text()</code>: Select only the text contained in the node and all its descendants.</li>
+<li><code>/*</code>: Select all children (elements only) of the node.</li>
+<li><code>//*</code>: Select all descendants (elements only) of the node.</li>
+<li><code>/@*</code>: Select all attributes of the node.</li>
+<li><code>//@*</code>: Select all attributes of the node's descendants.</li>
+</ul>
+<figure>
+<p><img alt="bg 75%" src="../assets/XPATH-Flow.png"/></p>
+<figcaption>
+  A node tree sample
+</figcaption>
+</figure>
+<h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permanent link">¶</a></h2>
+<p>To evaluate XPath expressions we can use <code>xmllint --xpath expr</code> or VSCode extension: <em>XSLT/XPath for Visual
+Studio Code</em>.</p>
+<h2 id="bibliography-webography-and-credits">Bibliography, webography and credits<a class="headerlink" href="#bibliography-webography-and-credits" title="Permanent link">¶</a></h2>
+<ul>
+<li>Bartolomé Sintés Marco. (2022, January 30). <em>XPath: XML Path language</em>, available at  <a href="https://www.mclibre.org/consultar/xml/lecciones/xml-xpath.html">https://www.mclibre.org/consultar/xml/lecciones/xml-xpath.html</a></li>
+</ul>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Introduction" class="md-footer__link md-footer__link--prev" href="../0500-intro/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Introduction
+            </div>
+</div>
+</a>
+<a aria-label="Next: XSLT" class="md-footer__link md-footer__link--next" href="../0502-xslt/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              XSLT
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+<script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</body>
+</html>

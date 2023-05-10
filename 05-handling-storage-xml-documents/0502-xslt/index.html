@@ -1,0 +1,839 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.2.2, mkdocs-material-7.2.6" name="generator"/>
+<title>XSLT - MLIMS</title>
+<link href="../../assets/stylesheets/main.802231af.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
+<meta content="#4cae4f" name="theme-color"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700%7C&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Lato";--md-code-font-family:""}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="brown" data-md-color-primary="green" data-md-color-scheme="" dir="ltr">
+<script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#xslt">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="MLIMS" class="md-header__button md-logo" data-md-component="logo" href="../.." title="MLIMS">
+<img alt="logo" src="../../assets/logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            MLIMS
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              XSLT
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="MLIMS" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="MLIMS">
+<img alt="logo" src="../../assets/logo.png"/>
+</a>
+    MLIMS
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1">
+        1. Markup languages. XML
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="1. Markup languages. XML" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          1. Markup languages. XML
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01-mlxml/00_index/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01-mlxml/01_llenguatges/">
+        Markup languages
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01-mlxml/02_xml/">
+        XML
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../01-mlxml/03_tasks/">
+        Tasks
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+        2. XML schemas and vocabularies
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="2. XML schemas and vocabularies" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          2. XML schemas and vocabularies
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02-xml-scheme/0200-intro/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02-xml-scheme/0201-xml-scheme/">
+        XML schemas
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02-xml-scheme/0202-content-syndication/">
+        Content syndication
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../02-xml-scheme/0299-tasks/">
+        Tasks
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+        3. HTML
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="3. HTML" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          3. HTML
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../03-html/0300-intro/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../03-html/0301-html/">
+        HTML
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+        4. CSS
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="4. CSS" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          4. CSS
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../04-css/04-01-css/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../04-css/04-02-css-layout/">
+        Introduction to CSS layout
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../04-css/04-99-tasks/">
+        Tasks
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+        5. XML handling and storage
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="5. XML handling and storage" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          5. XML handling and storage
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../0500-intro/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../0501-xpath/">
+        XPath
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          XSLT
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        XSLT
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xslt-transformation">
+    XSLT - Transformation
+  </a>
+<nav aria-label="XSLT - Transformation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-to-display-transformations">
+    How to display transformations
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xslt-elements">
+    XSLT elements
+  </a>
+<nav aria-label="XSLT elements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xslstylesheet">
+    xsl:stylesheet
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xsltemplate">
+    xsl:template
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xslapply-templates">
+    xsl:apply-templates
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xslvalue-of">
+    xsl:value-of
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#line-breaks-and-whitespace">
+    Line breaks and whitespace
+  </a>
+<nav aria-label="Line breaks and whitespace" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-xslstrip-space-statement">
+    The &lt;xsl:strip-space&gt; statement
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xsltext">
+    &lt;xsl:text&gt;
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creating-attributes">
+    Creating attributes
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#webography">
+    Webography
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../0503-xmlstorage/">
+        XML Storage
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../0599-tasks/">
+        Tasks
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
+        6. An introduction to javascript
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="6. An introduction to javascript" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          6. An introduction to javascript
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../06-an-introdution-to-javascript/01-intro/">
+        Introduction
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7">
+        7. An introduction to server side languages
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="7. An introduction to server side languages" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          7. An introduction to server side languages
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../07-intro-web-apps/0700-index/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../07-intro-web-apps/0701-intro/">
+        Introduction to web apps
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../07-intro-web-apps/0702-node/">
+        Node.js
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../07-intro-web-apps/0703-installing">
+        Installing Node.js
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../07-intro-web-apps/0704-modules/">
+        Modules and packages
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../07-intro-web-apps/0799-tasks/">
+        Tasks
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8">
+        8. Bussines information systems
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="8. Bussines information systems" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+          8. Bussines information systems
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../10-bussines-information-systems/01-intro/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../10-bussines-information-systems/02-ERP-installation-management/">
+        ERP management
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../10-bussines-information-systems/99-tasks/">
+        Tasks
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xslt-transformation">
+    XSLT - Transformation
+  </a>
+<nav aria-label="XSLT - Transformation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-to-display-transformations">
+    How to display transformations
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xslt-elements">
+    XSLT elements
+  </a>
+<nav aria-label="XSLT elements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xslstylesheet">
+    xsl:stylesheet
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xsltemplate">
+    xsl:template
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xslapply-templates">
+    xsl:apply-templates
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xslvalue-of">
+    xsl:value-of
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#line-breaks-and-whitespace">
+    Line breaks and whitespace
+  </a>
+<nav aria-label="Line breaks and whitespace" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-xslstrip-space-statement">
+    The &lt;xsl:strip-space&gt; statement
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xsltext">
+    &lt;xsl:text&gt;
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creating-attributes">
+    Creating attributes
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#webography">
+    Webography
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="xslt">XSLT<a class="headerlink" href="#xslt" title="Permanent link">¶</a></h1>
+<p>XSLT (Extensible Stylesheet Language for Transformations) is a language used to 
+change the way XML information is shown. <strong>It takes the structure of XML elements 
+and converts it into a different type of document</strong>.</p>
+<p>The W3C, which is the organization behind the internet, recommends XSLT, just 
+like it recommends CSS. However, <strong>XSLT is more powerful</strong> and can do more 
+things than CSS.</p>
+<p>With XSLT, you can completely change the structure of a document, 
+rearrange information, add new information, make decisions 
+based on the information in the document, and even do calculations.</p>
+<p>To work properly, <strong>XSLT uses other XML technologies</strong> such as XPath and 
+XML Schemas. XPath helps decide which templates to use and XML Schemas defines the data types.</p>
+<p>XSLT templates are often used to create custom views of an XML document 
+to be viewed on different devices like printers, computers, or smartphones. 
+All you need is the original XML document and XSLT can create the other 
+views as needed.</p>
+<p>One limitation of XSLT is that the input document must always be in XML format, 
+even though the output can be in any format like text, HTML, or XML.</p>
+<h2 id="xslt-transformation">XSLT - Transformation<a class="headerlink" href="#xslt-transformation" title="Permanent link">¶</a></h2>
+<p>XSLT is a <strong>declarative language</strong>. Therefore, XSLT stylesheets are not written 
+as a sequence of instructions, but as a collection of template rules. 
+Each template sets how a particular element is transformed 
+(defined by XPath expressions). The document is transformed as follows:</p>
+<ol>
+<li>The processor scans the document and builds the document tree.</li>
+<li>The processor traverses the document tree from the root node.</li>
+<li>On each node traversed, the processor may or may not apply a template:<ul>
+<li>If no template can be applied to a node, its contents are included in the final document (the text of the node, not the text of the descending nodes). The processor then traverses its child nodes.</li>
+<li>If a template can be applied to a node, the template is applied. The template can generate text that is included in the final document. In principle, the processor does not traverse its child nodes, unless the template tells the processor that the child nodes should be traversed.</li>
+</ul>
+</li>
+<li>When the processor has traversed the tree, the transformation is complete.</li>
+</ol>
+<p>More information at <a href="https://www.w3schools.com/xml/xsl_intro.asp">XSLT Tutorial at W3Schools</a></p>
+<h3 id="how-to-display-transformations">How to display transformations<a class="headerlink" href="#how-to-display-transformations" title="Permanent link">¶</a></h3>
+<p>We have several options:</p>
+<ol>
+<li>By adding a reference to the XSL stylesheet in the XML document and open it from a live server.</li>
+<li>By using a VSCode extension like XML extension by Red Hat.</li>
+<li>By using a CLI command like <code>xsltproc</code>.</li>
+</ol>
+<h2 id="xslt-elements">XSLT elements<a class="headerlink" href="#xslt-elements" title="Permanent link">¶</a></h2>
+<p>Our samples are based on this template:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nt">&lt;library&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span>  <span class="nt">&lt;book&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="nt">&lt;title&gt;</span>Life is Elsewhere<span class="nt">&lt;/title&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="nt">&lt;author&gt;</span>Milan Kundera<span class="nt">&lt;/author&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="nt">&lt;publicationDate</span> <span class="na">year=</span><span class="s">"1973"</span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="nt">&lt;/book&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="nt">&lt;book&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="nt">&lt;title&gt;</span>Pantaleon and the Visitors<span class="nt">&lt;/title&gt;</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="nt">&lt;author</span> <span class="na">birthDate=</span><span class="s">"03/28/1936"</span><span class="nt">&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/author&gt;</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="nt">&lt;publicationDate</span> <span class="na">year=</span><span class="s">"1973"</span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="12 "></span>  <span class="nt">&lt;/book&gt;</span>
+<span class="linenos" data-linenos="13 "></span>  <span class="nt">&lt;book&gt;</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="nt">&lt;title&gt;</span>Conversation in the Cathedral<span class="nt">&lt;/title&gt;</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="nt">&lt;author</span> <span class="na">birthDate=</span><span class="s">"03/28/1936"</span><span class="nt">&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/author&gt;</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="nt">&lt;publicationDate</span> <span class="na">year=</span><span class="s">"1969"</span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="17 "></span>  <span class="nt">&lt;/book&gt;</span>
+<span class="linenos" data-linenos="18 "></span><span class="nt">&lt;/library&gt;</span>
+</code></pre></div>
+<h3 id="xslstylesheet"><code>xsl:stylesheet</code><a class="headerlink" href="#xslstylesheet" title="Permanent link">¶</a></h3>
+<p>This element serves as the root element of an XSLT stylesheet, and it contains 
+the XSLT instructions for transforming the source XML document.</p>
+<h3 id="xsltemplate"><code>xsl:template</code><a class="headerlink" href="#xsltemplate" title="Permanent link">¶</a></h3>
+<p>This element defines a template rule that specifies how a particular part of 
+the source XML document should be transformed.</p>
+<h3 id="xslapply-templates"><code>xsl:apply-templates</code><a class="headerlink" href="#xslapply-templates" title="Permanent link">¶</a></h3>
+<p>This element tells the XSLT processor to continue processing childs of current element.</p>
+<h3 id="xslvalue-of"><code>xsl:value-of</code><a class="headerlink" href="#xslvalue-of" title="Permanent link">¶</a></h3>
+<p>This element is used to insert the value of a specified element or attribute into the result tree.</p>
+<p>Here's a basic XSLT example that transforms the XML document into an HTML table, 
+displaying the title, author, and publication year of each book:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">version=</span><span class="s">"1.0"</span> 
+<span class="linenos" data-linenos=" 3 "></span>  <span class="na">xmlns:xsl=</span><span class="s">"http://www.w3.org/1999/XSL/Transform"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">"/"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="nt">&lt;html&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>      <span class="nt">&lt;body&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>        <span class="nt">&lt;table</span> <span class="na">border=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>          <span class="nt">&lt;tr&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>            <span class="nt">&lt;th&gt;</span>Title<span class="nt">&lt;/th&gt;</span>
+<span class="linenos" data-linenos="10 "></span>            <span class="nt">&lt;th&gt;</span>Author<span class="nt">&lt;/th&gt;</span>
+<span class="linenos" data-linenos="11 "></span>            <span class="nt">&lt;th&gt;</span>Publication Year<span class="nt">&lt;/th&gt;</span>
+<span class="linenos" data-linenos="12 "></span>          <span class="nt">&lt;/tr&gt;</span>
+<span class="linenos" data-linenos="13 "></span>          <span class="nt">&lt;xsl:apply-templates</span> <span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="14 "></span>        <span class="nt">&lt;/table&gt;</span>
+<span class="linenos" data-linenos="15 "></span>      <span class="nt">&lt;/body&gt;</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="nt">&lt;/html&gt;</span>
+<span class="linenos" data-linenos="17 "></span>  <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="linenos" data-linenos="18 "></span>
+<span class="linenos" data-linenos="19 "></span>  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">"book"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos="20 "></span>    <span class="nt">&lt;tr&gt;</span>
+<span class="linenos" data-linenos="21 "></span>      <span class="nt">&lt;td&gt;&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"title"</span> <span class="nt">/&gt;&lt;/td&gt;</span>
+<span class="linenos" data-linenos="22 "></span>      <span class="nt">&lt;td&gt;&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"author"</span> <span class="nt">/&gt;&lt;/td&gt;</span>
+<span class="linenos" data-linenos="23 "></span>      <span class="nt">&lt;td&gt;&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"publicationDate/@year"</span> <span class="nt">/&gt;&lt;/td&gt;</span>
+<span class="linenos" data-linenos="24 "></span>    <span class="nt">&lt;/tr&gt;</span>
+<span class="linenos" data-linenos="25 "></span>  <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="linenos" data-linenos="26 "></span><span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</code></pre></div>
+In this XSLT stylesheet, the first template rule uses <code>xsl:apply-templates</code> to force the processing of
+child nodes. The second template rule matches the book elements and defines how to transform them into table rows. 
+The result will be the:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">"1"</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Author<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>        <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Publication Year<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="10 "></span>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Life is Elsewhere<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="11 "></span>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Milan Kundera<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="12 "></span>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>1973<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="13 "></span>      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="14 "></span>      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="15 "></span>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Pantaleon and the Visitors<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="16 "></span>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Mario Vargas Llosa<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="17 "></span>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>1973<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="18 "></span>      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="19 "></span>      <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="20 "></span>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Conversation in the Cathedral<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="21 "></span>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Mario Vargas Llosa<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="22 "></span>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>1969<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="23 "></span>      <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="24 "></span>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="25 "></span>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="26 "></span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="line-breaks-and-whitespace">Line breaks and whitespace<a class="headerlink" href="#line-breaks-and-whitespace" title="Permanent link">¶</a></h3>
+<p>When transforming a document, XSLT processors embed line breaks and white space in the output, but they do not do so consistently.</p>
+<p>There doesn't seem to be a simple solution that works on all processors, but there are solutions that work on every processor.</p>
+<h4 id="the-xslstrip-space-statement">The <code>&lt;xsl:strip-space&gt;</code> statement<a class="headerlink" href="#the-xslstrip-space-statement" title="Permanent link">¶</a></h4>
+<p>The <code>&lt;xsl:strip-space&gt;</code> command allows you to indicate whether elements containing only 
+whitespace are included in the transformation.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">"http://www.w3.org/1999/XSL/Transform"</span>
+<span class="linenos" data-linenos=" 3 "></span> <span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span>  <span class="nt">&lt;xsl:strip-space</span> <span class="na">elements=</span><span class="s">"*"</span> <span class="nt">/&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">"/"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="nt">&lt;html&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>      <span class="nt">&lt;h1&gt;</span>Autores<span class="nt">&lt;/h1&gt;</span>
+<span class="linenos" data-linenos="10 "></span>       <span class="nt">&lt;xsl:apply-templates</span> <span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="nt">&lt;/html&gt;</span>
+<span class="linenos" data-linenos="12 "></span>  <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span>  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">"libro"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos="15 "></span>      <span class="nt">&lt;p&gt;&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"autor"</span><span class="nt">/&gt;&lt;/p&gt;</span>
+<span class="linenos" data-linenos="16 "></span>  <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span><span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</code></pre></div>
+<p>The output will be:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;html&gt;</span>
+<span class="linenos" data-linenos="3 "></span>  <span class="nt">&lt;h1&gt;</span>Autores<span class="nt">&lt;/h1&gt;</span>
+<span class="linenos" data-linenos="4 "></span>  <span class="nt">&lt;p&gt;</span>Milan Kundera<span class="nt">&lt;/p&gt;</span>
+<span class="linenos" data-linenos="5 "></span>  <span class="nt">&lt;p&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/p&gt;</span>
+<span class="linenos" data-linenos="6 "></span>  <span class="nt">&lt;p&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/p&gt;</span>
+<span class="linenos" data-linenos="7 "></span><span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<h3 id="xsltext"><code>&lt;xsl:text&gt;</code><a class="headerlink" href="#xsltext" title="Permanent link">¶</a></h3>
+<p><code>&lt;xsl:text&gt;</code> allow you to generate text you cannot generate simply by adding it (line breaks, and whitespaces, for instance).</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nt">&lt;xsl:stylesheet</span> 
+<span class="linenos" data-linenos=" 3 "></span><span class="na">xmlns:xsl=</span><span class="s">"http://www.w3.org/1999/XSL/Transform"</span> 
+<span class="linenos" data-linenos=" 4 "></span><span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">"/"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>  <span class="nt">&lt;html&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="nt">&lt;xsl:text&gt;</span><span class="ni">&amp;#10;</span> <span class="nt">&lt;/xsl:text&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>      <span class="nt">&lt;h1&gt;</span>Authors<span class="nt">&lt;/h1&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>      <span class="nt">&lt;xsl:apply-templates</span> <span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="10 "></span>  <span class="nt">&lt;/html&gt;</span>
+<span class="linenos" data-linenos="11 "></span>  <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="linenos" data-linenos="12 "></span>  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">"libro"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="nt">&lt;p&gt;&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"autor"</span><span class="nt">/&gt;&lt;/p&gt;</span>
+<span class="linenos" data-linenos="14 "></span>  <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="linenos" data-linenos="15 "></span><span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</code></pre></div>
+The output will be:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;html&gt;</span>
+<span class="linenos" data-linenos="3 "></span>  <span class="nt">&lt;h1&gt;</span>Autores<span class="nt">&lt;/h1&gt;</span>
+<span class="linenos" data-linenos="4 "></span>  <span class="nt">&lt;p&gt;</span>Milan Kundera<span class="nt">&lt;/p&gt;</span>
+<span class="linenos" data-linenos="5 "></span>  <span class="nt">&lt;p&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/p&gt;</span>
+<span class="linenos" data-linenos="6 "></span>  <span class="nt">&lt;p&gt;</span>Mario Vargas Llosa<span class="nt">&lt;/p&gt;</span>
+<span class="linenos" data-linenos="7 "></span><span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<h3 id="creating-attributes">Creating attributes<a class="headerlink" href="#creating-attributes" title="Permanent link">¶</a></h3>
+<p>The <code>&lt;xsl:attribute&gt;</code> command allows you to generate an attribute and its value.</p>
+<p>From the following XML document, we want to generate the <code>&lt;img&gt;</code> tag. Where the value of the <code>src</code> attribute is the content of the <code>&lt;image&gt;</code> tag. </p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;licenses&gt;</span>
+<span class="linenos" data-linenos="3 "></span>  <span class="nt">&lt;license&gt;</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="nt">&lt;name&gt;</span>Creative Commons By - Share Alike<span class="nt">&lt;/name&gt;</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="nt">&lt;image&gt;</span>cc-bysa-88x31.png<span class="nt">&lt;/image&gt;</span>
+<span class="linenos" data-linenos="6 "></span>  <span class="nt">&lt;/license&gt;</span>
+<span class="linenos" data-linenos="7 "></span><span class="nt">&lt;/licenses&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nt">&lt;xsl:stylesheet</span> 
+<span class="linenos" data-linenos=" 3 "></span><span class="na">xmlns:xsl=</span><span class="s">"http://www.w3.org/1999/XSL/Transform"</span> 
+<span class="linenos" data-linenos=" 4 "></span><span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">"license"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="nt">&lt;p&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"&lt;xsl:value-of select="</span><span class="err">imagen"</span> <span class="nt">/&gt;</span>" /&gt;
+<span class="linenos" data-linenos=" 9 "></span>  <span class="nt">&lt;/p&gt;</span>
+<span class="linenos" data-linenos="10 "></span><span class="nt">&lt;/xsl:template&gt;</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>Error at line 5, column 19: not well-formed (<em>invalid  token</em>)</p>
+</blockquote>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nt">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">"http://www.w3.org/1999/XSL/Transform"</span> 
+<span class="linenos" data-linenos=" 3 "></span>  <span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">"/"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="nt">&lt;html&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>      <span class="nt">&lt;xsl:apply-templates</span> <span class="nt">/&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="nt">&lt;/html&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">"licencia"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="nt">&lt;p&gt;&lt;img&gt;</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"src"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos="12 "></span>      <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"imagen"</span> <span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="nt">&lt;/xsl:attribute&gt;</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="nt">&lt;/img&gt;</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="nt">&lt;/p&gt;</span>
+<span class="linenos" data-linenos="16 "></span>  <span class="nt">&lt;/xsl:template&gt;</span>
+<span class="linenos" data-linenos="17 "></span><span class="nt">&lt;/xsl:stylesheet&gt;</span>
+</code></pre></div>
+HTML output will be:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>  <span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="linenos" data-linenos="2 "></span>  <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"cc-bysa-88x31.png"</span><span class="p">/&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="4 "></span>  <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h2 id="webography">Webography<a class="headerlink" href="#webography" title="Permanent link">¶</a></h2>
+<ul>
+<li>Bartolomé Sintés Marco. (2022, January 30). <em>XSLT: XSLT language</em>, available at  <a href="https://www.mclibre.org/consultar/xml/lecciones/xml-xslt.html">https://www.mclibre.org/consultar/xml/lecciones/xml-xslt.html</a></li>
+</ul>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: XPath" class="md-footer__link md-footer__link--prev" href="../0501-xpath/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              XPath
+            </div>
+</div>
+</a>
+<a aria-label="Next: XML Storage" class="md-footer__link md-footer__link--next" href="../0503-xmlstorage/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              XML Storage
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+<script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</body>
+</html>
