@@ -382,6 +382,11 @@
     Using packages and managing dependencies with NPM
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#an-example-prompt-module">
+    An example: prompt module
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -392,7 +397,7 @@
 <h1 id="modules-and-packages-in-nodejs">Modules and packages in Node.js<a class="headerlink" href="#modules-and-packages-in-nodejs" title="Permanent link">¶</a></h1>
 <h2 id="what-are-modules-in-nodejs">What are modules in Node.js?<a class="headerlink" href="#what-are-modules-in-nodejs" title="Permanent link">¶</a></h2>
 <p>In Node.js, a module is a reusable block of code that can be loaded into another application or module. Modules can contain functions, variables, classes, and other code that can be used to add functionality to an application or to encapsulate code into logical units.</p>
-<p>In Node.js, modules are typically stored in separate files, with each file containing one or more modules. Modules are identified by their file names and can be loaded into an application using the <code>require()</code> function.</p>
+<p>Modules are typically stored in separate files, with each file containing one or more modules. Modules are identified by their file names and can be loaded into an application using the <code>require()</code> function.</p>
 <h2 id="importing-and-exporting-modules">Importing and exporting modules<a class="headerlink" href="#importing-and-exporting-modules" title="Permanent link">¶</a></h2>
 <p>To use a module in Node.js, you need to import it into your application using the <code>require()</code> function. Here's an example of how to import a module:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>const myModule = require('./myModule');
@@ -427,6 +432,30 @@
 <span class="linenos" data-linenos="7 "></span>}
 </code></pre></div>
 <p>In this example, we're specifying that our application depends on the <code>express</code> package, version <code>4.17.1</code> or higher. When we run <code>npm install</code>, NPM will download and install this package, along with any other dependencies specified in the <code>package.json</code> file.</p>
+<h2 id="an-example-prompt-module">An example: <code>prompt</code> module<a class="headerlink" href="#an-example-prompt-module" title="Permanent link">¶</a></h2>
+<p>This is an example program using the <code>prompt</code> module to ask the user for their name and age, and then print out a message with their information:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1">// index.js</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="c1">// Import the prompt module</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="kd">const</span> <span class="nx">prompt</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'prompt'</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="c1">// Start the prompt</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="nx">prompt</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="c1">// Get the name and age from the user</span>
+<span class="linenos" data-linenos="10 "></span><span class="nx">prompt</span><span class="p">.</span><span class="nx">get</span><span class="p">([</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'age'</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="k">return</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="15 "></span>
+<span class="linenos" data-linenos="16 "></span>  <span class="c1">// Print out a message with the user's information</span>
+<span class="linenos" data-linenos="17 "></span>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Your name is </span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> and you are </span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">age</span><span class="si">}</span><span class="sb"> years old.`</span><span class="p">);</span>
+<span class="linenos" data-linenos="18 "></span><span class="p">});</span>
+</code></pre></div>
+<p>In this program, we use the <code>prompt</code> module to ask the user for their name and age. We pass an array of property names (<code>['name', 'age']</code>) to <code>prompt.get()</code>, which will prompt the user for those values. We also pass a callback function that will be called once the user has entered their information.</p>
+<p>If there's an error while prompting the user, we log the error to the console. Otherwise, we use string interpolation to print out a message with the user's information.</p>
+<p>To run this program, make sure you have installed the <code>prompt</code> module (you can do this with <code>npm install prompt</code>), and then run the program with <code>node index.js</code>. The program will prompt you for your name and age, and then print out a message with your information.</p>
 </article>
 </div>
 </div>
