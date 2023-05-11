@@ -399,10 +399,12 @@
 <li>Output the area of the rectangle to the console in the following format: <code>The area of a rectangle with width X and height Y is Z</code>, where X and Y are the input values and Z is the calculated area.</li>
 </ol>
 <p>Here's an example of how your program should behave:</p>
-<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$node rectangle-area.js 4 5
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$node rectangle-area.js 4 5
 <span class="linenos" data-linenos="2 "></span>The area of a rectangle with width 4 and height 5 is 20
 </code></pre></div>
-704. Create a basic command-line calculator: </p>
+</li>
+<li>
+<p>Create a basic command-line calculator: </p>
 <p>Adapt <code>702.js</code> program in order to ask the user for two numbers and an operator. The program will return the result. The program will continue asking until the user writes "No".</p>
 <p>Here you have a example of how the program should behave:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$node 704.js
@@ -413,6 +415,27 @@
 <span class="linenos" data-linenos="6 "></span>
 <span class="linenos" data-linenos="7 "></span>prompt: Would you like to do another operation?: No
 </code></pre></div>
+</li>
+<li>
+<p>Write a program that creates a new text file and saves information about the user's operating system to it.</p>
+<p>Prerequisites: </p>
+<ul>
+<li>Working with objects in JavaScript</li>
+<li>Handling JSON strings.</li>
+</ul>
+<p>Here are the steps to complete the assignment:</p>
+<ol>
+<li>Create a new Node.js file and require the <code>os</code> and <code>fs</code> modules.</li>
+<li>Use the <code>os.platform()</code>, <code>os.arch()</code>, and <code>os.release()</code> methods to get the name of the user's operating system, architecture, and release version, respectively.</li>
+<li>Use the <code>os.userInfo()</code> to get the username. </li>
+<li>Create a JavaScript object that contains the operating system information and the username.</li>
+<li>Use the <code>fs.writeFile()</code> method to create a new file and save the compiled information to it in JSON format.</li>
+</ol>
+<p>Here's an example of how the program should behave:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$node 705.js
+<span class="linenos" data-linenos="2 "></span>Operating system information saved to os-info.txt
+</code></pre></div>
+<p><strong>Optionally</strong>, if file <code>os-info.txt</code> exists ask the user for overwriting it or not.</p>
 </li>
 </ol>
 </article>
