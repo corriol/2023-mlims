@@ -350,6 +350,20 @@
     An example: prompt module
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#accessing-databases-from-nodejs-mysql2">
+    Accessing databases from Node.js: mysql2
+  </a>
+<nav aria-label="Accessing databases from Node.js: mysql2" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-operations">
+    Basic operations
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -425,6 +439,20 @@
     An example: prompt module
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#accessing-databases-from-nodejs-mysql2">
+    Accessing databases from Node.js: mysql2
+  </a>
+<nav aria-label="Accessing databases from Node.js: mysql2" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-operations">
+    Basic operations
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </div>
@@ -494,6 +522,78 @@
 <p>In this program, we use the <code>prompt</code> module to ask the user for their name and age. We pass an array of property names (<code>['name', 'age']</code>) to <code>prompt.get()</code>, which will prompt the user for those values. We also pass a callback function that will be called once the user has entered their information.</p>
 <p>If there's an error while prompting the user, we log the error to the console. Otherwise, we use string interpolation to print out a message with the user's information.</p>
 <p>To run this program, make sure you have installed the <code>prompt</code> module (you can do this with <code>npm install prompt</code>), and then run the program with <code>node index.js</code>. The program will prompt you for your name and age, and then print out a message with your information.</p>
+<h2 id="accessing-databases-from-nodejs-mysql2">Accessing databases from Node.js: mysql2<a class="headerlink" href="#accessing-databases-from-nodejs-mysql2" title="Permanent link">¶</a></h2>
+<p><code>mysql2</code> is a Node.js module that provides a MySQL database driver. The module uses the Node.js <code>stream</code> interface to communicate with the MySQL server, which allows for better performance and lower memory usage. <code>mysql2</code> supports all the common MySQL operations such as querying, inserting, updating, and deleting data.</p>
+<p>To install it run:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>npm i mysql2
+</code></pre></div>
+<p>Supose we have the following database:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="o">`</span><span class="n">nodejs_sample</span><span class="o">`</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="n">USE</span> <span class="o">`</span><span class="n">nodejs_sample</span><span class="o">`</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="o">`</span><span class="n">users</span><span class="o">`</span> <span class="p">(</span>
+<span class="linenos" data-linenos=" 6 "></span>  <span class="o">`</span><span class="n">id</span><span class="o">`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="o">`</span><span class="n">username</span><span class="o">`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="o">`</span><span class="n">email</span><span class="o">`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 9 "></span>  <span class="o">`</span><span class="n">age</span><span class="o">`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+<span class="linenos" data-linenos="10 "></span>  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">)</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">);</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">users</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">'John Doe'</span><span class="p">,</span> <span class="s1">'johndoe@example.com'</span><span class="p">,</span> <span class="mi">28</span><span class="p">);</span>
+<span class="linenos" data-linenos="14 "></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">users</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">'Jane Smith'</span><span class="p">,</span> <span class="s1">'janesmith@example.com'</span><span class="p">,</span> <span class="mi">35</span><span class="p">);</span>
+<span class="linenos" data-linenos="15 "></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">users</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">'Bob Johnson'</span><span class="p">,</span> <span class="s1">'bobjohnson@example.com'</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span>
+<span class="linenos" data-linenos="16 "></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">users</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">'Alice Brown'</span><span class="p">,</span> <span class="s1">'alicebrown@example.com'</span><span class="p">,</span> <span class="mi">23</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="basic-operations">Basic operations<a class="headerlink" href="#basic-operations" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">const</span> <span class="nx">mysql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mysql2'</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="c1">// create the connection to the database</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="kd">const</span> <span class="nx">connection</span> <span class="o">=</span> <span class="nx">mysql</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">({</span>
+<span class="linenos" data-linenos=" 5 "></span>  <span class="nx">host</span><span class="o">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 6 "></span>  <span class="nx">user</span><span class="o">:</span> <span class="s1">'youruser'</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="nx">password</span><span class="o">:</span> <span class="s1">'yourpassword'</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="nx">database</span><span class="o">:</span> <span class="s1">'nodejs_sample'</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="p">});</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="c1">// select data from a table</span>
+<span class="linenos" data-linenos="13 "></span><span class="kd">const</span> <span class="nx">sqlSelect</span> <span class="o">=</span> <span class="s1">'SELECT * FROM users'</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span><span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sqlSelect</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+<span class="linenos" data-linenos="16 "></span>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">results</span><span class="p">);</span>
+<span class="linenos" data-linenos="17 "></span><span class="p">});</span>
+<span class="linenos" data-linenos="18 "></span>
+<span class="linenos" data-linenos="19 "></span>
+<span class="linenos" data-linenos="20 "></span><span class="c1">// insert data into a table</span>
+<span class="linenos" data-linenos="21 "></span><span class="kd">const</span> <span class="nx">sqlInsert</span> <span class="o">=</span> <span class="s1">'INSERT INTO users (username, email) VALUES (?, ?)'</span><span class="p">;</span>
+<span class="linenos" data-linenos="22 "></span><span class="kd">const</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'JohnDoe'</span><span class="p">,</span> <span class="s1">'johndoe@example.com'</span><span class="p">];</span>
+<span class="linenos" data-linenos="23 "></span><span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sqlInsert</span><span class="p">,</span> <span class="nx">values</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="24 "></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+<span class="linenos" data-linenos="25 "></span>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Number of records inserted: "</span> <span class="o">+</span> <span class="nx">results</span><span class="p">.</span><span class="nx">affectedRows</span><span class="p">);</span>
+<span class="linenos" data-linenos="26 "></span><span class="p">});</span>
+<span class="linenos" data-linenos="27 "></span>
+<span class="linenos" data-linenos="28 "></span><span class="c1">// update data in a table</span>
+<span class="linenos" data-linenos="29 "></span><span class="kd">const</span> <span class="nx">sqlUpdate</span> <span class="o">=</span> <span class="s1">'UPDATE users SET email = ? WHERE username = ?'</span><span class="p">;</span>
+<span class="linenos" data-linenos="30 "></span><span class="kd">const</span> <span class="nx">updateValues</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'newemail@example.com'</span><span class="p">,</span> <span class="s1">'JohnDoe'</span><span class="p">];</span>
+<span class="linenos" data-linenos="31 "></span><span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sqlUpdate</span><span class="p">,</span> <span class="nx">updateValues</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="32 "></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+<span class="linenos" data-linenos="33 "></span>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Number of records updated: "</span> <span class="o">+</span> <span class="nx">results</span><span class="p">.</span><span class="nx">affectedRows</span><span class="p">);</span>
+<span class="linenos" data-linenos="34 "></span><span class="p">});</span>
+<span class="linenos" data-linenos="35 "></span>
+<span class="linenos" data-linenos="36 "></span><span class="c1">// delete data from a table</span>
+<span class="linenos" data-linenos="37 "></span><span class="kd">const</span> <span class="nx">sqlDelete</span> <span class="o">=</span> <span class="s1">'DELETE FROM users WHERE username = ?'</span><span class="p">;</span>
+<span class="linenos" data-linenos="38 "></span><span class="kd">const</span> <span class="nx">deleteValues</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'JohnDoe'</span><span class="p">];</span>
+<span class="linenos" data-linenos="39 "></span><span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sqlDelete</span><span class="p">,</span> <span class="nx">deleteValues</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="40 "></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
+<span class="linenos" data-linenos="41 "></span>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Number of records deleted: "</span> <span class="o">+</span> <span class="nx">results</span><span class="p">.</span><span class="nx">affectedRows</span><span class="p">);</span>
+<span class="linenos" data-linenos="42 "></span><span class="p">});</span>
+<span class="linenos" data-linenos="43 "></span>
+<span class="linenos" data-linenos="44 "></span><span class="c1">// close the connection to the database</span>
+<span class="linenos" data-linenos="45 "></span><span class="nx">connection</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+</code></pre></div>
+<p>In this example, we first create a connection to the database by passing in the database details. We then execute various SQL queries, including selecting data from a table, inserting data into a table, updating data in a table, and deleting data from a table.</p>
+<p>Note that this is just a basic example and there are many more complex operations that can be done with the mysql2 module in Node.js.</p>
 </article>
 </div>
 </div>
