@@ -364,6 +364,11 @@
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#importing-and-exporting-xml-files-intofrom-database">
+    Importing and exporting XML files into/from database
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -452,6 +457,11 @@
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#importing-and-exporting-xml-files-intofrom-database">
+    Importing and exporting XML files into/from database
+  </a>
 </li>
 </ul>
 </nav>
@@ -594,6 +604,130 @@
 </code></pre></div>
 <p>In this example, we first create a connection to the database by passing in the database details. We then execute various SQL queries, including selecting data from a table, inserting data into a table, updating data in a table, and deleting data from a table.</p>
 <p>Note that this is just a basic example and there are many more complex operations that can be done with the mysql2 module in Node.js.</p>
+<h2 id="importing-and-exporting-xml-files-intofrom-database">Importing and exporting XML files into/from database<a class="headerlink" href="#importing-and-exporting-xml-files-intofrom-database" title="Permanent link">¶</a></h2>
+<p>The <code>fast-xml-parser</code> module is a lightweight and high-performance XML parser for Node.js. It allows you to efficiently parse XML documents and convert them into JavaScript objects for further processing.</p>
+<p>We can use <code>fast-xml-parser</code> to read and write XML files.</p>
+<p>The following code is an example of exporting a database table to XML using <code>mysql2</code>, <code>fs</code>, and <code>fast-xml-parser</code> in Node.js:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="kd">const</span> <span class="nx">mysql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mysql2'</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="kd">const</span> <span class="nx">parser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fast-xml-parser'</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="c1">// Create the database connection</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="kd">const</span> <span class="nx">connection</span> <span class="o">=</span> <span class="nx">mysql</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">({</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="nx">host</span><span class="o">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="nx">user</span><span class="o">:</span> <span class="s1">'youruser'</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 9 "></span>  <span class="nx">password</span><span class="o">:</span> <span class="s1">'yourpassword'</span><span class="p">,</span>
+<span class="linenos" data-linenos="10 "></span>  <span class="nx">database</span><span class="o">:</span> <span class="s1">'yourdatabase'</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">});</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="c1">// Select data from the database table</span>
+<span class="linenos" data-linenos="14 "></span><span class="kd">const</span> <span class="nx">sqlSelect</span> <span class="o">=</span> <span class="s1">'SELECT * FROM users'</span><span class="p">;</span>
+<span class="linenos" data-linenos="15 "></span><span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sqlSelect</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos" data-linenos="16 "></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="17 "></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="linenos" data-linenos="18 "></span>    <span class="k">return</span><span class="p">;</span>
+<span class="linenos" data-linenos="19 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="20 "></span>
+<span class="linenos" data-linenos="21 "></span>  <span class="c1">// Convert the results to XML</span>
+<span class="linenos" data-linenos="22 "></span>  <span class="kd">const</span> <span class="nx">xmlData</span> <span class="o">=</span> <span class="nx">parser</span><span class="p">.</span><span class="nx">parse</span><span class="p">({</span>
+<span class="linenos" data-linenos="23 "></span>    <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos" data-linenos="24 "></span>      <span class="nx">item</span><span class="o">:</span> <span class="nx">results</span>
+<span class="linenos" data-linenos="25 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="26 "></span>  <span class="p">},</span> <span class="p">{</span>
+<span class="linenos" data-linenos="27 "></span>    <span class="nx">ignoreAttributes</span><span class="o">:</span> <span class="kc">false</span>
+<span class="linenos" data-linenos="28 "></span>  <span class="p">});</span>
+<span class="linenos" data-linenos="29 "></span>
+<span class="linenos" data-linenos="30 "></span>  <span class="c1">// Convert the XML object to a string</span>
+<span class="linenos" data-linenos="31 "></span>  <span class="kd">const</span> <span class="nx">xmlString</span> <span class="o">=</span> <span class="nx">parser</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">xmlData</span><span class="p">,</span> <span class="p">{</span>
+<span class="linenos" data-linenos="32 "></span>    <span class="nx">cdataTagName</span><span class="o">:</span> <span class="s1">'__cdata'</span><span class="p">,</span>
+<span class="linenos" data-linenos="33 "></span>    <span class="nx">format</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="linenos" data-linenos="34 "></span>    <span class="nx">indentBy</span><span class="o">:</span> <span class="s1">'  '</span><span class="p">,</span>
+<span class="linenos" data-linenos="35 "></span>    <span class="nx">ignoreAttributes</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="linenos" data-linenos="36 "></span>    <span class="nx">ignoreNameSpace</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="linenos" data-linenos="37 "></span>    <span class="nx">textNodeName</span><span class="o">:</span> <span class="s1">'#text'</span>
+<span class="linenos" data-linenos="38 "></span>  <span class="p">});</span>
+<span class="linenos" data-linenos="39 "></span>
+<span class="linenos" data-linenos="40 "></span>  <span class="c1">// Write the XML string to a file</span>
+<span class="linenos" data-linenos="41 "></span>  <span class="nx">fs</span><span class="p">.</span><span class="nx">writeFile</span><span class="p">(</span><span class="s1">'data.xml'</span><span class="p">,</span> <span class="nx">xmlString</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos" data-linenos="42 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="43 "></span>      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="linenos" data-linenos="44 "></span>      <span class="k">return</span><span class="p">;</span>
+<span class="linenos" data-linenos="45 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="46 "></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Data exported to data.xml'</span><span class="p">);</span>
+<span class="linenos" data-linenos="47 "></span>  <span class="p">});</span>
+<span class="linenos" data-linenos="48 "></span>
+<span class="linenos" data-linenos="49 "></span>  <span class="c1">// Close the database connection</span>
+<span class="linenos" data-linenos="50 "></span>  <span class="nx">connection</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+<span class="linenos" data-linenos="51 "></span><span class="p">});</span>
+</code></pre></div>
+This script connects to the MySQL database, selects all data from the specified table, converts the results into an XML object using <code>fast-xml-parser</code>, and then converts the XML object to a formatted XML string. Finally, the XML string is written to a file named <code>data.xml</code> using the <code>fs.writeFile</code> function.</p>
+<p>You can adjust the <code>parse</code> options provided to <code>fast-xml-parser</code> to customize the XML output as per your requirements.</p>
+<p>The result file should look like that:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nt">&lt;root&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span>  <span class="nt">&lt;item&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="nt">&lt;id&gt;</span>1<span class="nt">&lt;/id&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="nt">&lt;username&gt;</span>JohnDoe<span class="nt">&lt;/name&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="nt">&lt;email&gt;</span>johndoe@example.com<span class="nt">&lt;/email&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="nt">&lt;age&gt;</span>28<span class="nt">&lt;/age&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="nt">&lt;/item&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="nt">&lt;item&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="nt">&lt;id&gt;</span>2<span class="nt">&lt;/id&gt;</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="nt">&lt;username&gt;</span>JaneSmith<span class="nt">&lt;/name&gt;</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="nt">&lt;email&gt;</span>janesmith@example.com<span class="nt">&lt;/email&gt;</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="nt">&lt;age&gt;</span>35<span class="nt">&lt;/age&gt;</span>
+<span class="linenos" data-linenos="13 "></span>  <span class="nt">&lt;/item&gt;</span>
+<span class="linenos" data-linenos="14 "></span>  <span class="nt">&lt;item&gt;</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="nt">&lt;id&gt;</span>3<span class="nt">&lt;/id&gt;</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="nt">&lt;username&gt;</span>BobJohnson<span class="nt">&lt;/name&gt;</span>
+<span class="linenos" data-linenos="17 "></span>    <span class="nt">&lt;email&gt;</span>bobjohnson@example.com<span class="nt">&lt;/email&gt;</span>
+<span class="linenos" data-linenos="18 "></span>    <span class="nt">&lt;age&gt;</span>42<span class="nt">&lt;/age&gt;</span>
+<span class="linenos" data-linenos="19 "></span>  <span class="nt">&lt;/item&gt;</span>
+<span class="linenos" data-linenos="20 "></span><span class="nt">&lt;/root&gt;</span>
+</code></pre></div>
+<p>This is an example of importing rows into a database table in Node.js:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="kd">const</span> <span class="nx">mysql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mysql2'</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="kd">const</span> <span class="nx">parser</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fast-xml-parser'</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="c1">// Create the database connection</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="kd">const</span> <span class="nx">connection</span> <span class="o">=</span> <span class="nx">mysql</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">({</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="nx">host</span><span class="o">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="nx">user</span><span class="o">:</span> <span class="s1">'youruser'</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 9 "></span>  <span class="nx">password</span><span class="o">:</span> <span class="s1">'yourpassword'</span><span class="p">,</span>
+<span class="linenos" data-linenos="10 "></span>  <span class="nx">database</span><span class="o">:</span> <span class="s1">'yourdatabase'</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">});</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="c1">// Read the XML file</span>
+<span class="linenos" data-linenos="14 "></span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">'data.xml'</span><span class="p">,</span> <span class="s1">'utf-8'</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">xmlData</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="linenos" data-linenos="17 "></span>    <span class="k">return</span><span class="p">;</span>
+<span class="linenos" data-linenos="18 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="19 "></span>
+<span class="linenos" data-linenos="20 "></span>  <span class="c1">// Parse the XML data</span>
+<span class="linenos" data-linenos="21 "></span>  <span class="kd">const</span> <span class="nx">parsedData</span> <span class="o">=</span> <span class="nx">parser</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">xmlData</span><span class="p">);</span>
+<span class="linenos" data-linenos="22 "></span>
+<span class="linenos" data-linenos="23 "></span>  <span class="c1">// Extract the items from the parsed XML object</span>
+<span class="linenos" data-linenos="24 "></span>  <span class="kd">const</span> <span class="nx">items</span> <span class="o">=</span> <span class="nx">parsedData</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">item</span><span class="p">;</span>
+<span class="linenos" data-linenos="25 "></span>
+<span class="linenos" data-linenos="26 "></span>  <span class="c1">// Insert the data into the database table</span>
+<span class="linenos" data-linenos="27 "></span>  <span class="kd">const</span> <span class="nx">sqlInsert</span> <span class="o">=</span> <span class="s1">'INSERT INTO users (name, email, age) VALUES (?, ?, ?)'</span><span class="p">;</span>
+<span class="linenos" data-linenos="28 "></span>  <span class="nx">items</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">item</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos" data-linenos="29 "></span>    <span class="kd">const</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">item</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span> <span class="nx">item</span><span class="p">.</span><span class="nx">age</span><span class="p">];</span>
+<span class="linenos" data-linenos="30 "></span>    <span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sqlInsert</span><span class="p">,</span> <span class="nx">values</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos" data-linenos="31 "></span>      <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="32 "></span>        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="linenos" data-linenos="33 "></span>        <span class="k">return</span><span class="p">;</span>
+<span class="linenos" data-linenos="34 "></span>      <span class="p">}</span>
+<span class="linenos" data-linenos="35 "></span>      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Record inserted:'</span><span class="p">,</span> <span class="nx">results</span><span class="p">.</span><span class="nx">insertId</span><span class="p">);</span>
+<span class="linenos" data-linenos="36 "></span>    <span class="p">});</span>
+<span class="linenos" data-linenos="37 "></span>  <span class="p">});</span>
+<span class="linenos" data-linenos="38 "></span>
+<span class="linenos" data-linenos="39 "></span>  <span class="c1">// Close the database connection</span>
+<span class="linenos" data-linenos="40 "></span>  <span class="nx">connection</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+<span class="linenos" data-linenos="41 "></span><span class="p">});</span>
+</code></pre></div>
+This script reads the XML file (data.xml), parses its contents using fast-xml-parser, and extracts the necessary data. Then, it inserts the extracted data into the specified table in the MySQL database using parameterized queries. Finally, it logs the insert IDs of the inserted records and closes the database connection.</p>
 </article>
 </div>
 </div>
