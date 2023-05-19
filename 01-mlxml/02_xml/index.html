@@ -5,19 +5,20 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../01_llenguatges/" rel="prev"/>
+<link href="../03_tasks/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.2.2, mkdocs-material-7.2.6" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.9" name="generator"/>
 <title>XML - MLIMS</title>
-<link href="../../assets/stylesheets/main.802231af.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
-<meta content="#4cae4f" name="theme-color"/>
+<link href="../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700%7C&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font-family:"Lato";--md-code-font-family:""}</style>
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Lato";--md-code-font:"Roboto Mono"}</style>
 <link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
-<body data-md-color-accent="brown" data-md-color-primary="green" data-md-color-scheme="" dir="ltr">
-<script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<body data-md-color-accent="brown" data-md-color-primary="green" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
@@ -34,7 +35,7 @@
 <img alt="logo" src="../../assets/logo.png"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
 </label>
 <div class="md-header__title" data-md-component="header-title">
 <div class="md-header__ellipsis">
@@ -53,7 +54,7 @@
 </div>
 </div>
 <label class="md-header__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
 </label>
 <div class="md-search" data-md-component="search" role="dialog">
 <label class="md-search__overlay" for="__search"></label>
@@ -61,12 +62,12 @@
 <form class="md-search__form" name="search">
 <input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
 <label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </label>
 <nav aria-label="Search" class="md-search__options">
-<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
 </button>
 </nav>
 </form>
@@ -76,7 +77,7 @@
 <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list"></ol>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
 </div>
 </div>
@@ -99,12 +100,12 @@
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1">
-        1. Markup languages. XML
-        <span class="md-nav__icon md-icon"></span>
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          1. Markup languages. XML
+          <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="1. Markup languages. XML" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
           1. Markup languages. XML
@@ -121,7 +122,7 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
           XML
           <span class="md-nav__icon md-icon"></span>
@@ -355,12 +356,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2">
-        2. XML schemas and vocabularies
-        <span class="md-nav__icon md-icon"></span>
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          2. XML schemas and vocabularies
+          <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="2. XML schemas and vocabularies" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
           2. XML schemas and vocabularies
@@ -390,12 +391,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3">
-        3. HTML
-        <span class="md-nav__icon md-icon"></span>
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          3. HTML
+          <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="3. HTML" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
           3. HTML
@@ -415,12 +416,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4">
-        4. CSS
-        <span class="md-nav__icon md-icon"></span>
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          4. CSS
+          <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="4. CSS" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
           4. CSS
@@ -445,12 +446,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5">
-        5. XML handling and storage
-        <span class="md-nav__icon md-icon"></span>
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          5. XML handling and storage
+          <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="5. XML handling and storage" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
           5. XML handling and storage
@@ -485,12 +486,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6">
-        6. An introduction to javascript
-        <span class="md-nav__icon md-icon"></span>
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          6. An introduction to javascript
+          <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="6. An introduction to javascript" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
           6. An introduction to javascript
@@ -505,12 +506,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7">
-        7. An introduction to server side languages
-        <span class="md-nav__icon md-icon"></span>
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          7. An introduction to server side languages
+          <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="7. An introduction to server side languages" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
           7. An introduction to server side languages
@@ -550,12 +551,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
-<label class="md-nav__link" for="__nav_8">
-        8. Bussines information systems
-        <span class="md-nav__icon md-icon"></span>
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          8. Bussines information systems
+          <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="8. Bussines information systems" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
           8. Bussines information systems
@@ -887,11 +888,11 @@
 <p>Given the "entities.xml" file:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;? xml version = "1.0" encoding = "UTF-8"?&gt;</span>
 <span class="linenos" data-linenos="2 "></span><span class="nt">&lt;entities&gt;</span>
-<span class="linenos" data-linenos="3 "></span>   <span class="nt">&lt;less_than&gt;</span> <span class="ni">&amp;lt;</span> <span class="nt">&lt;/less_than&gt;</span>
-<span class="linenos" data-linenos="4 "></span>   <span class="nt">&lt;greater_than&gt;</span> <span class="ni">&amp;gt;</span> <span class="nt">&lt;/greater_than&gt;</span>
-<span class="linenos" data-linenos="5 "></span>   <span class="nt">&lt;double_quote&gt;</span> <span class="ni">&amp;quot;</span> <span class="nt">&lt;/double_quote&gt;</span>
-<span class="linenos" data-linenos="6 "></span>   <span class="nt">&lt;simple_quote&gt;</span> <span class="ni">&amp;apos;</span> <span class="nt">&lt;/simple_quote&gt;</span>
-<span class="linenos" data-linenos="7 "></span>   <span class="nt">&lt;ampersand&gt;</span> <span class="ni">&amp;amp;</span> <span class="nt">&lt;/ampersand&gt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">   </span><span class="nt">&lt;less_than&gt;</span><span class="w"> </span><span class="ni">&amp;lt;</span><span class="w"> </span><span class="nt">&lt;/less_than&gt;</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">   </span><span class="nt">&lt;greater_than&gt;</span><span class="w"> </span><span class="ni">&amp;gt;</span><span class="w"> </span><span class="nt">&lt;/greater_than&gt;</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">   </span><span class="nt">&lt;double_quote&gt;</span><span class="w"> </span><span class="ni">&amp;quot;</span><span class="w"> </span><span class="nt">&lt;/double_quote&gt;</span>
+<span class="linenos" data-linenos="6 "></span><span class="w">   </span><span class="nt">&lt;simple_quote&gt;</span><span class="w"> </span><span class="ni">&amp;apos;</span><span class="w"> </span><span class="nt">&lt;/simple_quote&gt;</span>
+<span class="linenos" data-linenos="7 "></span><span class="w">   </span><span class="nt">&lt;ampersand&gt;</span><span class="w"> </span><span class="ni">&amp;amp;</span><span class="w"> </span><span class="nt">&lt;/ampersand&gt;</span>
 <span class="linenos" data-linenos="8 "></span><span class="nt">&lt;/entities&gt;</span>
 </code></pre></div>
 <p>When you open it in Google Chrome you can see:</p>
@@ -912,25 +913,25 @@ It is important to remark that between the start tag (<code>&lt;stag&gt;</code>)
 <p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;tag&gt;&lt;/tag&gt;</span>
 </code></pre></div>
 A simpler alternative way of writing this is kind of elements is: </p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;tag</span> <span class="nt">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;tag</span><span class="w"> </span><span class="nt">/&gt;</span>
 </code></pre></div>
 <p>To write an empty element <code>name</code>, we should write:
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;name&gt;&lt;/name&gt;</span>
 </code></pre></div>
 Or:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;name</span> <span class="nt">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;name</span><span class="w"> </span><span class="nt">/&gt;</span>
 </code></pre></div>
 <h3 id="relation-between-parent-and-childs">Relation between parent and childs<a class="headerlink" href="#relation-between-parent-and-childs" title="Permanent link">¶</a></h3>
 <p>An parent element could contain one or many elements:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nt">&lt;people&gt;</span>
-<span class="linenos" data-linenos=" 2 "></span>   <span class="nt">&lt;name&gt;</span>Elsa<span class="nt">&lt;/name&gt;</span>
-<span class="linenos" data-linenos=" 3 "></span>   <span class="nt">&lt;woman</span> <span class="nt">/&gt;</span>
-<span class="linenos" data-linenos=" 4 "></span>   <span class="nt">&lt;birthday&gt;</span>
-<span class="linenos" data-linenos=" 5 "></span>      <span class="nt">&lt;day&gt;</span>18<span class="nt">&lt;/day&gt;</span>
-<span class="linenos" data-linenos=" 6 "></span>      <span class="nt">&lt;month&gt;</span>6<span class="nt">&lt;/month&gt;</span>
-<span class="linenos" data-linenos=" 7 "></span>      <span class="nt">&lt;year&gt;</span>1996<span class="nt">&lt;/year&gt;</span>
-<span class="linenos" data-linenos=" 8 "></span>   <span class="nt">&lt;/birthday&gt;</span>
-<span class="linenos" data-linenos=" 9 "></span>   <span class="nt">&lt;city&gt;</span>Pamplona<span class="nt">&lt;/city&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">   </span><span class="nt">&lt;name&gt;</span>Elsa<span class="nt">&lt;/name&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">   </span><span class="nt">&lt;woman</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">   </span><span class="nt">&lt;birthday&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">      </span><span class="nt">&lt;day&gt;</span>18<span class="nt">&lt;/day&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">      </span><span class="nt">&lt;month&gt;</span>6<span class="nt">&lt;/month&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">      </span><span class="nt">&lt;year&gt;</span>1996<span class="nt">&lt;/year&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">   </span><span class="nt">&lt;/birthday&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">   </span><span class="nt">&lt;city&gt;</span>Pamplona<span class="nt">&lt;/city&gt;</span>
 <span class="linenos" data-linenos="10 "></span><span class="nt">&lt;/people&gt;</span>
 </code></pre></div>
 <p>In this example, the <code>people</code> element contains four elements (children): "name", "woman", "birthday" and "city". In addition, the "birthday" element contains three  elements (children): "day", "month" and "year".</p>
@@ -951,8 +952,8 @@ D --&gt; H[year]
 <h4 id="elements-with-mixed-content">Elements with mixed content<a class="headerlink" href="#elements-with-mixed-content" title="Permanent link">¶</a></h4>
 <p>An element type has mixed content when elements of that type may contain character data, optionally interspersed with child elements. In this case, the types of the child elements may be constrained, but not their order or their number of occurrences:</p>
 <p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;description&gt;</span>
-<span class="linenos" data-linenos="2 "></span>   character data <span class="nt">&lt;br/&gt;</span> more text <span class="nt">&lt;br/&gt;</span> 
-<span class="linenos" data-linenos="3 "></span>   and <span class="nt">&lt;strong&gt;</span>more data<span class="nt">&lt;/strong&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">   </span>character<span class="w"> </span>data<span class="w"> </span><span class="nt">&lt;br/&gt;</span><span class="w"> </span>more<span class="w"> </span>text<span class="w"> </span><span class="nt">&lt;br/&gt;</span><span class="w"> </span>
+<span class="linenos" data-linenos="3 "></span><span class="w">   </span>and<span class="w"> </span><span class="nt">&lt;strong&gt;</span>more<span class="w"> </span>data<span class="nt">&lt;/strong&gt;</span>
 <span class="linenos" data-linenos="4 "></span><span class="nt">&lt;/description&gt;</span>
 </code></pre></div>
 Mixed content is a very effective way of marking up textual data, the most obvious example being HTML.</p>
@@ -968,12 +969,12 @@ Mixed content is a very effective way of marking up textual data, the most obvio
 <h3 id="all-xml-elements-must-have-a-closing-tag">All XML elements must have a closing tag<a class="headerlink" href="#all-xml-elements-must-have-a-closing-tag" title="Permanent link">¶</a></h3>
 <p>It is illegal to omit the closing tag when you are creating XML syntax. XML elements must have a closing tag.</p>
 <p>Incorrect:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;body&gt;</span>See Spot run.
-<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;body&gt;</span>See Spot catch the ball.
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;body&gt;</span>See<span class="w"> </span>Spot<span class="w"> </span>run.
+<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;body&gt;</span>See<span class="w"> </span>Spot<span class="w"> </span>catch<span class="w"> </span>the<span class="w"> </span>ball.
 </code></pre></div>
 <p>Correct:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;body&gt;</span>See Spot run.<span class="nt">&lt;/body&gt;</span>
-<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;body&gt;</span>See Spot catch the ball.<span class="nt">&lt;/body&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;body&gt;</span>See<span class="w"> </span>Spot<span class="w"> </span>run.<span class="nt">&lt;/body&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;body&gt;</span>See<span class="w"> </span>Spot<span class="w"> </span>catch<span class="w"> </span>the<span class="w"> </span>ball.<span class="nt">&lt;/body&gt;</span>
 </code></pre></div>
 <h3 id="all-xml-elements-must-be-properly-nested">All XML elements must be properly nested<a class="headerlink" href="#all-xml-elements-must-be-properly-nested" title="Permanent link">¶</a></h3>
 <p>Improper nesting of tags makes no sense to XML.</p>
@@ -981,29 +982,29 @@ Mixed content is a very effective way of marking up textual data, the most obvio
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>&lt;b&gt;&lt;i&gt;This text is bold and italic.&lt;/b&gt;&lt;/i&gt;
 </code></pre></div>
 <p>Correct:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;b&gt;&lt;i&gt;</span>This text is bold and italic.<span class="nt">&lt;/i&gt;&lt;/b&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;b&gt;&lt;i&gt;</span>This<span class="w"> </span>text<span class="w"> </span>is<span class="w"> </span>bold<span class="w"> </span>and<span class="w"> </span>italic.<span class="nt">&lt;/i&gt;&lt;/b&gt;</span>
 </code></pre></div>
 <h3 id="all-xml-documents-must-have-a-root-element">All XML documents must have a root element<a class="headerlink" href="#all-xml-documents-must-have-a-root-element" title="Permanent link">¶</a></h3>
 <p>All XML documents must contain a single tag pair to define a root element. All other elements must be within this root element. All elements can have sub elements (child elements). Sub elements must be correctly nested within their parent element.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;root&gt;</span>
-<span class="linenos" data-linenos="2 "></span>  <span class="nt">&lt;child&gt;</span>
-<span class="linenos" data-linenos="3 "></span>    <span class="nt">&lt;subchild&gt;</span>.....<span class="nt">&lt;/subchild&gt;</span>
-<span class="linenos" data-linenos="4 "></span>  <span class="nt">&lt;/child&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">  </span><span class="nt">&lt;child&gt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="nt">&lt;subchild&gt;</span>.....<span class="nt">&lt;/subchild&gt;</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">  </span><span class="nt">&lt;/child&gt;</span>
 <span class="linenos" data-linenos="5 "></span><span class="nt">&lt;/root&gt;</span>
 </code></pre></div>
 <h3 id="attribute-values-must-always-be-quoted">Attribute values must always be quoted<a class="headerlink" href="#attribute-values-must-always-be-quoted" title="Permanent link">¶</a></h3>
 <p>It is illegal to omit quotation marks around attribute values. XML elements can have attributes in name/value pairs; however, the attribute value must always be quoted.</p>
 <p>Incorrect:</p>
 <p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?xml version= “1.0” encoding=“ISO-8859-1”?&gt;</span>
-<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;note</span> <span class="na">date=</span><span class="s">05/05/05</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;note</span><span class="w"> </span><span class="na">date=</span><span class="s">05/05/05</span><span class="nt">&gt;</span>
 <span class="linenos" data-linenos="3 "></span><span class="nt">&lt;to&gt;</span>Dick<span class="nt">&lt;/to&gt;</span>
 <span class="linenos" data-linenos="4 "></span><span class="nt">&lt;from&gt;</span>Jane<span class="nt">&lt;/from&gt;</span>
 <span class="linenos" data-linenos="5 "></span><span class="nt">&lt;/note&gt;</span>
 </code></pre></div>
 Correct:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?xml version= “1.0” encoding=“ISO-8859-1”?&gt;</span>
-<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;note</span> <span class="na">date=</span><span class="s">”05/05/05”</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;note</span><span class="w"> </span><span class="na">date=</span><span class="s">”05/05/05”</span><span class="nt">&gt;</span>
 <span class="linenos" data-linenos="3 "></span><span class="nt">&lt;to&gt;</span>Dick<span class="nt">&lt;/to&gt;</span>
 <span class="linenos" data-linenos="4 "></span><span class="nt">&lt;from&gt;</span>Jane<span class="nt">&lt;/from&gt;</span>
 <span class="linenos" data-linenos="5 "></span><span class="nt">&lt;/note&gt;</span>
@@ -1015,7 +1016,7 @@ Correct:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>&lt;Body&gt;See Spot run.&lt;/body&gt;
 </code></pre></div>
 <p>Correct:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;body&gt;</span>See Spot run.<span class="nt">&lt;/body&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;body&gt;</span>See<span class="w"> </span>Spot<span class="w"> </span>run.<span class="nt">&lt;/body&gt;</span>
 </code></pre></div>
 <p>In addition, they have to fullfil the follow rules:</p>
 <ul>
@@ -1030,9 +1031,9 @@ Correct:</p>
 <span class="linenos" data-linenos="3 "></span><span class="nt">&lt;mes&gt;</span>6<span class="nt">&lt;mes/&gt;</span>
 <span class="linenos" data-linenos="4 "></span><span class="nt">&lt;ciudad&gt;</span>Pamplona<span class="nt">&lt;/finciudad&gt;</span>
 <span class="linenos" data-linenos="5 "></span><span class="nt">&lt;_rojo&gt;</span>
-<span class="linenos" data-linenos="6 "></span><span class="nt">&lt;2colores&gt;</span>Rojo y Naranja<span class="nt">&lt;/2colores&gt;</span>
+<span class="linenos" data-linenos="6 "></span><span class="nt">&lt;2colores&gt;</span>Rojo<span class="w"> </span>y<span class="w"> </span>Naranja<span class="nt">&lt;/2colores&gt;</span>
 <span class="linenos" data-linenos="7 "></span><span class="nt">&lt;persona&gt;&lt;nombre&gt;</span>Elsa<span class="nt">&lt;/persona&gt;&lt;/nombre&gt;</span>
-<span class="linenos" data-linenos="8 "></span><span class="nt">&lt;color</span> <span class="err">favorito</span><span class="nt">&gt;</span>azul<span class="err">&lt;</span>/color favorito&gt;
+<span class="linenos" data-linenos="8 "></span><span class="nt">&lt;color</span><span class="w"> </span><span class="err">favorito</span><span class="nt">&gt;</span>azul<span class="err">&lt;</span>/color<span class="w"> </span>favorito&gt;
 </code></pre></div>
 <p>We must write them:</p>
 <p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nt">&lt;ciudad&gt;</span>Pamplona<span class="nt">&lt;/ciudad&gt;</span>
@@ -1040,8 +1041,8 @@ Correct:</p>
 <span class="linenos" data-linenos=" 3 "></span><span class="nt">&lt;mes&gt;</span>6<span class="nt">&lt;/mes&gt;</span>
 <span class="linenos" data-linenos=" 4 "></span><span class="nt">&lt;ciudad&gt;</span>Pamplona<span class="nt">&lt;/ciudad&gt;</span>
 <span class="linenos" data-linenos=" 5 "></span><span class="nt">&lt;_rojo/&gt;</span>
-<span class="linenos" data-linenos=" 6 "></span><span class="nt">&lt;colores2&gt;</span>Rojo y Naranja<span class="nt">&lt;/colores2&gt;</span>
-<span class="linenos" data-linenos=" 7 "></span><span class="nt">&lt;Aficiones</span> <span class="nt">&gt;</span>Cine, Bailar, Nadar<span class="nt">&lt;/Aficiones &gt;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="nt">&lt;colores2&gt;</span>Rojo<span class="w"> </span>y<span class="w"> </span>Naranja<span class="nt">&lt;/colores2&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="nt">&lt;Aficiones</span><span class="w"> </span><span class="nt">&gt;</span>Cine,<span class="w"> </span>Bailar,<span class="w"> </span>Nadar<span class="nt">&lt;/Aficiones &gt;</span>
 <span class="linenos" data-linenos=" 8 "></span><span class="nt">&lt;persona&gt;&lt;nombre&gt;</span>Elsa<span class="nt">&lt;/nombre&gt;&lt;/persona&gt;</span>
 <span class="linenos" data-linenos=" 9 "></span><span class="nt">&lt;color.favorito&gt;</span>azul<span class="nt">&lt;/color.favorito&gt;</span>
 <span class="linenos" data-linenos="10 "></span><span class="nt">&lt;color-favorito&gt;</span>azul<span class="nt">&lt;/color-favorito&gt;</span>
@@ -1062,16 +1063,16 @@ it is also advisable to avoid its use.</p>
 <li>Price: 12.56</li>
 </ul>
 <p>Its representation in an XML document could be, for example:
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;product</span> <span class="na">code =</span> <span class="s">"G45"</span><span class="nt">&gt;</span>
-<span class="linenos" data-linenos="2 "></span>   <span class="nt">&lt;name</span> <span class="na">color =</span> <span class="s">"black"</span> <span class="na">price =</span> <span class="s">"12.56"</span><span class="nt">&gt;</span> Wool hat <span class="nt">&lt;/ name&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;product</span><span class="w"> </span><span class="na">code =</span><span class="w"> </span><span class="s">"G45"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">   </span><span class="nt">&lt;name</span><span class="w"> </span><span class="na">color =</span><span class="w"> </span><span class="s">"black"</span><span class="w"> </span><span class="na">price =</span><span class="w"> </span><span class="s">"12.56"</span><span class="nt">&gt;</span><span class="w"> </span>Wool<span class="w"> </span>hat<span class="w"> </span><span class="nt">&lt;/ name&gt;</span>
 <span class="linenos" data-linenos="3 "></span><span class="nt">&lt;/ product&gt;</span>
 </code></pre></div>
 In this example three attributes have been written: code, color and price. It should be noted that, its values ​​("G45",
 "black" and "12.56") have been enclosed in double quotes ("). However, they can also be enclosed in single quotes (').</p>
 <p>If, for example, the <code>code</code> attribute were to be represented as an element, it could be written:</p>
 <p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;product&gt;</span>
-<span class="linenos" data-linenos="2 "></span>   <span class="nt">&lt;code&gt;</span>G45<span class="nt">&lt;/code&gt;</span>
-<span class="linenos" data-linenos="3 "></span>   <span class="nt">&lt;name</span> <span class="na">color=</span><span class="s">"black"</span> <span class="na">price=</span><span class="s">"12.56"</span><span class="nt">&gt;</span>Wool hat<span class="nt">&lt;/ name&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">   </span><span class="nt">&lt;code&gt;</span>G45<span class="nt">&lt;/code&gt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">   </span><span class="nt">&lt;name</span><span class="w"> </span><span class="na">color=</span><span class="s">"black"</span><span class="w"> </span><span class="na">price=</span><span class="s">"12.56"</span><span class="nt">&gt;</span>Wool<span class="w"> </span>hat<span class="nt">&lt;/ name&gt;</span>
 <span class="linenos" data-linenos="4 "></span><span class="nt">&lt;/ product&gt;</span>
 </code></pre></div>
 As you can see, now the value of the code has not been written in double quotes.</p>
@@ -1082,10 +1083,10 @@ is everything between the opening and closing tags, even if they contain other e
 <h3 id="syntax-rules">Syntax rules<a class="headerlink" href="#syntax-rules" title="Permanent link">¶</a></h3>
 <p>Attribute names must meet the same syntax rules as element names. In addition, all
  attributes of an element must be unique. For example, it is incorrect to write:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;data</span> <span class="na">x=</span><span class="s">"3"</span> <span class="na">x=</span><span class="s">"4"</span> <span class="na">i=</span><span class="s">"5"</span> <span class="nt">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;data</span><span class="w"> </span><span class="na">x=</span><span class="s">"3"</span><span class="w"> </span><span class="na">x=</span><span class="s">"4"</span><span class="w"> </span><span class="na">i=</span><span class="s">"5"</span><span class="w"> </span><span class="nt">/&gt;</span>
 </code></pre></div>
 <p>However, it is correct to write:</p>
-<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;data</span> <span class="na">x=</span><span class="s">"3"</span> <span class="na">X=</span><span class="s">"4"</span> <span class="na">i=</span><span class="s">"5"</span> <span class="nt">/&gt;</span>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;data</span><span class="w"> </span><span class="na">x=</span><span class="s">"3"</span><span class="w"> </span><span class="na">X=</span><span class="s">"4"</span><span class="w"> </span><span class="na">i=</span><span class="s">"5"</span><span class="w"> </span><span class="nt">/&gt;</span>
 </code></pre></div>
 Attributes contained in an element, as in this case x, X and y, must be separated by whitespace, and is not
 significant his order.</p>
@@ -1116,21 +1117,21 @@ respectively.</p>
 <h3 id="problematic-characters-in-xml-less-than-and-ampersand">Problematic characters in XML: less than (&lt;) and ampersand (&amp;)<a class="headerlink" href="#problematic-characters-in-xml-less-than-and-ampersand" title="Permanent link">¶</a></h3>
 <p>In an XML document, the "&lt;" character is problematic because it indicates the beginning of a tag. So,
 instead of writing, for example:</p>
-<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;condition&gt;</span>a <span class="nt">&lt; b</span><span class="err">&lt;/condition</span><span class="nt">&gt;</span>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;condition&gt;</span>a<span class="w"> </span><span class="nt">&lt; b</span><span class="err">&lt;/condition</span><span class="nt">&gt;</span>
 </code></pre></div>
 The entity reference should be used by typing:</p>
-<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;condition&gt;</span>a <span class="ni">&amp;lt;</span> b <span class="nt">&lt;/condition&gt;</span>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;condition&gt;</span>a<span class="w"> </span><span class="ni">&amp;lt;</span><span class="w"> </span>b<span class="w"> </span><span class="nt">&lt;/condition&gt;</span>
 </code></pre></div>
 The <code>&gt;</code> character can be used in the text contained in an element, and it is not incorrect to write, for example:</p>
-<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;condition&gt;</span>a &gt; b<span class="nt">&lt;/condition&gt;</span>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;condition&gt;</span>a<span class="w"> </span>&gt;<span class="w"> </span>b<span class="nt">&lt;/condition&gt;</span>
 </code></pre></div>
 However, it is recommended to use your entity reference (<code>&amp;gt;</code>).</p>
 <p>In an XML document, the <em>ampersand</em> character is also problematic, as it is used to indicate the beginning of an
 reference to entity. For example, it is incorrect to write:
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;condition&gt;</span> a==1 <span class="err">&amp;&amp;</span> b==2 <span class="nt">&lt;/condition&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;condition&gt;</span><span class="w"> </span>a==1<span class="w"> </span><span class="err">&amp;&amp;</span><span class="w"> </span>b==2<span class="w"> </span><span class="nt">&lt;/condition&gt;</span>
 </code></pre></div>
 Instead, write the following:
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;condition&gt;</span> a==1 <span class="ni">&amp;amp;&amp;amp;</span> b==2 <span class="nt">&lt;/condition&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;condition&gt;</span><span class="w"> </span>a==1<span class="w"> </span><span class="ni">&amp;amp;&amp;amp;</span><span class="w"> </span>b==2<span class="w"> </span><span class="nt">&lt;/condition&gt;</span>
 </code></pre></div></p>
 <h3 id="character-references-in-xml">Character references in XML<a class="headerlink" href="#character-references-in-xml" title="Permanent link">¶</a></h3>
 <p>Unicode character references with &amp;# symbols can be written in an XML document, followed by the decimal value
@@ -1139,8 +1140,8 @@ Instead, write the following:
 <p>Given the XML document "products.xml":</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;? xml version = "1.0" encoding = "UTF-8"?&gt;</span>
 <span class="linenos" data-linenos="2 "></span><span class="nt">&lt;products&gt;</span>
-<span class="linenos" data-linenos="3 "></span>   <span class="nt">&lt;name</span> <span class="na">price =</span> <span class="s">"12.56&amp;#8364;"</span><span class="nt">&gt;</span> Wool hat <span class="nt">&lt;/name&gt;</span>
-<span class="linenos" data-linenos="4 "></span>   <span class="nt">&lt;name</span> <span class="na">price =</span> <span class="s">"16.99&amp;#x20AC;"</span><span class="nt">&gt;</span> Fleece cap <span class="nt">&lt;/name&gt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">   </span><span class="nt">&lt;name</span><span class="w"> </span><span class="na">price =</span><span class="w"> </span><span class="s">"12.56&amp;#8364;"</span><span class="nt">&gt;</span><span class="w"> </span>Wool<span class="w"> </span>hat<span class="w"> </span><span class="nt">&lt;/name&gt;</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">   </span><span class="nt">&lt;name</span><span class="w"> </span><span class="na">price =</span><span class="w"> </span><span class="s">"16.99&amp;#x20AC;"</span><span class="nt">&gt;</span><span class="w"> </span>Fleece<span class="w"> </span>cap<span class="w"> </span><span class="nt">&lt;/name&gt;</span>
 <span class="linenos" data-linenos="5 "></span><span class="nt">&lt;/products&gt;</span>
 </code></pre></div>
 <p>When viewing in a web browser, you can see the following:</p>
@@ -1149,31 +1150,31 @@ Instead, write the following:
 decimal (<code>&amp;#8364;</code>) in Unicode and, the second time, its hexadecimal value (<code>&amp;#x20AC;</code>).</p>
 <h2 id="comments-in-xml">Comments in XML<a class="headerlink" href="#comments-in-xml" title="Permanent link">¶</a></h2>
 <p>To write comments to an XML document, they must be written between the characters <code>&lt;!--</code> and <code>--&gt;</code>. For example:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c">&lt;!-- This is a comment written in an XML document --&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cm">&lt;!-- This is a comment written in an XML document --&gt;</span>
 </code></pre></div>
 <p>Given the XML file "letras.xml":
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?xml version = "1.0" encoding = "UTF-8"?&gt;</span>
-<span class="linenos" data-linenos=" 2 "></span><span class="c">&lt;!-- Example use of comments .--&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="cm">&lt;!-- Example use of comments .--&gt;</span>
 <span class="linenos" data-linenos=" 3 "></span><span class="nt">&lt;a&gt;</span>
-<span class="linenos" data-linenos=" 4 "></span>   <span class="nt">&lt;b&gt;</span>
-<span class="linenos" data-linenos=" 5 "></span>      <span class="nt">&lt;c</span> <span class="na">quantity=</span><span class="s">"4"</span><span class="nt">&gt;</span>cccc<span class="nt">&lt;/c&gt;</span>
-<span class="linenos" data-linenos=" 6 "></span>      <span class="nt">&lt;d</span> <span class="na">quantity=</span><span class="s">"2"</span><span class="nt">&gt;</span>dd<span class="nt">&lt;/d&gt;</span>
-<span class="linenos" data-linenos=" 7 "></span>   <span class="nt">&lt;/b&gt;</span>
-<span class="linenos" data-linenos=" 8 "></span>   <span class="nt">&lt;e&gt;</span>
-<span class="linenos" data-linenos=" 9 "></span>      <span class="nt">&lt;f</span> <span class="na">quantity=</span><span class="s">"8"</span><span class="nt">&gt;</span>ffffffff<span class="nt">&lt;/f&gt;</span>
-<span class="linenos" data-linenos="10 "></span>      <span class="c">&lt;!-- g may appear several times --&gt;</span>
-<span class="linenos" data-linenos="11 "></span>      <span class="nt">&lt;g</span> <span class="na">quantity=</span><span class="s">"5"</span><span class="nt">&gt;</span>ggggg <span class="nt">&lt;/g&gt;</span>
-<span class="linenos" data-linenos="12 "></span>      <span class="nt">&lt;g</span> <span class="na">quantity=</span><span class="s">"2"</span><span class="nt">&gt;</span>gg <span class="nt">&lt;/g&gt;</span>
-<span class="linenos" data-linenos="13 "></span>   <span class="nt">&lt;/e&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">   </span><span class="nt">&lt;b&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">      </span><span class="nt">&lt;c</span><span class="w"> </span><span class="na">quantity=</span><span class="s">"4"</span><span class="nt">&gt;</span>cccc<span class="nt">&lt;/c&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">      </span><span class="nt">&lt;d</span><span class="w"> </span><span class="na">quantity=</span><span class="s">"2"</span><span class="nt">&gt;</span>dd<span class="nt">&lt;/d&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">   </span><span class="nt">&lt;/b&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">   </span><span class="nt">&lt;e&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">      </span><span class="nt">&lt;f</span><span class="w"> </span><span class="na">quantity=</span><span class="s">"8"</span><span class="nt">&gt;</span>ffffffff<span class="nt">&lt;/f&gt;</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">      </span><span class="cm">&lt;!-- g may appear several times --&gt;</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">      </span><span class="nt">&lt;g</span><span class="w"> </span><span class="na">quantity=</span><span class="s">"5"</span><span class="nt">&gt;</span>ggggg<span class="w"> </span><span class="nt">&lt;/g&gt;</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">      </span><span class="nt">&lt;g</span><span class="w"> </span><span class="na">quantity=</span><span class="s">"2"</span><span class="nt">&gt;</span>gg<span class="w"> </span><span class="nt">&lt;/g&gt;</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">   </span><span class="nt">&lt;/e&gt;</span>
 <span class="linenos" data-linenos="14 "></span><span class="nt">&lt;/a&gt;</span>
 </code></pre></div>
 In a browser you will see:</p>
 <p><img alt="Displaying the letras.xml file in Google Chrome - Example of the {Abrirllave.com XML tutorial" src="../assets/letras-xml-chrome.gif"/></p>
 <p>In an XML document, comments cannot be written within tags. For example, it is incorrect to write:</p>
-<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;element</span> <span class="err">&lt;!--</span> <span class="err">empty</span> <span class="err">element</span> <span class="err">--</span><span class="nt">&gt;</span> /&gt;
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;element</span><span class="w"> </span><span class="err">&lt;!--</span><span class="w"> </span><span class="err">empty</span><span class="w"> </span><span class="err">element</span><span class="w"> </span><span class="err">--</span><span class="nt">&gt;</span><span class="w"> </span>/&gt;
 </code></pre></div>
 On the other hand, it should be noted that in the comments of an XML document it is not allowed to use two consecutive hyphens:</p>
-<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c">&lt;!-- two hyphens in a row - in a comment gives error --&gt;</span>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cm">&lt;!-- two hyphens in a row - in a comment gives error --&gt;</span>
 </code></pre></div>
 So, it is not possible to nest comments in an XML document.</p>
 <h2 id="cdata-sections-in-xml">CDATA sections in XML<a class="headerlink" href="#cdata-sections-in-xml" title="Permanent link">¶</a></h2>
@@ -1181,7 +1182,7 @@ So, it is not possible to nest comments in an XML document.</p>
 For example, this can be useful when you want to type text that contains any of the problematic characters: less than <code>&lt;</code>
 o ampersand <code>&amp;</code>.</p>
 <p>In an XML document, to include a CDATA section, we must start with the character string
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="err">&lt;</span>![CDATA [
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="err">&lt;</span>![CDATA<span class="w"> </span>[
 </code></pre></div>
 and ending with the characters 
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>]]&gt;.
@@ -1191,14 +1192,14 @@ and ending with the characters
 <span class="linenos" data-linenos=" 2 "></span><span class="nt">&lt;CDATA_example&gt;</span>
 <span class="linenos" data-linenos=" 3 "></span><span class="cp">&lt;![CDATA [</span>
 <span class="linenos" data-linenos=" 4 "></span><span class="cp">#include &lt;stdio.h&gt;</span>
-<span class="linenos" data-linenos=" 5 "></span>int main ()
+<span class="linenos" data-linenos=" 5 "></span>int<span class="w"> </span>main<span class="w"> </span>()
 <span class="linenos" data-linenos=" 6 "></span>{
-<span class="linenos" data-linenos=" 7 "></span>   float note;
-<span class="linenos" data-linenos=" 8 "></span>   printf ("\n Enter note (real):");
-<span class="linenos" data-linenos=" 9 "></span>   scanf ("%f", <span class="ni">&amp;note);</span>
-<span class="linenos" data-linenos="10 "></span>   if (5 <span class="err">&lt;</span>= note)
-<span class="linenos" data-linenos="11 "></span>      printf ("\n APPROVED");
-<span class="linenos" data-linenos="12 "></span>   return 0;
+<span class="linenos" data-linenos=" 7 "></span><span class="w">   </span>float<span class="w"> </span>note;
+<span class="linenos" data-linenos=" 8 "></span><span class="w">   </span>printf<span class="w"> </span>("\n<span class="w"> </span>Enter<span class="w"> </span>note<span class="w"> </span>(real):");
+<span class="linenos" data-linenos=" 9 "></span><span class="w">   </span>scanf<span class="w"> </span>("%f",<span class="w"> </span><span class="ni">&amp;note);</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">   </span>if<span class="w"> </span>(5<span class="w"> </span><span class="err">&lt;</span>=<span class="w"> </span>note)
+<span class="linenos" data-linenos="11 "></span><span class="w">      </span>printf<span class="w"> </span>("\n<span class="w"> </span>APPROVED");
+<span class="linenos" data-linenos="12 "></span><span class="w">   </span>return<span class="w"> </span>0;
 <span class="linenos" data-linenos="13 "></span>}
 <span class="linenos" data-linenos="14 "></span>]]&gt;
 <span class="linenos" data-linenos="15 "></span><span class="nt">&lt;/CDATA_example&gt;</span>
@@ -1232,43 +1233,43 @@ some specific editors like <em>XML Copy Editor</em> or an IDE with some plugin l
   XML contains names of elements or attributes from various vocabularies and results in various elements or attributes
    homonyms (with the same name): if each vocabulary is given a different namespace, the ambiguity is resolved.</p>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span> <span class="nt">&lt;menu&gt;</span>
-<span class="linenos" data-linenos="2 "></span>    <span class="nt">&lt;option&gt;</span>Save<span class="nt">&lt;/option&gt;</span>
-<span class="linenos" data-linenos="3 "></span>    <span class="nt">&lt;description&gt;</span>Save the current document<span class="nt">&lt;/description&gt;</span>
-<span class="linenos" data-linenos="4 "></span> <span class="nt">&lt;/menu&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w"> </span><span class="nt">&lt;menu&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="nt">&lt;option&gt;</span>Save<span class="nt">&lt;/option&gt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="nt">&lt;description&gt;</span>Save<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>document<span class="nt">&lt;/description&gt;</span>
+<span class="linenos" data-linenos="4 "></span><span class="w"> </span><span class="nt">&lt;/menu&gt;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span> <span class="nt">&lt;menu&gt;</span>
-<span class="linenos" data-linenos=" 2 "></span>    <span class="nt">&lt;meats&gt;</span>
-<span class="linenos" data-linenos=" 3 "></span>       <span class="nt">&lt;veal_steak</span> <span class="na">price=</span><span class="s">"12.95"</span> <span class="nt">/&gt;</span>
-<span class="linenos" data-linenos=" 4 "></span>       <span class="nt">&lt;sirloin_staeck</span> <span class="na">price=</span><span class="s">"13.60"</span> <span class="nt">/&gt;</span>
-<span class="linenos" data-linenos=" 5 "></span>    <span class="nt">&lt;/meats&gt;</span>
-<span class="linenos" data-linenos=" 6 "></span>    <span class="nt">&lt;fishes&gt;</span>
-<span class="linenos" data-linenos=" 7 "></span>       <span class="nt">&lt;baked_salmon</span>  <span class="na">price=</span><span class="s">"16.20"</span> <span class="nt">/&gt;</span>
-<span class="linenos" data-linenos=" 8 "></span>       <span class="nt">&lt;hake_in_green_sauce</span> <span class="na">price=</span><span class="s">"15.85"</span> <span class="nt">/&gt;</span>
-<span class="linenos" data-linenos=" 9 "></span>    <span class="nt">&lt;/fishes&gt;</span>
-<span class="linenos" data-linenos="10 "></span> <span class="nt">&lt;/menu&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="w"> </span><span class="nt">&lt;menu&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="nt">&lt;meats&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">       </span><span class="nt">&lt;veal_steak</span><span class="w"> </span><span class="na">price=</span><span class="s">"12.95"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">       </span><span class="nt">&lt;sirloin_staeck</span><span class="w"> </span><span class="na">price=</span><span class="s">"13.60"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="nt">&lt;/meats&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="nt">&lt;fishes&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">       </span><span class="nt">&lt;baked_salmon</span><span class="w">  </span><span class="na">price=</span><span class="s">"16.20"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">       </span><span class="nt">&lt;hake_in_green_sauce</span><span class="w"> </span><span class="na">price=</span><span class="s">"15.85"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="nt">&lt;/fishes&gt;</span>
+<span class="linenos" data-linenos="10 "></span><span class="w"> </span><span class="nt">&lt;/menu&gt;</span>
 </code></pre></div>
 <p>So, if the <code>&lt;menu&gt;</code> elements are included in an XML document, a name conflict arises. To solve it,
  namespaces can be used. For example, typing:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?xml version = "1.0" encoding = "UTF-8"?&gt;</span>
-<span class="hll"><span class="linenos" data-linenos=" 2 "></span><span class="nt">&lt;e1:example</span> <span class="na">xmlns:e1=</span><span class="s">"http://www.abrirllave.com/example1"</span>
-</span><span class="hll"><span class="linenos" data-linenos=" 3 "></span>   <span class="na">xmlns:e2=</span><span class="s">"http://www.abrirllave.com/ejemplo2"</span><span class="nt">&gt;</span>  
+<span class="hll"><span class="linenos" data-linenos=" 2 "></span><span class="nt">&lt;e1:example</span><span class="w"> </span><span class="na">xmlns:e1=</span><span class="s">"http://www.abrirllave.com/example1"</span>
+</span><span class="hll"><span class="linenos" data-linenos=" 3 "></span><span class="w">   </span><span class="na">xmlns:e2=</span><span class="s">"http://www.abrirllave.com/ejemplo2"</span><span class="nt">&gt;</span><span class="w">  </span>
 </span><span class="linenos" data-linenos=" 4 "></span>
-<span class="linenos" data-linenos=" 5 "></span> <span class="nt">&lt;e1:menu&gt;</span>
-<span class="linenos" data-linenos=" 6 "></span>    <span class="nt">&lt;e1:option&gt;</span>Save<span class="nt">&lt;/e1:option&gt;</span>
-<span class="linenos" data-linenos=" 7 "></span>    <span class="nt">&lt;e1:description&gt;</span>Save the current document<span class="nt">&lt;/e1:description&gt;</span>
-<span class="linenos" data-linenos=" 8 "></span> <span class="nt">&lt;/e1:menu&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w"> </span><span class="nt">&lt;e1:menu&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="nt">&lt;e1:option&gt;</span>Save<span class="nt">&lt;/e1:option&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="nt">&lt;e1:description&gt;</span>Save<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>document<span class="nt">&lt;/e1:description&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w"> </span><span class="nt">&lt;/e1:menu&gt;</span>
 <span class="linenos" data-linenos=" 9 "></span>
-<span class="linenos" data-linenos="10 "></span> <span class="nt">&lt;e2:menu&gt;</span>
-<span class="linenos" data-linenos="11 "></span>    <span class="nt">&lt;e2:meats&gt;</span>
-<span class="linenos" data-linenos="12 "></span>       <span class="nt">&lt;e2:veal_steak</span> <span class="na">price =</span> <span class="s">"12.95"</span> <span class="nt">/&gt;</span>
-<span class="linenos" data-linenos="13 "></span>       <span class="nt">&lt;e2:sirloin_staeck</span> <span class="na">price =</span> <span class="s">"13.60"</span> <span class="nt">/&gt;</span>
-<span class="linenos" data-linenos="14 "></span>    <span class="nt">&lt;/e2:meats&gt;</span>
-<span class="linenos" data-linenos="15 "></span>    <span class="nt">&lt;e2:fishes&gt;</span>
-<span class="linenos" data-linenos="16 "></span>       <span class="nt">&lt;e2:baked_salmon</span>  <span class="na">price =</span> <span class="s">"16.20"</span> <span class="nt">/&gt;</span>
-<span class="linenos" data-linenos="17 "></span>       <span class="nt">&lt;e2:hake_in_green_sauce</span> <span class="na">price =</span> <span class="s">"15.85"</span> <span class="nt">/&gt;</span>
-<span class="linenos" data-linenos="18 "></span>    <span class="nt">&lt;/e2:fishes&gt;</span>
-<span class="linenos" data-linenos="19 "></span> <span class="nt">&lt;/e2:menu&gt;</span>
+<span class="linenos" data-linenos="10 "></span><span class="w"> </span><span class="nt">&lt;e2:menu&gt;</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="nt">&lt;e2:meats&gt;</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">       </span><span class="nt">&lt;e2:veal_steak</span><span class="w"> </span><span class="na">price =</span><span class="w"> </span><span class="s">"12.95"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">       </span><span class="nt">&lt;e2:sirloin_staeck</span><span class="w"> </span><span class="na">price =</span><span class="w"> </span><span class="s">"13.60"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="nt">&lt;/e2:meats&gt;</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="nt">&lt;e2:fishes&gt;</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">       </span><span class="nt">&lt;e2:baked_salmon</span><span class="w">  </span><span class="na">price =</span><span class="w"> </span><span class="s">"16.20"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">       </span><span class="nt">&lt;e2:hake_in_green_sauce</span><span class="w"> </span><span class="na">price =</span><span class="w"> </span><span class="s">"15.85"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="nt">&lt;/e2:fishes&gt;</span>
+<span class="linenos" data-linenos="19 "></span><span class="w"> </span><span class="nt">&lt;/e2:menu&gt;</span>
 <span class="linenos" data-linenos="20 "></span><span class="nt">&lt;/e1:example&gt;</span>
 </code></pre></div>
 <p>The following syntax is used to define a namespace:</p>
@@ -1289,55 +1290,55 @@ document: <code>&lt;e1: menu&gt;</code>, <code>&lt;e2: menu&gt;</code>, <code>&l
 <p>In this way, both the element where the namespace has been defined, and all its successors (children, children of children,
 etc.), must belong to this namespace. For example:</p>
 <p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?xml version = "1.0" encoding = "UTF-8"?&gt;</span>
-<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;example</span> <span class="na">xmlns=</span><span class="s">"http://www.abrirllave.com/example1"</span><span class="nt">&gt;</span>
-<span class="linenos" data-linenos="3 "></span>  <span class="nt">&lt;menu&gt;</span>
-<span class="linenos" data-linenos="4 "></span>    <span class="nt">&lt;option&gt;</span>Save<span class="nt">&lt;/option&gt;</span>
-<span class="linenos" data-linenos="5 "></span>    <span class="nt">&lt;description&gt;</span>Save the current document<span class="nt">&lt;/description&gt;</span>
-<span class="linenos" data-linenos="6 "></span> <span class="nt">&lt;/menu&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="nt">&lt;example</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://www.abrirllave.com/example1"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">  </span><span class="nt">&lt;menu&gt;</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="nt">&lt;option&gt;</span>Save<span class="nt">&lt;/option&gt;</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="nt">&lt;description&gt;</span>Save<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>document<span class="nt">&lt;/description&gt;</span>
+<span class="linenos" data-linenos="6 "></span><span class="w"> </span><span class="nt">&lt;/menu&gt;</span>
 </code></pre></div>
 In the following example, a default namespace is initially defined for the <code>&lt;example&gt;</code> element and its contents.
  in it. However, a second namespace is then defined, which by default affects the second <code>&lt;menu&gt; element
  that appears in the document and its successors:</code><meats><code>,</code><fishes><code>,</code><veal_steak>` ...</veal_steak></fishes></meats></p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?xml version = "1.0" encoding = "UTF-8"?&gt;</span>
-<span class="hll"><span class="linenos" data-linenos=" 2 "></span><span class="nt">&lt;example</span> <span class="na">xmlns=</span><span class="s">"http://www.abrirllave.com/example1"</span><span class="nt">&gt;</span>  
+<span class="hll"><span class="linenos" data-linenos=" 2 "></span><span class="nt">&lt;example</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://www.abrirllave.com/example1"</span><span class="nt">&gt;</span><span class="w">  </span>
 </span><span class="linenos" data-linenos=" 3 "></span>
-<span class="linenos" data-linenos=" 4 "></span> <span class="nt">&lt;menu&gt;</span>
-<span class="linenos" data-linenos=" 5 "></span>    <span class="nt">&lt;option&gt;</span>Save<span class="nt">&lt;/option&gt;</span>
-<span class="linenos" data-linenos=" 6 "></span>    <span class="nt">&lt;description&gt;</span>Save the current document<span class="nt">&lt;/description&gt;</span>
-<span class="linenos" data-linenos=" 7 "></span> <span class="nt">&lt;/menu&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w"> </span><span class="nt">&lt;menu&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="nt">&lt;option&gt;</span>Save<span class="nt">&lt;/option&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="nt">&lt;description&gt;</span>Save<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>document<span class="nt">&lt;/description&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w"> </span><span class="nt">&lt;/menu&gt;</span>
 <span class="linenos" data-linenos=" 8 "></span>
-<span class="hll"><span class="linenos" data-linenos=" 9 "></span> <span class="nt">&lt;menu</span> <span class="na">xmlns=</span><span class="s">"http://www.abrirllave.com/example2"</span><span class="nt">&gt;</span>
-</span><span class="linenos" data-linenos="10 "></span>    <span class="nt">&lt;meats&gt;</span>
-<span class="linenos" data-linenos="11 "></span>       <span class="nt">&lt;veal_steak</span> <span class="na">price =</span> <span class="s">"12.95"</span> <span class="nt">/&gt;</span>
-<span class="linenos" data-linenos="12 "></span>       <span class="nt">&lt;sirloin_staeck</span> <span class="na">price =</span> <span class="s">"13.60"</span> <span class="nt">/&gt;</span>
-<span class="linenos" data-linenos="13 "></span>    <span class="nt">&lt;/meats&gt;</span>
-<span class="linenos" data-linenos="14 "></span>    <span class="nt">&lt;fishes&gt;</span>
-<span class="linenos" data-linenos="15 "></span>       <span class="nt">&lt;baked_salmon</span>  <span class="na">price =</span> <span class="s">"16.20"</span> <span class="nt">/&gt;</span>
-<span class="linenos" data-linenos="16 "></span>       <span class="nt">&lt;hake_in_green_sauce</span> <span class="na">price =</span> <span class="s">"15.85"</span> <span class="nt">/&gt;</span>
-<span class="linenos" data-linenos="17 "></span>    <span class="nt">&lt;/fishes&gt;</span>
-<span class="linenos" data-linenos="18 "></span> <span class="nt">&lt;/menu&gt;</span>
+<span class="hll"><span class="linenos" data-linenos=" 9 "></span><span class="w"> </span><span class="nt">&lt;menu</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://www.abrirllave.com/example2"</span><span class="nt">&gt;</span>
+</span><span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="nt">&lt;meats&gt;</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">       </span><span class="nt">&lt;veal_steak</span><span class="w"> </span><span class="na">price =</span><span class="w"> </span><span class="s">"12.95"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">       </span><span class="nt">&lt;sirloin_staeck</span><span class="w"> </span><span class="na">price =</span><span class="w"> </span><span class="s">"13.60"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="nt">&lt;/meats&gt;</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="nt">&lt;fishes&gt;</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">       </span><span class="nt">&lt;baked_salmon</span><span class="w">  </span><span class="na">price =</span><span class="w"> </span><span class="s">"16.20"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">       </span><span class="nt">&lt;hake_in_green_sauce</span><span class="w"> </span><span class="na">price =</span><span class="w"> </span><span class="s">"15.85"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="nt">&lt;/fishes&gt;</span>
+<span class="linenos" data-linenos="18 "></span><span class="w"> </span><span class="nt">&lt;/menu&gt;</span>
 <span class="linenos" data-linenos="19 "></span><span class="nt">&lt;/example&gt;</span>
 </code></pre></div>
 <p>In an XML document, to indicate that certain elements -or all- do not belong to any namespace, the attribute is written
 <code>xmlns</code> empty, that is,<code>xmlns=""</code>.</p>
 <p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?xml version = "1.0" encoding = "UTF-8"?&gt;</span>
-<span class="linenos" data-linenos=" 2 "></span><span class="nt">&lt;example</span> <span class="na">xmlns=</span><span class="s">"http://www.abrirllave.com/example1"</span><span class="nt">&gt;</span>  
+<span class="linenos" data-linenos=" 2 "></span><span class="nt">&lt;example</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://www.abrirllave.com/example1"</span><span class="nt">&gt;</span><span class="w">  </span>
 <span class="linenos" data-linenos=" 3 "></span>
-<span class="linenos" data-linenos=" 4 "></span> <span class="nt">&lt;menu&gt;</span>
-<span class="linenos" data-linenos=" 5 "></span>    <span class="nt">&lt;option&gt;</span>Save<span class="nt">&lt;/option&gt;</span>
-<span class="linenos" data-linenos=" 6 "></span>    <span class="nt">&lt;description&gt;</span>Save the current document<span class="nt">&lt;/description&gt;</span>
-<span class="linenos" data-linenos=" 7 "></span> <span class="nt">&lt;/menu&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w"> </span><span class="nt">&lt;menu&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="nt">&lt;option&gt;</span>Save<span class="nt">&lt;/option&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="nt">&lt;description&gt;</span>Save<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>document<span class="nt">&lt;/description&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w"> </span><span class="nt">&lt;/menu&gt;</span>
 <span class="linenos" data-linenos=" 8 "></span>
-<span class="linenos" data-linenos=" 9 "></span> <span class="nt">&lt;menu</span> <span class="na">xmlns=</span><span class="s">"http://www.abrirllave.com/example2"</span><span class="nt">&gt;</span>
-<span class="linenos" data-linenos="10 "></span>    <span class="nt">&lt;meats&gt;</span>
-<span class="linenos" data-linenos="11 "></span>       <span class="nt">&lt;veal_steak</span> <span class="na">price =</span> <span class="s">"12.95"</span> <span class="nt">/&gt;</span>
-<span class="linenos" data-linenos="12 "></span>       <span class="nt">&lt;sirloin_staeck</span> <span class="na">price =</span> <span class="s">"13.60"</span> <span class="nt">/&gt;</span>
-<span class="linenos" data-linenos="13 "></span>    <span class="nt">&lt;/meats&gt;</span>
-<span class="hll"><span class="linenos" data-linenos="14 "></span>    <span class="nt">&lt;fishes</span> <span class="na">xmlns=</span><span class="s">""</span><span class="nt">&gt;</span>
-</span><span class="linenos" data-linenos="15 "></span>       <span class="nt">&lt;baked_salmon</span>  <span class="na">price =</span> <span class="s">"16.20"</span> <span class="nt">/&gt;</span>
-<span class="linenos" data-linenos="16 "></span>       <span class="nt">&lt;hake_in_green_sauce</span> <span class="na">price =</span> <span class="s">"15.85"</span> <span class="nt">/&gt;</span>
-<span class="linenos" data-linenos="17 "></span>    <span class="nt">&lt;/fishes&gt;</span>
-<span class="linenos" data-linenos="18 "></span> <span class="nt">&lt;/menu&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w"> </span><span class="nt">&lt;menu</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://www.abrirllave.com/example2"</span><span class="nt">&gt;</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="nt">&lt;meats&gt;</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">       </span><span class="nt">&lt;veal_steak</span><span class="w"> </span><span class="na">price =</span><span class="w"> </span><span class="s">"12.95"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">       </span><span class="nt">&lt;sirloin_staeck</span><span class="w"> </span><span class="na">price =</span><span class="w"> </span><span class="s">"13.60"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="nt">&lt;/meats&gt;</span>
+<span class="hll"><span class="linenos" data-linenos="14 "></span><span class="w">    </span><span class="nt">&lt;fishes</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">""</span><span class="nt">&gt;</span>
+</span><span class="linenos" data-linenos="15 "></span><span class="w">       </span><span class="nt">&lt;baked_salmon</span><span class="w">  </span><span class="na">price =</span><span class="w"> </span><span class="s">"16.20"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">       </span><span class="nt">&lt;hake_in_green_sauce</span><span class="w"> </span><span class="na">price =</span><span class="w"> </span><span class="s">"15.85"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="nt">&lt;/fishes&gt;</span>
+<span class="linenos" data-linenos="18 "></span><span class="w"> </span><span class="nt">&lt;/menu&gt;</span>
 <span class="linenos" data-linenos="19 "></span><span class="nt">&lt;/example&gt;</span>
 </code></pre></div>
 In this case, the element <fishes> and its children do not belong in any namespace.</fishes></p>
@@ -1358,42 +1359,15 @@ en <a href="https://www.mclibre.org/consultar/xml/">https://www.mclibre.org/cons
 </div>
 </main>
 <footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Markup languages" class="md-footer__link md-footer__link--prev" href="../01_llenguatges/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Previous
-              </span>
-              Markup languages
-            </div>
-</div>
-</a>
-<a aria-label="Next: Tasks" class="md-footer__link md-footer__link--next" href="../03_tasks/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Next
-              </span>
-              Tasks
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
-</div>
-</a>
-</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
-<div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
-          Material for MkDocs
-        </a>
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
 </div>
 </div>
 </div>
@@ -1402,8 +1376,8 @@ en <a href="https://www.mclibre.org/consultar/xml/">https://www.mclibre.org/cons
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
-<script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.a00a7c5e.min.js"></script>
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 <script>mermaid.initialize({});</script></body>
 </html>
