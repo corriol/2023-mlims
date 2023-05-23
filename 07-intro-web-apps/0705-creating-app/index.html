@@ -355,6 +355,15 @@
 <a class="md-nav__link" href="#using-nodejss-http-library-to-create-a-web-server">
     Using Node.js's http library to create a web server
   </a>
+<nav aria-label="Using Node.js's http library to create a web server" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-basic-app-using-http-library">
+    A basic app using http library
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -430,6 +439,15 @@
 <a class="md-nav__link" href="#using-nodejss-http-library-to-create-a-web-server">
     Using Node.js's http library to create a web server
   </a>
+<nav aria-label="Using Node.js's http library to create a web server" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-basic-app-using-http-library">
+    A basic app using http library
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -484,6 +502,70 @@
 <li><code>res.end()</code>: Ends the response and sends it to the client.</li>
 </ul>
 <p>By using these classes and methods, you can create powerful and flexible web applications with Node.js.</p>
+<h3 id="a-basic-app-using-http-library">A basic app using <code>http</code> library<a class="headerlink" href="#a-basic-app-using-http-library" title="Permanent link">¶</a></h3>
+<p>The following code will create a web server that responds with "Hello, World!":</p>
+<ol>
+<li>Start by setting up a new Node.js project with the following structure:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>├── server.js
+<span class="linenos" data-linenos="2 "></span>└── public
+<span class="linenos" data-linenos="3 "></span>    └── index.html
+</code></pre></div>
+<ol start="2">
+<li>
+<p>Open the <code>index.html</code> file in the <code>public</code> folder and add the following content:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Hello World<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="7 "></span>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="9 "></span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+</li>
+<li>
+<p>In the <code>server.js</code> file, add the following code to create a basic web server using the built-in <code>http</code> module:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">http</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'http'</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'path'</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">((</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="c1">// Set the content type to HTML</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s1">'Content-Type'</span><span class="p">,</span><span class="w"> </span><span class="s1">'text/html'</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="c1">// Read the index.html file and send its contents as the response</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">filePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s1">'public'</span><span class="p">,</span><span class="w"> </span><span class="s1">'index.html'</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">filePath</span><span class="p">,</span><span class="w"> </span><span class="s1">'utf-8'</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">content</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">            </span><span class="nx">res</span><span class="p">.</span><span class="nx">statusCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">500</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">            </span><span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">'Internal Server Error'</span><span class="p">);</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">            </span><span class="nx">res</span><span class="p">.</span><span class="nx">statusCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">200</span><span class="p">;</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">            </span><span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="nx">content</span><span class="p">);</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">    </span><span class="p">});</span>
+<span class="linenos" data-linenos="21 "></span><span class="p">});</span>
+<span class="linenos" data-linenos="22 "></span>
+<span class="linenos" data-linenos="23 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3000</span><span class="p">;</span>
+<span class="linenos" data-linenos="24 "></span><span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="25 "></span><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Server running on port </span><span class="si">${</span><span class="nx">port</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="linenos" data-linenos="26 "></span><span class="p">});</span>
+</code></pre></div>
+<ol start="3">
+<li>
+<p>Open a terminal, navigate to the project folder, and run the following command to start the server:
+   <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>node server.js
+</code></pre></div></p>
+</li>
+<li>
+<p>Open a web browser and visit <code>http://localhost:3000</code> to see the "Hello, World!" message displayed in HTML.</p>
+</li>
+</ol>
 </article>
 </div>
 </div>
