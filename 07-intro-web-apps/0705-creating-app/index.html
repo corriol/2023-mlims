@@ -361,6 +361,20 @@
     A basic app using http library
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#using-a-template-engine">
+    Using a template engine
+  </a>
+<nav aria-label="Using a template engine" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-example-using-ejs">
+    Basic example using EJS
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 </ul>
 </nav>
 </li>
@@ -444,6 +458,20 @@
 <a class="md-nav__link" href="#a-basic-app-using-http-library">
     A basic app using http library
   </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#using-a-template-engine">
+    Using a template engine
+  </a>
+<nav aria-label="Using a template engine" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#basic-example-using-ejs">
+    Basic example using EJS
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -565,6 +593,145 @@
 <p>Open a web browser and visit <code>http://localhost:3000</code> to see the "Hello, World!" message displayed in HTML.</p>
 </li>
 </ol>
+<h3 id="using-a-template-engine">Using a template engine<a class="headerlink" href="#using-a-template-engine" title="Permanent link">¶</a></h3>
+<p>A template engine is a library that allows you to generate dynamic content by combining predefined templates with data. It simplifies the process of creating dynamic web pages or generating other text-based documents by separating the presentation logic (the template) from the data or business logic.</p>
+<p>In the context of Node.js, there are several popular template engines available that can be used to generate dynamic HTML pages, such as:</p>
+<ol>
+<li><strong>EJS (Embedded JavaScript)</strong>: EJS is a simple and widely used template engine for Node.js. It allows you to embed JavaScript code within your HTML templates. You can define variables, loops, conditionals, and other JavaScript expressions directly in the template. EJS templates use the <code>.ejs</code> file extension.</li>
+</ol>
+<p>Example usage:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c">&lt;!-- index.ejs --&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Dynamic Page<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, <span class="err">&lt;</span>%= name %&gt;!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>  <span class="err">&lt;</span>% if (isAdmin) { %&gt;
+<span class="linenos" data-linenos="10 "></span>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Welcome, administrator!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="11 "></span>  <span class="err">&lt;</span>% } else { %&gt;
+<span class="linenos" data-linenos="12 "></span>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Welcome, guest!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="13 "></span>  <span class="err">&lt;</span>% } %&gt;
+<span class="linenos" data-linenos="14 "></span><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<ol start="2">
+<li><strong>Pug (formerly Jade)</strong>: Pug is a concise and feature-rich template engine for Node.js. It uses indentation and a clean syntax to define HTML structure and elements. Pug templates use the <code>.pug</code> file extension.</li>
+</ol>
+<p>Example usage:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c">// index.pug</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nt">doctype</span> html
+<span class="linenos" data-linenos=" 3 "></span><span class="nt">html</span>
+<span class="linenos" data-linenos=" 4 "></span>  <span class="nt">head</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="nt">title</span><span class="p">=</span> <span class="n">pageTitle</span>
+<span class="linenos" data-linenos=" 6 "></span>  <span class="nt">body</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="nt">h1</span><span class="p">=</span> <span class="n">greeting</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="nt">if</span> isAdmin
+<span class="linenos" data-linenos=" 9 "></span>      <span class="nt">p</span> Welcome, administrator!
+<span class="linenos" data-linenos="10 "></span>    <span class="nt">else</span>
+<span class="linenos" data-linenos="11 "></span>      <span class="nt">p</span> Welcome, guest!
+</code></pre></div></p>
+<ol start="3">
+<li><strong>nunjucks</strong>: Nunjucks is another popular template engine for Node.js that provides a powerful and flexible way to generate dynamic content. It is inspired by Jinja2, a template engine used in Python.</li>
+</ol>
+<p>Example usage:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c">&lt;!-- index.nkj --&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Dynamic Page<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, {{ name }}!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>  {% if isAdmin %}
+<span class="linenos" data-linenos="10 "></span>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Welcome, administrator!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="11 "></span>  {% else %}
+<span class="linenos" data-linenos="12 "></span>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Welcome, guest!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="13 "></span>  {% endif %}
+<span class="linenos" data-linenos="14 "></span><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<p>These are just a few examples of popular template engines in the Node.js ecosystem. Each template engine has its own syntax and features, but they all serve the purpose of separating the presentation logic from the data, making it easier to generate dynamic content in web applications.</p>
+<p>By using a template engine, you can dynamically render HTML pages with data from your Node.js application, resulting in more maintainable and flexible code.</p>
+<h4 id="basic-example-using-ejs">Basic example using <code>EJS</code><a class="headerlink" href="#basic-example-using-ejs" title="Permanent link">¶</a></h4>
+<p>Here's an example of using EJS as a template engine in a Node.js application:</p>
+<ol>
+<li>
+<p>Set up a new Node.js project with the following structure:
+   <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>├── server.js
+<span class="linenos" data-linenos="2 "></span>└── views
+<span class="linenos" data-linenos="3 "></span>    └── index.ejs
+</code></pre></div></p>
+</li>
+<li>
+<p>In the <code>views</code> folder, create an <code>index.ejs</code> file with the following content:
+   <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Dynamic Page<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, <span class="err">&lt;</span>%= name %&gt;!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="err">&lt;</span>% if (isAdmin) { %&gt;
+<span class="linenos" data-linenos=" 9 "></span>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Welcome, administrator!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="10 "></span>  <span class="err">&lt;</span>% } else { %&gt;
+<span class="linenos" data-linenos="11 "></span>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Welcome, guest!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="12 "></span>  <span class="err">&lt;</span>% } %&gt;
+<span class="linenos" data-linenos="13 "></span><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="14 "></span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>In your <code>server.js</code> file, include the necessary code to set up a basic HTTP server and render the EJS template:
+   <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">const</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'http'</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="kd">const</span> <span class="nx">ejs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ejs'</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="kd">const</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">((</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span>  <span class="c1">// Read the template file</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">'./views/index.ejs'</span><span class="p">,</span> <span class="s1">'utf8'</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">template</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span>      <span class="nx">res</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mf">500</span><span class="p">,</span> <span class="p">{</span> <span class="s1">'Content-Type'</span><span class="o">:</span> <span class="s1">'text/plain'</span> <span class="p">});</span>
+<span class="linenos" data-linenos="10 "></span>      <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">'Internal Server Error'</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span>      <span class="k">return</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span>    <span class="c1">// Define the data</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos" data-linenos="16 "></span>      <span class="nx">name</span><span class="o">:</span> <span class="s1">'John Doe'</span><span class="p">,</span>
+<span class="linenos" data-linenos="17 "></span>      <span class="nx">isAdmin</span><span class="o">:</span> <span class="kc">true</span>
+<span class="linenos" data-linenos="18 "></span>    <span class="p">};</span>
+<span class="linenos" data-linenos="19 "></span>
+<span class="linenos" data-linenos="20 "></span>    <span class="c1">// Render the template with the data</span>
+<span class="linenos" data-linenos="21 "></span>    <span class="kd">const</span> <span class="nx">rendered</span> <span class="o">=</span> <span class="nx">ejs</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">template</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+<span class="linenos" data-linenos="22 "></span>
+<span class="linenos" data-linenos="23 "></span>    <span class="c1">// Set the response headers and send the rendered template</span>
+<span class="linenos" data-linenos="24 "></span>    <span class="nx">res</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mf">200</span><span class="p">,</span> <span class="p">{</span> <span class="s1">'Content-Type'</span><span class="o">:</span> <span class="s1">'text/html'</span> <span class="p">});</span>
+<span class="linenos" data-linenos="25 "></span>    <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="nx">rendered</span><span class="p">);</span>
+<span class="linenos" data-linenos="26 "></span>  <span class="p">});</span>
+<span class="linenos" data-linenos="27 "></span><span class="p">});</span>
+<span class="linenos" data-linenos="28 "></span>
+<span class="linenos" data-linenos="29 "></span><span class="kd">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="mf">3000</span><span class="p">;</span>
+<span class="linenos" data-linenos="30 "></span>
+<span class="linenos" data-linenos="31 "></span><span class="c1">// Start the server</span>
+<span class="linenos" data-linenos="32 "></span><span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos" data-linenos="33 "></span>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Server running on port </span><span class="si">${</span><span class="nx">port</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="linenos" data-linenos="34 "></span><span class="p">});</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Run the server using the command:
+   <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>node server.js
+</code></pre></div></p>
+</li>
+<li>
+<p>Open a web browser and visit <code>http://localhost:3000</code> to see the rendered EJS template with the dynamic content.</p>
+</li>
+</ol>
+<p>In this example, the HTTP server is created using the <code>http</code> module. The <code>fs</code> module is used to read the EJS template file, and the <code>ejs</code> module is used to render the template with the provided data.</p>
+<p>By dynamically rendering the EJS template, you can generate HTML pages with dynamic content.</p>
+<p>You have more information about EJS in <a href="https://ejs.co/">Embedded JavaScript templating</a></p>
 </article>
 </div>
 </div>
