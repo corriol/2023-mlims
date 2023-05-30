@@ -5,19 +5,20 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../0702-node/" rel="prev"/>
+<link href="../0705-creating-app/" rel="next"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.2.2, mkdocs-material-7.2.6" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.9" name="generator"/>
 <title>Modules and packages - MLIMS</title>
-<link href="../../assets/stylesheets/main.802231af.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
-<meta content="#4cae4f" name="theme-color"/>
+<link href="../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700%7C&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font-family:"Lato";--md-code-font-family:""}</style>
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Lato";--md-code-font:"Roboto Mono"}</style>
 <link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
-<body data-md-color-accent="brown" data-md-color-primary="green" data-md-color-scheme="" dir="ltr">
-<script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<body data-md-color-accent="brown" data-md-color-primary="green" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
@@ -34,7 +35,7 @@
 <img alt="logo" src="../../assets/logo.png"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
 </label>
 <div class="md-header__title" data-md-component="header-title">
 <div class="md-header__ellipsis">
@@ -53,7 +54,7 @@
 </div>
 </div>
 <label class="md-header__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
 </label>
 <div class="md-search" data-md-component="search" role="dialog">
 <label class="md-search__overlay" for="__search"></label>
@@ -61,12 +62,12 @@
 <form class="md-search__form" name="search">
 <input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
 <label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </label>
 <nav aria-label="Search" class="md-search__options">
-<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
 </button>
 </nav>
 </form>
@@ -76,7 +77,7 @@
 <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list"></ol>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
 </div>
 </div>
@@ -99,12 +100,12 @@
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1">
-        1. Markup languages. XML
-        <span class="md-nav__icon md-icon"></span>
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          1. Markup languages. XML
+          <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="1. Markup languages. XML" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
           1. Markup languages. XML
@@ -134,12 +135,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2">
-        2. XML schemas and vocabularies
-        <span class="md-nav__icon md-icon"></span>
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          2. XML schemas and vocabularies
+          <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="2. XML schemas and vocabularies" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
           2. XML schemas and vocabularies
@@ -169,12 +170,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3">
-        3. HTML
-        <span class="md-nav__icon md-icon"></span>
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          3. HTML
+          <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="3. HTML" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
           3. HTML
@@ -194,12 +195,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
-<label class="md-nav__link" for="__nav_4">
-        4. CSS
-        <span class="md-nav__icon md-icon"></span>
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          4. CSS
+          <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="4. CSS" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
           4. CSS
@@ -224,12 +225,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5">
-        5. XML handling and storage
-        <span class="md-nav__icon md-icon"></span>
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          5. XML handling and storage
+          <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="5. XML handling and storage" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
           5. XML handling and storage
@@ -264,12 +265,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6">
-        6. An introduction to javascript
-        <span class="md-nav__icon md-icon"></span>
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          6. An introduction to javascript
+          <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="6. An introduction to javascript" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
           6. An introduction to javascript
@@ -284,12 +285,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
-<label class="md-nav__link" for="__nav_7">
-        7. An introduction to server side languages
-        <span class="md-nav__icon md-icon"></span>
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          7. An introduction to server side languages
+          <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="7. An introduction to server side languages" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
           7. An introduction to server side languages
@@ -316,7 +317,7 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
           Modules and packages
           <span class="md-nav__icon md-icon"></span>
@@ -386,12 +387,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
-<label class="md-nav__link" for="__nav_8">
-        8. Bussines information systems
-        <span class="md-nav__icon md-icon"></span>
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          8. Bussines information systems
+          <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="8. Bussines information systems" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
           8. Bussines information systems
@@ -518,20 +519,20 @@
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1">// index.js</span>
 <span class="linenos" data-linenos=" 2 "></span>
 <span class="linenos" data-linenos=" 3 "></span><span class="c1">// Import the prompt module</span>
-<span class="linenos" data-linenos=" 4 "></span><span class="kd">const</span> <span class="nx">prompt</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'prompt'</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">prompt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'prompt'</span><span class="p">);</span>
 <span class="linenos" data-linenos=" 5 "></span>
 <span class="linenos" data-linenos=" 6 "></span><span class="c1">// Start the prompt</span>
 <span class="linenos" data-linenos=" 7 "></span><span class="nx">prompt</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
 <span class="linenos" data-linenos=" 8 "></span>
 <span class="linenos" data-linenos=" 9 "></span><span class="c1">// Get the name and age from the user</span>
-<span class="linenos" data-linenos="10 "></span><span class="nx">prompt</span><span class="p">.</span><span class="nx">get</span><span class="p">([</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'age'</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos" data-linenos="11 "></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos" data-linenos="12 "></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
-<span class="linenos" data-linenos="13 "></span>    <span class="k">return</span><span class="p">;</span>
-<span class="linenos" data-linenos="14 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="10 "></span><span class="nx">prompt</span><span class="p">.</span><span class="nx">get</span><span class="p">([</span><span class="s1">'name'</span><span class="p">,</span><span class="w"> </span><span class="s1">'age'</span><span class="p">],</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">  </span><span class="p">}</span>
 <span class="linenos" data-linenos="15 "></span>
-<span class="linenos" data-linenos="16 "></span>  <span class="c1">// Print out a message with the user's information</span>
-<span class="linenos" data-linenos="17 "></span>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Your name is </span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> and you are </span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">age</span><span class="si">}</span><span class="sb"> years old.`</span><span class="p">);</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">  </span><span class="c1">// Print out a message with the user's information</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Your name is </span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> and you are </span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">age</span><span class="si">}</span><span class="sb"> years old.`</span><span class="p">);</span>
 <span class="linenos" data-linenos="18 "></span><span class="p">});</span>
 </code></pre></div>
 <p>In this program, we use the <code>prompt</code> module to ask the user for their name and age. We pass an array of property names (<code>['name', 'age']</code>) to <code>prompt.get()</code>, which will prompt the user for those values. We also pass a callback function that will be called once the user has entered their information.</p>
@@ -543,65 +544,65 @@
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>npm i mysql2
 </code></pre></div>
 <p>Supose we have the following database:</p>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="o">`</span><span class="n">nodejs_sample</span><span class="o">`</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="o">`</span><span class="n">nodejs_sample</span><span class="o">`</span><span class="p">;</span>
 <span class="linenos" data-linenos=" 2 "></span>
-<span class="linenos" data-linenos=" 3 "></span><span class="n">USE</span> <span class="o">`</span><span class="n">nodejs_sample</span><span class="o">`</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="n">USE</span><span class="w"> </span><span class="o">`</span><span class="n">nodejs_sample</span><span class="o">`</span><span class="p">;</span>
 <span class="linenos" data-linenos=" 4 "></span>
-<span class="linenos" data-linenos=" 5 "></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="o">`</span><span class="n">users</span><span class="o">`</span> <span class="p">(</span>
-<span class="linenos" data-linenos=" 6 "></span>  <span class="o">`</span><span class="n">id</span><span class="o">`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
-<span class="linenos" data-linenos=" 7 "></span>  <span class="o">`</span><span class="n">username</span><span class="o">`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-<span class="linenos" data-linenos=" 8 "></span>  <span class="o">`</span><span class="n">email</span><span class="o">`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-<span class="linenos" data-linenos=" 9 "></span>  <span class="o">`</span><span class="n">age</span><span class="o">`</span> <span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
-<span class="linenos" data-linenos="10 "></span>  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="o">`</span><span class="n">users</span><span class="o">`</span><span class="w"> </span><span class="p">(</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">  </span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="w"> </span><span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">  </span><span class="o">`</span><span class="n">username</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">  </span><span class="o">`</span><span class="n">email</span><span class="o">`</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">  </span><span class="o">`</span><span class="n">age</span><span class="o">`</span><span class="w"> </span><span class="nb">INT</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">  </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">id</span><span class="o">`</span><span class="p">)</span>
 <span class="linenos" data-linenos="11 "></span><span class="p">);</span>
 <span class="linenos" data-linenos="12 "></span>
-<span class="linenos" data-linenos="13 "></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">users</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">'JohnDoe'</span><span class="p">,</span> <span class="s1">'johndoe@example.com'</span><span class="p">,</span> <span class="mi">28</span><span class="p">);</span>
-<span class="linenos" data-linenos="14 "></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">users</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">'JaneSmith'</span><span class="p">,</span> <span class="s1">'janesmith@example.com'</span><span class="p">,</span> <span class="mi">35</span><span class="p">);</span>
-<span class="linenos" data-linenos="15 "></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">users</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">'BobJohnson'</span><span class="p">,</span> <span class="s1">'bobjohnson@example.com'</span><span class="p">,</span> <span class="mi">42</span><span class="p">);</span>
-<span class="linenos" data-linenos="16 "></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">users</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">'AliceBrown'</span><span class="p">,</span> <span class="s1">'alicebrown@example.com'</span><span class="p">,</span> <span class="mi">23</span><span class="p">);</span>
+<span class="linenos" data-linenos="13 "></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'JohnDoe'</span><span class="p">,</span><span class="w"> </span><span class="s1">'johndoe@example.com'</span><span class="p">,</span><span class="w"> </span><span class="mi">28</span><span class="p">);</span>
+<span class="linenos" data-linenos="14 "></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'JaneSmith'</span><span class="p">,</span><span class="w"> </span><span class="s1">'janesmith@example.com'</span><span class="p">,</span><span class="w"> </span><span class="mi">35</span><span class="p">);</span>
+<span class="linenos" data-linenos="15 "></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'BobJohnson'</span><span class="p">,</span><span class="w"> </span><span class="s1">'bobjohnson@example.com'</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">);</span>
+<span class="linenos" data-linenos="16 "></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">'AliceBrown'</span><span class="p">,</span><span class="w"> </span><span class="s1">'alicebrown@example.com'</span><span class="p">,</span><span class="w"> </span><span class="mi">23</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="basic-operations">Basic operations<a class="headerlink" href="#basic-operations" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">const</span> <span class="nx">mysql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mysql2'</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">mysql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'mysql2'</span><span class="p">);</span>
 <span class="linenos" data-linenos=" 2 "></span>
 <span class="linenos" data-linenos=" 3 "></span><span class="c1">// create the connection to the database</span>
-<span class="linenos" data-linenos=" 4 "></span><span class="kd">const</span> <span class="nx">connection</span> <span class="o">=</span> <span class="nx">mysql</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">({</span>
-<span class="linenos" data-linenos=" 5 "></span>  <span class="nx">host</span><span class="o">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
-<span class="linenos" data-linenos=" 6 "></span>  <span class="nx">user</span><span class="o">:</span> <span class="s1">'youruser'</span><span class="p">,</span>
-<span class="linenos" data-linenos=" 7 "></span>  <span class="nx">password</span><span class="o">:</span> <span class="s1">'yourpassword'</span><span class="p">,</span>
-<span class="linenos" data-linenos=" 8 "></span>  <span class="nx">database</span><span class="o">:</span> <span class="s1">'nodejs_sample'</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">mysql</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">({</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">  </span><span class="nx">host</span><span class="o">:</span><span class="w"> </span><span class="s1">'localhost'</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">  </span><span class="nx">user</span><span class="o">:</span><span class="w"> </span><span class="s1">'youruser'</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">  </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s1">'yourpassword'</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">  </span><span class="nx">database</span><span class="o">:</span><span class="w"> </span><span class="s1">'nodejs_sample'</span>
 <span class="linenos" data-linenos=" 9 "></span><span class="p">});</span>
 <span class="linenos" data-linenos="10 "></span>
 <span class="linenos" data-linenos="11 "></span>
 <span class="linenos" data-linenos="12 "></span><span class="c1">// select data from a table</span>
-<span class="linenos" data-linenos="13 "></span><span class="kd">const</span> <span class="nx">sqlSelect</span> <span class="o">=</span> <span class="s1">'SELECT * FROM users'</span><span class="p">;</span>
-<span class="linenos" data-linenos="14 "></span><span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sqlSelect</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos" data-linenos="15 "></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
-<span class="linenos" data-linenos="16 "></span>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">results</span><span class="p">);</span>
+<span class="linenos" data-linenos="13 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">sqlSelect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'SELECT * FROM users'</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span><span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sqlSelect</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">results</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="nx">err</span><span class="p">;</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">results</span><span class="p">);</span>
 <span class="linenos" data-linenos="17 "></span><span class="p">});</span>
 <span class="linenos" data-linenos="18 "></span>
 <span class="linenos" data-linenos="19 "></span>
 <span class="linenos" data-linenos="20 "></span><span class="c1">// insert data into a table</span>
-<span class="linenos" data-linenos="21 "></span><span class="kd">const</span> <span class="nx">sqlInsert</span> <span class="o">=</span> <span class="s1">'INSERT INTO users (username, email) VALUES (?, ?)'</span><span class="p">;</span>
-<span class="linenos" data-linenos="22 "></span><span class="kd">const</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'JackDoe'</span><span class="p">,</span> <span class="s1">'johndoe@example.com'</span><span class="p">];</span>
-<span class="linenos" data-linenos="23 "></span><span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sqlInsert</span><span class="p">,</span> <span class="nx">values</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos" data-linenos="24 "></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
-<span class="linenos" data-linenos="25 "></span>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Number of records inserted: "</span> <span class="o">+</span> <span class="nx">results</span><span class="p">.</span><span class="nx">affectedRows</span><span class="p">);</span>
+<span class="linenos" data-linenos="21 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">sqlInsert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'INSERT INTO users (username, email) VALUES (?, ?)'</span><span class="p">;</span>
+<span class="linenos" data-linenos="22 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'JackDoe'</span><span class="p">,</span><span class="w"> </span><span class="s1">'johndoe@example.com'</span><span class="p">];</span>
+<span class="linenos" data-linenos="23 "></span><span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sqlInsert</span><span class="p">,</span><span class="w"> </span><span class="nx">values</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">results</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="24 "></span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="nx">err</span><span class="p">;</span>
+<span class="linenos" data-linenos="25 "></span><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Number of records inserted: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">results</span><span class="p">.</span><span class="nx">affectedRows</span><span class="p">);</span>
 <span class="linenos" data-linenos="26 "></span><span class="p">});</span>
 <span class="linenos" data-linenos="27 "></span>
 <span class="linenos" data-linenos="28 "></span><span class="c1">// update data in a table</span>
-<span class="linenos" data-linenos="29 "></span><span class="kd">const</span> <span class="nx">sqlUpdate</span> <span class="o">=</span> <span class="s1">'UPDATE users SET email = ? WHERE username = ?'</span><span class="p">;</span>
-<span class="linenos" data-linenos="30 "></span><span class="kd">const</span> <span class="nx">updateValues</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'newemail@example.com'</span><span class="p">,</span> <span class="s1">'JohnDoe'</span><span class="p">];</span>
-<span class="linenos" data-linenos="31 "></span><span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sqlUpdate</span><span class="p">,</span> <span class="nx">updateValues</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos" data-linenos="32 "></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
-<span class="linenos" data-linenos="33 "></span>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Number of records updated: "</span> <span class="o">+</span> <span class="nx">results</span><span class="p">.</span><span class="nx">affectedRows</span><span class="p">);</span>
+<span class="linenos" data-linenos="29 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">sqlUpdate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'UPDATE users SET email = ? WHERE username = ?'</span><span class="p">;</span>
+<span class="linenos" data-linenos="30 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">updateValues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'newemail@example.com'</span><span class="p">,</span><span class="w"> </span><span class="s1">'JohnDoe'</span><span class="p">];</span>
+<span class="linenos" data-linenos="31 "></span><span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sqlUpdate</span><span class="p">,</span><span class="w"> </span><span class="nx">updateValues</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">results</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="32 "></span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="nx">err</span><span class="p">;</span>
+<span class="linenos" data-linenos="33 "></span><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Number of records updated: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">results</span><span class="p">.</span><span class="nx">affectedRows</span><span class="p">);</span>
 <span class="linenos" data-linenos="34 "></span><span class="p">});</span>
 <span class="linenos" data-linenos="35 "></span>
 <span class="linenos" data-linenos="36 "></span><span class="c1">// delete data from a table</span>
-<span class="linenos" data-linenos="37 "></span><span class="kd">const</span> <span class="nx">sqlDelete</span> <span class="o">=</span> <span class="s1">'DELETE FROM users WHERE username = ?'</span><span class="p">;</span>
-<span class="linenos" data-linenos="38 "></span><span class="kd">const</span> <span class="nx">deleteValues</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'JohnDoe'</span><span class="p">];</span>
-<span class="linenos" data-linenos="39 "></span><span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sqlDelete</span><span class="p">,</span> <span class="nx">deleteValues</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos" data-linenos="40 "></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">err</span><span class="p">;</span>
-<span class="linenos" data-linenos="41 "></span>  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Number of records deleted: "</span> <span class="o">+</span> <span class="nx">results</span><span class="p">.</span><span class="nx">affectedRows</span><span class="p">);</span>
+<span class="linenos" data-linenos="37 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">sqlDelete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'DELETE FROM users WHERE username = ?'</span><span class="p">;</span>
+<span class="linenos" data-linenos="38 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">deleteValues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'JohnDoe'</span><span class="p">];</span>
+<span class="linenos" data-linenos="39 "></span><span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sqlDelete</span><span class="p">,</span><span class="w"> </span><span class="nx">deleteValues</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">results</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="40 "></span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="nx">err</span><span class="p">;</span>
+<span class="linenos" data-linenos="41 "></span><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Number of records deleted: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">results</span><span class="p">.</span><span class="nx">affectedRows</span><span class="p">);</span>
 <span class="linenos" data-linenos="42 "></span><span class="p">});</span>
 <span class="linenos" data-linenos="43 "></span>
 <span class="linenos" data-linenos="44 "></span><span class="c1">// close the connection to the database</span>
@@ -613,120 +614,120 @@
 <p>The <code>fast-xml-parser</code> module is a lightweight and high-performance XML parser for Node.js. It allows you to efficiently parse XML documents and convert them into JavaScript objects for further processing.</p>
 <p>We can use <code>fast-xml-parser</code> to read and write XML files.</p>
 <p>The following code is an example of exporting a database table to XML using <code>mysql2</code>, <code>fs</code>, and <code>fast-xml-parser</code> in Node.js:</p>
-<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">);</span>
-<span class="linenos" data-linenos=" 2 "></span><span class="kd">const</span> <span class="nx">mysql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mysql2'</span><span class="p">);</span>
-<span class="linenos" data-linenos=" 3 "></span><span class="kd">const</span> <span class="p">{</span> <span class="nx">XMLBuilder</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fast-xml-parser'</span><span class="p">);</span>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">mysql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'mysql2'</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">XMLBuilder</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'fast-xml-parser'</span><span class="p">);</span>
 <span class="linenos" data-linenos=" 4 "></span>
 <span class="linenos" data-linenos=" 5 "></span><span class="c1">// Create the database connection</span>
-<span class="linenos" data-linenos=" 6 "></span><span class="kd">const</span> <span class="nx">connection</span> <span class="o">=</span> <span class="nx">mysql</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">({</span>
-<span class="linenos" data-linenos=" 7 "></span>  <span class="nx">host</span><span class="o">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
-<span class="linenos" data-linenos=" 8 "></span>  <span class="nx">user</span><span class="o">:</span> <span class="s1">'youruser'</span><span class="p">,</span>
-<span class="linenos" data-linenos=" 9 "></span>  <span class="nx">password</span><span class="o">:</span> <span class="s1">'yourpassword'</span><span class="p">,</span>
-<span class="linenos" data-linenos="10 "></span>  <span class="nx">database</span><span class="o">:</span> <span class="s1">'yourdatabase'</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">mysql</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">({</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">  </span><span class="nx">host</span><span class="o">:</span><span class="w"> </span><span class="s1">'localhost'</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">  </span><span class="nx">user</span><span class="o">:</span><span class="w"> </span><span class="s1">'youruser'</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">  </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s1">'yourpassword'</span><span class="p">,</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">  </span><span class="nx">database</span><span class="o">:</span><span class="w"> </span><span class="s1">'yourdatabase'</span>
 <span class="linenos" data-linenos="11 "></span><span class="p">});</span>
 <span class="linenos" data-linenos="12 "></span>
 <span class="linenos" data-linenos="13 "></span><span class="c1">// Select data from the database table</span>
-<span class="linenos" data-linenos="14 "></span><span class="kd">const</span> <span class="nx">sqlSelect</span> <span class="o">=</span> <span class="s1">'SELECT * FROM users'</span><span class="p">;</span>
-<span class="linenos" data-linenos="15 "></span><span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sqlSelect</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-<span class="linenos" data-linenos="16 "></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos" data-linenos="17 "></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
-<span class="linenos" data-linenos="18 "></span>    <span class="k">return</span><span class="p">;</span>
-<span class="linenos" data-linenos="19 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="14 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">sqlSelect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'SELECT * FROM users'</span><span class="p">;</span>
+<span class="linenos" data-linenos="15 "></span><span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sqlSelect</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">results</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">  </span><span class="p">}</span>
 <span class="linenos" data-linenos="20 "></span>
-<span class="linenos" data-linenos="21 "></span>  <span class="kd">const</span> <span class="nx">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLBuilder</span><span class="p">(</span>
-<span class="linenos" data-linenos="22 "></span>    <span class="p">{</span>
-<span class="linenos" data-linenos="23 "></span>        <span class="nx">format</span><span class="o">:</span> <span class="kc">true</span>
-<span class="linenos" data-linenos="24 "></span>    <span class="p">}</span>
-<span class="linenos" data-linenos="25 "></span>  <span class="p">);</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">XMLBuilder</span><span class="p">(</span>
+<span class="linenos" data-linenos="22 "></span><span class="w">    </span><span class="p">{</span>
+<span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="linenos" data-linenos="24 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="25 "></span><span class="w">  </span><span class="p">);</span>
 <span class="linenos" data-linenos="26 "></span>
-<span class="linenos" data-linenos="27 "></span>  <span class="c1">// Convert the results to XML</span>
-<span class="linenos" data-linenos="28 "></span>  <span class="kd">const</span> <span class="nx">xmlData</span> <span class="o">=</span> <span class="nx">builder</span><span class="p">.</span><span class="nx">build</span><span class="p">({</span>
-<span class="linenos" data-linenos="29 "></span>    <span class="nx">root</span><span class="o">:</span> <span class="p">{</span>
-<span class="linenos" data-linenos="30 "></span>        <span class="nx">item</span><span class="o">:</span> <span class="nx">result</span>
-<span class="linenos" data-linenos="31 "></span>    <span class="p">}</span>
-<span class="linenos" data-linenos="32 "></span>  <span class="p">});</span>
+<span class="linenos" data-linenos="27 "></span><span class="w">  </span><span class="c1">// Convert the results to XML</span>
+<span class="linenos" data-linenos="28 "></span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">xmlData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">builder</span><span class="p">.</span><span class="nx">build</span><span class="p">({</span>
+<span class="linenos" data-linenos="29 "></span><span class="w">    </span><span class="nx">root</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="30 "></span><span class="w">        </span><span class="nx">item</span><span class="o">:</span><span class="w"> </span><span class="nx">result</span>
+<span class="linenos" data-linenos="31 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="32 "></span><span class="w">  </span><span class="p">});</span>
 <span class="linenos" data-linenos="33 "></span>
-<span class="linenos" data-linenos="34 "></span>  <span class="c1">// Write the XML string to a file</span>
-<span class="linenos" data-linenos="35 "></span>  <span class="nx">fs</span><span class="p">.</span><span class="nx">writeFile</span><span class="p">(</span><span class="s1">'data.xml'</span><span class="p">,</span> <span class="nx">xmlString</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-<span class="linenos" data-linenos="36 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos" data-linenos="37 "></span>      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
-<span class="linenos" data-linenos="38 "></span>      <span class="k">return</span><span class="p">;</span>
-<span class="linenos" data-linenos="39 "></span>    <span class="p">}</span>
-<span class="linenos" data-linenos="40 "></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Data exported to data.xml'</span><span class="p">);</span>
-<span class="linenos" data-linenos="41 "></span>  <span class="p">});</span>
+<span class="linenos" data-linenos="34 "></span><span class="w">  </span><span class="c1">// Write the XML string to a file</span>
+<span class="linenos" data-linenos="35 "></span><span class="w">  </span><span class="nx">fs</span><span class="p">.</span><span class="nx">writeFile</span><span class="p">(</span><span class="s1">'data.xml'</span><span class="p">,</span><span class="w"> </span><span class="nx">xmlString</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="36 "></span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="37 "></span><span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="linenos" data-linenos="38 "></span><span class="w">      </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos" data-linenos="39 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="40 "></span><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Data exported to data.xml'</span><span class="p">);</span>
+<span class="linenos" data-linenos="41 "></span><span class="w">  </span><span class="p">});</span>
 <span class="linenos" data-linenos="42 "></span>
-<span class="linenos" data-linenos="43 "></span>  <span class="c1">// Close the database connection</span>
-<span class="linenos" data-linenos="44 "></span>  <span class="nx">connection</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+<span class="linenos" data-linenos="43 "></span><span class="w">  </span><span class="c1">// Close the database connection</span>
+<span class="linenos" data-linenos="44 "></span><span class="w">  </span><span class="nx">connection</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
 <span class="linenos" data-linenos="45 "></span><span class="p">});</span>
 </code></pre></div>
 This script connects to the MySQL database, selects all data from the specified table, converts the results into an XML object using <code>fast-xml-parser</code>, and then converts the XML object to a formatted XML string. Finally, the XML string is written to a file named <code>data.xml</code> using the <code>fs.writeFile</code> function.</p>
 <p>You can adjust the <code>build</code> options provided to <code>fast-xml-parser</code> to customize the XML output as per your requirements.</p>
 <p>The result file should look like that:</p>
 <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nt">&lt;root&gt;</span>
-<span class="linenos" data-linenos=" 2 "></span>  <span class="nt">&lt;item&gt;</span>
-<span class="linenos" data-linenos=" 3 "></span>    <span class="nt">&lt;id&gt;</span>1<span class="nt">&lt;/id&gt;</span>
-<span class="linenos" data-linenos=" 4 "></span>    <span class="nt">&lt;username&gt;</span>JohnDoe<span class="nt">&lt;/name&gt;</span>
-<span class="linenos" data-linenos=" 5 "></span>    <span class="nt">&lt;email&gt;</span>johndoe@example.com<span class="nt">&lt;/email&gt;</span>
-<span class="linenos" data-linenos=" 6 "></span>    <span class="nt">&lt;age&gt;</span>28<span class="nt">&lt;/age&gt;</span>
-<span class="linenos" data-linenos=" 7 "></span>  <span class="nt">&lt;/item&gt;</span>
-<span class="linenos" data-linenos=" 8 "></span>  <span class="nt">&lt;item&gt;</span>
-<span class="linenos" data-linenos=" 9 "></span>    <span class="nt">&lt;id&gt;</span>2<span class="nt">&lt;/id&gt;</span>
-<span class="linenos" data-linenos="10 "></span>    <span class="nt">&lt;username&gt;</span>JaneSmith<span class="nt">&lt;/name&gt;</span>
-<span class="linenos" data-linenos="11 "></span>    <span class="nt">&lt;email&gt;</span>janesmith@example.com<span class="nt">&lt;/email&gt;</span>
-<span class="linenos" data-linenos="12 "></span>    <span class="nt">&lt;age&gt;</span>35<span class="nt">&lt;/age&gt;</span>
-<span class="linenos" data-linenos="13 "></span>  <span class="nt">&lt;/item&gt;</span>
-<span class="linenos" data-linenos="14 "></span>  <span class="nt">&lt;item&gt;</span>
-<span class="linenos" data-linenos="15 "></span>    <span class="nt">&lt;id&gt;</span>3<span class="nt">&lt;/id&gt;</span>
-<span class="linenos" data-linenos="16 "></span>    <span class="nt">&lt;username&gt;</span>BobJohnson<span class="nt">&lt;/name&gt;</span>
-<span class="linenos" data-linenos="17 "></span>    <span class="nt">&lt;email&gt;</span>bobjohnson@example.com<span class="nt">&lt;/email&gt;</span>
-<span class="linenos" data-linenos="18 "></span>    <span class="nt">&lt;age&gt;</span>42<span class="nt">&lt;/age&gt;</span>
-<span class="linenos" data-linenos="19 "></span>  <span class="nt">&lt;/item&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">  </span><span class="nt">&lt;item&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">    </span><span class="nt">&lt;id&gt;</span>1<span class="nt">&lt;/id&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">    </span><span class="nt">&lt;username&gt;</span>JohnDoe<span class="nt">&lt;/name&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">    </span><span class="nt">&lt;email&gt;</span>johndoe@example.com<span class="nt">&lt;/email&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">    </span><span class="nt">&lt;age&gt;</span>28<span class="nt">&lt;/age&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">  </span><span class="nt">&lt;/item&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">  </span><span class="nt">&lt;item&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">    </span><span class="nt">&lt;id&gt;</span>2<span class="nt">&lt;/id&gt;</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">    </span><span class="nt">&lt;username&gt;</span>JaneSmith<span class="nt">&lt;/name&gt;</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">    </span><span class="nt">&lt;email&gt;</span>janesmith@example.com<span class="nt">&lt;/email&gt;</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">    </span><span class="nt">&lt;age&gt;</span>35<span class="nt">&lt;/age&gt;</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">  </span><span class="nt">&lt;/item&gt;</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">  </span><span class="nt">&lt;item&gt;</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="nt">&lt;id&gt;</span>3<span class="nt">&lt;/id&gt;</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="nt">&lt;username&gt;</span>BobJohnson<span class="nt">&lt;/name&gt;</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="nt">&lt;email&gt;</span>bobjohnson@example.com<span class="nt">&lt;/email&gt;</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="nt">&lt;age&gt;</span>42<span class="nt">&lt;/age&gt;</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">  </span><span class="nt">&lt;/item&gt;</span>
 <span class="linenos" data-linenos="20 "></span><span class="nt">&lt;/root&gt;</span>
 </code></pre></div>
 <p>This is an example of importing rows into a database table in Node.js:</p>
-<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">);</span>
-<span class="linenos" data-linenos=" 2 "></span><span class="kd">const</span> <span class="nx">mysql</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mysql2'</span><span class="p">);</span>
-<span class="linenos" data-linenos=" 3 "></span><span class="kd">const</span> <span class="p">{</span> <span class="nx">XMLParser</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fast-xml-parser'</span><span class="p">);</span>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">fs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">mysql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'mysql2'</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">XMLParser</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">'fast-xml-parser'</span><span class="p">);</span>
 <span class="linenos" data-linenos=" 4 "></span>
 <span class="linenos" data-linenos=" 5 "></span>
 <span class="linenos" data-linenos=" 6 "></span><span class="c1">// Create the database connection</span>
-<span class="linenos" data-linenos=" 7 "></span><span class="kd">const</span> <span class="nx">connection</span> <span class="o">=</span> <span class="nx">mysql</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">({</span>
-<span class="linenos" data-linenos=" 8 "></span>  <span class="nx">host</span><span class="o">:</span> <span class="s1">'localhost'</span><span class="p">,</span>
-<span class="linenos" data-linenos=" 9 "></span>  <span class="nx">user</span><span class="o">:</span> <span class="s1">'youruser'</span><span class="p">,</span>
-<span class="linenos" data-linenos="10 "></span>  <span class="nx">password</span><span class="o">:</span> <span class="s1">'yourpassword'</span><span class="p">,</span>
-<span class="linenos" data-linenos="11 "></span>  <span class="nx">database</span><span class="o">:</span> <span class="s1">'yourdatabase'</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="kd">const</span><span class="w"> </span><span class="nx">connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">mysql</span><span class="p">.</span><span class="nx">createConnection</span><span class="p">({</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">  </span><span class="nx">host</span><span class="o">:</span><span class="w"> </span><span class="s1">'localhost'</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">  </span><span class="nx">user</span><span class="o">:</span><span class="w"> </span><span class="s1">'youruser'</span><span class="p">,</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">  </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s1">'yourpassword'</span><span class="p">,</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">  </span><span class="nx">database</span><span class="o">:</span><span class="w"> </span><span class="s1">'yourdatabase'</span>
 <span class="linenos" data-linenos="12 "></span><span class="p">});</span>
 <span class="linenos" data-linenos="13 "></span>
 <span class="linenos" data-linenos="14 "></span><span class="c1">// Read the XML file</span>
-<span class="linenos" data-linenos="15 "></span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">'data.xml'</span><span class="p">,</span> <span class="s1">'utf-8'</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">xmlData</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-<span class="linenos" data-linenos="16 "></span>  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos" data-linenos="17 "></span>    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
-<span class="linenos" data-linenos="18 "></span>    <span class="k">return</span><span class="p">;</span>
-<span class="linenos" data-linenos="19 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="15 "></span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">'data.xml'</span><span class="p">,</span><span class="w"> </span><span class="s1">'utf-8'</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">xmlData</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">  </span><span class="p">}</span>
 <span class="linenos" data-linenos="20 "></span>
-<span class="linenos" data-linenos="21 "></span>  <span class="kd">const</span> <span class="nx">parser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLParser</span><span class="p">();</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">parser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">XMLParser</span><span class="p">();</span>
 <span class="linenos" data-linenos="22 "></span>
-<span class="linenos" data-linenos="23 "></span>  <span class="c1">// Parse the XML data</span>
-<span class="linenos" data-linenos="24 "></span>  <span class="kd">const</span> <span class="nx">parsedData</span> <span class="o">=</span> <span class="nx">parser</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">xmlData</span><span class="p">);</span>
+<span class="linenos" data-linenos="23 "></span><span class="w">  </span><span class="c1">// Parse the XML data</span>
+<span class="linenos" data-linenos="24 "></span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">parsedData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parser</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">xmlData</span><span class="p">);</span>
 <span class="linenos" data-linenos="25 "></span>
-<span class="linenos" data-linenos="26 "></span>  <span class="c1">// Extract the items from the parsed XML object</span>
-<span class="linenos" data-linenos="27 "></span>  <span class="kd">const</span> <span class="nx">items</span> <span class="o">=</span> <span class="nx">parsedData</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">item</span><span class="p">;</span>
+<span class="linenos" data-linenos="26 "></span><span class="w">  </span><span class="c1">// Extract the items from the parsed XML object</span>
+<span class="linenos" data-linenos="27 "></span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parsedData</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">item</span><span class="p">;</span>
 <span class="linenos" data-linenos="28 "></span>
-<span class="linenos" data-linenos="29 "></span>  <span class="c1">// Insert the data into the database table</span>
-<span class="linenos" data-linenos="30 "></span>  <span class="kd">const</span> <span class="nx">sqlInsert</span> <span class="o">=</span> <span class="s1">'INSERT INTO users (username, email, age) VALUES (?, ?, ?)'</span><span class="p">;</span>
-<span class="linenos" data-linenos="31 "></span>  <span class="nx">items</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">item</span> <span class="p">=&gt;</span> <span class="p">{</span>
-<span class="linenos" data-linenos="32 "></span>    <span class="kd">const</span> <span class="nx">values</span> <span class="o">=</span> <span class="p">[</span><span class="nx">item</span><span class="p">.</span><span class="nx">username</span><span class="p">,</span> <span class="nx">item</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span> <span class="nx">item</span><span class="p">.</span><span class="nx">age</span><span class="p">];</span>
-<span class="linenos" data-linenos="33 "></span>    <span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sqlInsert</span><span class="p">,</span> <span class="nx">values</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">results</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-<span class="linenos" data-linenos="34 "></span>      <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-<span class="linenos" data-linenos="35 "></span>        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
-<span class="linenos" data-linenos="36 "></span>        <span class="k">return</span><span class="p">;</span>
-<span class="linenos" data-linenos="37 "></span>      <span class="p">}</span>
-<span class="linenos" data-linenos="38 "></span>      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Record inserted:'</span><span class="p">,</span> <span class="nx">results</span><span class="p">.</span><span class="nx">insertId</span><span class="p">);</span>
-<span class="linenos" data-linenos="39 "></span>    <span class="p">});</span>
-<span class="linenos" data-linenos="40 "></span>  <span class="p">});</span>
+<span class="linenos" data-linenos="29 "></span><span class="w">  </span><span class="c1">// Insert the data into the database table</span>
+<span class="linenos" data-linenos="30 "></span><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">sqlInsert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'INSERT INTO users (username, email, age) VALUES (?, ?, ?)'</span><span class="p">;</span>
+<span class="linenos" data-linenos="31 "></span><span class="w">  </span><span class="nx">items</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="32 "></span><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">item</span><span class="p">.</span><span class="nx">username</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">age</span><span class="p">];</span>
+<span class="linenos" data-linenos="33 "></span><span class="w">    </span><span class="nx">connection</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sqlInsert</span><span class="p">,</span><span class="w"> </span><span class="nx">values</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">results</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="34 "></span><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="35 "></span><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="linenos" data-linenos="36 "></span><span class="w">        </span><span class="k">return</span><span class="p">;</span>
+<span class="linenos" data-linenos="37 "></span><span class="w">      </span><span class="p">}</span>
+<span class="linenos" data-linenos="38 "></span><span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Record inserted:'</span><span class="p">,</span><span class="w"> </span><span class="nx">results</span><span class="p">.</span><span class="nx">insertId</span><span class="p">);</span>
+<span class="linenos" data-linenos="39 "></span><span class="w">    </span><span class="p">});</span>
+<span class="linenos" data-linenos="40 "></span><span class="w">  </span><span class="p">});</span>
 <span class="linenos" data-linenos="41 "></span>
-<span class="linenos" data-linenos="42 "></span>  <span class="c1">// Close the database connection</span>
-<span class="linenos" data-linenos="43 "></span>  <span class="nx">connection</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+<span class="linenos" data-linenos="42 "></span><span class="w">  </span><span class="c1">// Close the database connection</span>
+<span class="linenos" data-linenos="43 "></span><span class="w">  </span><span class="nx">connection</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
 <span class="linenos" data-linenos="44 "></span><span class="p">});</span>
 </code></pre></div>
 This script reads the XML file (<code>data.xml</code>), parses its contents using <code>fast-xml-parser</code>, and extracts the necessary data. Then, it inserts the extracted data into the specified table in the MySQL database using parameterized queries. Finally, it logs the insert IDs of the inserted records and closes the database connection.</p>
@@ -735,42 +736,15 @@ This script reads the XML file (<code>data.xml</code>), parses its contents usin
 </div>
 </main>
 <footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Node.js" class="md-footer__link md-footer__link--prev" href="../0702-node/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Previous
-              </span>
-              Node.js
-            </div>
-</div>
-</a>
-<a aria-label="Next: Creating apps" class="md-footer__link md-footer__link--next" href="../0705-creating-app/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Next
-              </span>
-              Creating apps
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
-</div>
-</a>
-</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
-<div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
-          Material for MkDocs
-        </a>
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
 </div>
 </div>
 </div>
@@ -779,8 +753,8 @@ This script reads the XML file (<code>data.xml</code>), parses its contents usin
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
-<script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.a00a7c5e.min.js"></script>
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 </body>
 </html>
